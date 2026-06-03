@@ -1,0 +1,235 @@
+\documentclass[12pt, a4paper, oneside]{scrreprt}
+
+\usepackage{scrhack}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage{csquotes}
+\usepackage{mathpazo}
+\usepackage[scaled=0.95]{helvet}
+\usepackage{courier}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[automark,headsepline]{scrlayer-scrpage}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage[newfloat]{minted}
+\usepackage{caption}
+\usepackage[style=numeric, sorting=nty]{biblatex}
+
+\definecolor{myblue}{RGB}{20, 80, 150}
+
+\usepackage[
+    colorlinks=true,
+    linkcolor=myblue,
+    citecolor=myblue,
+    urlcolor=myblue,
+    bookmarks=true
+]{hyperref}
+
+\onehalfspacing
+\pagestyle{scrheadings}
+
+\SetupFloatingEnvironment{listing}{
+    fileext=lol,
+    listname={Spis kodów},
+    name=Listing,
+    placement=htbp
+}
+
+\setcounter{biburlnumpenalty}{100}
+\setcounter{biburlucpenalty}{100}
+\setcounter{biburllcpenalty}{100}
+
+\addbibresource{bibliografia.bib}
+
+\title{Sprzętowa implementacja funkcji aktywacji ReLU, sigmoid i tanh}
+\author{Jakub Jucha \and Patryk Kowalczyk}
+\date{Czerwiec 2026}
+
+% --------------------
+% DOKUMENT WŁAŚCIWY
+\begin{document}
+
+\maketitle
+
+\tableofcontents % Tworzy klikalny spis treści
+\newpage
+
+\chapter{Wprowadzenie}
+
+Główną zaletą procesorów (CPU) jest ich uniwersalność — są one w stanie obsłużyć dowolną funkcję matematyczną. Jednak w systemach wbudowanych i akceleratorach sprzętowych stosuje się inne techniki. Funkcja aktywacji utrwalona bezpośrednio w strukturze krzemowej może zwracać wynik już po jednym cyklu zegara, co czyni takie podejście znacznie korzystniejszym pod względem efektywności energetycznej. Istotną wadą tego rozwiązania jest konieczność wydzielenia dedykowanej powierzchni na krzemie oraz brak możliwości późniejszej modyfikacji za pomocą zwykłej aktualizacji oprogramowania~\cite{semiengineering}. Warto jednak zauważyć, że w przypadku układów FPGA ten problem elastyczności nie występuje.
+
+Najprostszą do zaimplementowania w języku Verilog jest funkcja ReLU (ang. \textit{Rectified Linear Unit}), opisana wzorem $y = \max(0,x)$. Jej realizacja sprzętowa wymaga jedynie komparatora znaku oraz prostego multipleksera: gdy sygnał wejściowy jest ujemny, układ zwraca 0, natomiast w przeciwnym wypadku sygnał wejściowy jest przepuszczany bezpośrednio na wyjście~\cite{semiengineering}.
+
+Kolejną popularną metodą jest przybliżanie wartości funkcji za pomocą tablic przeglądowych LUT (ang. \textit{Look Up Table}), czyli poprzez zapisanie predefiniowanych wartości wejść i wyjść w pamięci. Zaletą tego podejścia jest wysoka szybkość działania oraz możliwość szybkiej podmiany zawartości tablicy na inną. Wadą jest natomiast fakt, że przy wymaganej wyższej precyzji obliczeń rozmiar tablicy drastycznie rośnie~\cite{semiengineering}. 
+
+Pewnym ulepszeniem tej koncepcji są tablice LUT z interpolacją. Metoda ta również opiera się na strukturze tablicowej, ale wykorzystuje dodatkowe operacje arytmetyczne do estymacji wyników pomiędzy węzłami tablicy, co pozwala poprawić dokładność bez nadmiernego zwiększania zużycia pamięci. Istnieją również architektury wykorzystujące dwie tablice: jedną o grubszej, a drugą o drobniejszej ziarnistości, których wyniki są sumowane w celu uzyskania ostatecznego przybliżenia~\cite{thedatabus}.
+
+W aplikacjach cyfrowego przetwarzania sygnałów (DSP), które wymagają wyznaczania funkcji nieliniowych, takich jak tangens hiperboliczny ($\tanh$), szeroko stosowany jest algorytm CORDIC (ang. \textit{Coordinate Rotation Digital Computer}). Jest to niezwykle elegancka metoda iteracyjna, która wykorzystuje wyłącznie prostą logikę przesunięć bitowych oraz dodawania (ang. \textit{shift-add}) do osiągnięcia bardzo dokładnych wyników. Przykładowa implementacja CORDIC dla funkcji sinus i cosinus została przedstawiona pod adresem \url{https://zipcpu.com/dsp/2017/08/30/cordic.html}. Większość wiodących dostawców układów FPGA oferuje również gotowe bloki własności intelektualnej (ang. \textit{IP cores}) dla jednostek CORDIC~\cite{thedatabus}.
+
+Innym podejściem są szeregi Taylora (ang. \textit{Taylor series}) oraz przybliżenia wielomianowe (ang. \textit{polynomial approximations}). Metody te wykorzystują tradycyjne rozwinięcia funkcji w szeregi potęgowe i próbują zaimplementować operacje na zmiennych wyższych rzędów w wielomianach, co jednak wiąże się z koniecznością stosowania zasobożernych układów mnożących~\cite{thedatabus}.
+
+Do najbardziej zaawansowanych rozwiązań należą metody oparte na interpolacji wykorzystującej dyskretną transformację cosinusową DCT (ang. \textit{Discrete Cosine Transform}). Pozwalają one na bardzo precyzyjne dopasowanie dokładności obliczeń przy jednoczesnej optymalizacji zasobów sprzętowych wymaganych dla danej aplikacji~\cite{thedatabus}. Przykładowa implementacja funkcji $\tanh$ z wykorzystaniem tej techniki została szczegółowo opisana w artykule z 2016 roku~\cite{DCTtanh}.
+
+Aproksymacja odcinkowa (PWL - Piecewise Linear Approximation) jest kolejną metodą, która polega na podziale dziedziny funkcji na segmenty i aproksymacji każdego z nich za pomocą prostej linii ~\cite{bohrium}.
+W sprzęcie implementuje się to za pomocą małej tablicy LUT (która na podstawie wartości wejścia wybiera odpowiedni przedział, czyli współczynniki $a$ i $b$) oraz jednego mnożnika i dodawacza. W zaawansowanych implementacjach (np. algorytm PLAN) dobiera się współczynniki $a$ tak, aby były potęgami dwójki ($2^{-k}$) - wtedy mnożnik zastępuje się zwykłym przesunięciem bitowym, co drastycznie oszczędza zasoby FPGA.
+
+\chapter{Skrótowa lista potencjalnych metod}
+\section{ReLU}
+\begin{itemize}
+    \item Prosta implementacja w Verilog'u opisana poniżej
+\end{itemize}
+
+\section{Sigmoid i tanh}
+\begin{itemize}
+    \item Implementacja za pomocą LUT
+    \item Implementacja za pomocą LUT z interpolacją
+    \item Implementacja za pomocą CORDIC
+    \item Implementacja za pomocą Taylor series i polynomial approximations
+    \item Implementacja za pomocą DCT Interpolation
+    \item Implementacja za pomocą aproksymacji odcinkowej (PWL) + dodatkowo może być ulepszona o dobór współczynników $a$ tak, aby były potęgami dwójki (PLAN)
+\end{itemize}
+
+
+\chapter{Implementacja}
+
+Poniższe implementacje zostały znalezione na internecie i nie zostały jeszcze przetestowane.
+
+\section{ReLU}
+
+\begin{listing}[htbp]
+    \begin{minted}[linenos, bgcolor=gray!10]{verilog}
+module relu (
+    input wire signed [31:0] din_relu,
+    output wire signed [31:0] dout_relu
+);
+    assign dout_relu = (din_relu < 0) ? 32'b0 : din_relu;
+endmodule
+    \end{minted}
+    \caption{Implementacja funkcji ReLU w Verilog'u \cite{thedatabus}}
+    \label{lst:ReLUVerilog}
+\end{listing}
+
+\section{tanh}
+
+\begin{listing}[htbp]
+    \begin{minted}[linenos, bgcolor=gray!10]{verilog}
+module tanh_lut #(
+    parameter AW = 10,
+    parameter DW = 16,
+    parameter N = 16,
+    parameter Q = 12
+    )(
+    input clk,
+    input [AW-1:0] phase,
+    output [DW-1:0] tanh
+    );
+    reg [AW-1:0] addr_reg;
+(* ram_style = "block" *)reg [DW-1:0] mem [1<<AW-1:0];
+initial 
+begin
+    $readmemb("tanh_data.mem",mem);
+end
+
+always@(posedge clk)
+begin
+    addr_reg <= phase[AW-1:0];
+end
+
+assign tanh = mem[addr_reg];
+    \end{minted}
+    \caption{Implementacja funkcji tanh w Verilog'u używając LUT \cite{thedatabus}}
+    \label{lst:tanhLUT}
+\end{listing}
+
+\begin{listing}[htbp]
+    \begin{minted}[linenos, bgcolor=gray!10]{verilog}
+module tanh_lut #(
+    parameter AW = 10, 
+    parameter DW = 16,
+    parameter N = 16,
+    parameter Q = 12
+    )(
+    input clk,
+    input [N-1:0] phase,
+    output [DW-1:0] tanh
+    );
+
+    reg [9:0] addra_reg;
+    reg [9:0] addrb_reg;
+    wire [15:0] tanha;
+    wire [15:0] tanhb;
+    wire ovr1,ovr2;
+
+    wire [15:0] frac,one_minus_frac;
+    wire [15:0] A1,A2;
+    wire [15:0] one;
+    wire [DW-1:0] tanh_temp;
+
+
+    (* ram_style = "block" *)reg [15:0] mem [1<<10-1:0];
+    initial 
+    begin
+        $readmemb("tanh_data.mem",mem);
+    end
+    always@(posedge clk)
+    begin
+        addra_reg <= phase[9:0];
+        addrb_reg <= phase[9:0] + 1'b1;
+    end
+    assign tanha = mem[addra_reg];
+    assign tanhb = mem[addrb_reg];
+    assign frac = {'d0,phase[N-AW-'d2-1:0]};
+    assign one = 16'b0001000000000000;
+    assign one_minus_frac = one - frac;
+    qmult #(N,Q) mul1 (tanha,frac,A1,ovr1);
+    qmult #(N,Q) mul2 (tanhb,one_minus_frac,A2,ovr2);
+    assign tanh_temp = A1 + A2;
+    assign tanh = (phase [N-1]) ? (phase[N-2] ? (16'b1111000000000000) : (~tanh_temp + 1'b1)) :(phase[N-2] ? (16'b0001000000000000):(tanh_temp));
+
+endmodule
+    \end{minted}
+    \caption{Implementacja funkcji tanh w Verilog'u używając LUT z interpolacją \cite{thedatabus}}
+    \label{lst:tanhLUTinterpolation}
+\end{listing}
+
+\chapter{Porównywanie metod}
+
+Opis w jaki sposób zamierzamy porównać ze sobą wszystkie opisane wcześniej metody implementacji.
+
+\section{Planowane środowisko symulacyjne i model referencyjny}
+Wszystkie moduły sprzętowe zostaną napisane w języku Verilog. Do ich uruchomienia, symulacji oraz stworzenia środowisk testowych (ang. \textit{testbench}) planujemy wykorzystać darmową platformę internetową EDA Playground (\url{https://www.edaplayground.com}). 
+
+Działanie testbencha będzie polegać na automatycznym podawaniu na wejście układu RTL całego zakresu zmiennych i zapisywaniu tego, co układ zwróci na wyjściu. Żeby sprawdzić jakość działania, wyniki z Veriloga będą porównywane z idealną teorią matematyczną.
+Jako idealny wzorzec (referencję) zamierzamy wykorzystać obliczenia wykonane w Pythonie na liczbach zmiennoprzecinkowych.
+
+\section{Kryteria oceny}
+Każdą z metod będę oceniać pod kątem trzech głównych parametrów: dokładności, zużycia zasobów oraz szybkości działania.
+
+\subsection{Dokładność (Analiza błędu)}
+Do zmierzenia błędu planujemy wykorzystać trzy metryki:
+\begin{itemize}
+    \item \textbf{Błąd maksymalny} -- pokaże największą różnicę między teorią a Verilogiem, jaka przytrafi się w całym teście. Wskaże to na „najgorszy możliwy przypadek”.
+    \item \textbf{Średni błąd bezwzględny (MAE)} -- pokaże, o ile średnio myli się projektowany układ dla wszystkich podanych próbek.
+    \item \textbf{Pierwiastek błędu średniokwadratowego (RMSE)} -- podobnie jak MAE pokaże błąd, ale znacznie mocniej ukarze duże, pojedyncze odchylenia od wykresu.
+\end{itemize}
+
+\subsection{Zużycie zasobów FPGA}
+Z raportów po syntezie układu będą odczytywane dane o tym, ile miejsca w strukturze FPGA zajmie dana metoda. Sprawdzane będą trzy kluczowe elementy:
+\begin{itemize}
+    \item \textbf{LUT} -- uniwersalne komórki logiczne. Ich liczba powie o tym, jak skomplikowana logicznie jest dana metoda.
+    \item \textbf{FF (Przerzutniki)} -- elementy pamięciowe.
+    \item \textbf{DSP} -- wbudowane w FPGA szybkie sprzętowe mnożniki. Ważnym celem projektowym będzie ich oszczędzanie, ponieważ ich liczba w układach FPGA jest mocno ograniczona.
+\end{itemize}
+
+\subsection{Szybkość działania}
+Wydajność czasowa układów zostanie sprawdzona na podstawie dwóch parametrów:
+\begin{itemize}
+    \item \textbf{Maksymalna częstotliwość ($F_{max}$)} -- będzie informować o tym, z jak szybkim zegarem (w MHz) może maksymalnie pracować dany moduł, żeby nie doszło do błędów.
+    \item \textbf{Opóźnienie (ang. \textit{Latency})} -- czyli liczba cykli zegara, jaką układ będzie potrzebował od momentu wrzucenia liczby na wejście do momentu, gdy prawidłowy wynik pojawi się na wyjściu.
+\end{itemize}
+
+\printbibliography[title={Bibliografia}]
+\end{document}
