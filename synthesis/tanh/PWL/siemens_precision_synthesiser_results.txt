@@ -1,0 +1,217 @@
+[2026-06-12 15:55:54 UTC] precision -shell -file run.do -fileargs "design.sv" 
+precision: Setting MGC_HOME to /usr/share/precision/Mgc_home ...
+precision: Executing on platform: AlmaLinux release 9.6 (Sage Margay)  -- 5.4.0-216-generic -- x86_64 
+//  Precision RTL Synthesis 64-bit 2024.2.0.4 (Production Release) Wed Aug 14 00:06:06 PDT 2024
+//  
+//             This material contains trade secrets or otherwise confidential
+//             information owned by Siemens Industry Software Inc. or its    
+//             affiliates (collectively, "Siemens"), or its licensors. Access to
+//             and use of this information is strictly limited as set forth    
+//             in the Customer's applicable agreements with Siemens.           
+//  
+//                              Unpublished work. Copyright 2024 Siemens               
+//  
+//  Running on Linux runner@ec8d309a467b #236-Ubuntu SMP Fri Apr 11 19:53:21 UTC 2025 5.4.0-216-generic x86_64
+//  
+//  Start time Fri Jun 12 11:55:55 2026
+# -------------------------------------------------
+# Info: [9569]: Logging session transcript to file /home/runner/precision.log
+# Warning: [9508]: Results directory is not set. Use new_project, open_project, or set_results_dir.
+# Info: [9577]: Input directory: /home/runner
+# Info: [9572]: Moving session transcript to file /home/runner/precision.log
+# Info: [9558]: Created project /home/runner/project_1.psp in folder /home/runner.
+# Info: [9531]: Created directory: /home/runner/impl_1.
+# Info: [9531]: Created directory: /home/runner/impl_1/ui_data.
+# Info: [9557]: Created implementation impl_1 in project /home/runner/project_1.psp.
+# Info: [9578]: The Results Directory has been set to: /home/runner/impl_1/
+# Info: [9569]: Logging project transcript to file /home/runner/impl_1/precision.log
+# Info: [9569]: Logging suppressed messages transcript to file /home/runner/impl_1/precision.log.suppressed
+# Info: [9552]: Activated implementation impl_1 in project /home/runner/project_1.psp.
+# Info: [15302]: Setting up the design to use synthesis library "xca7.syn"
+# Info: [585]: The global max fanout is currently set to 10000 for Xilinx - ARTIX-7.
+# Info: [15328]: Setting Part to: "7A100TCSG324".
+# Info: [15329]: Setting Process to: "1".
+# Info: [7513]: The default input to Vivado place and route has been set to "Verilog".
+# Info: [7512]: The place and route tool for current technology is Vivado.
+# Info: [3052]: Decompressing file : /usr/share/precision/Mgc_home/pkgs/psr/techlibs/xca7.syn in /home/runner/impl_1/synlib.
+# Info: [3022]: Reading file: /home/runner/impl_1/synlib/xca7.syn.
+# Info: [645]: Loading library initialization file /usr/share/precision/Mgc_home/pkgs/psr/userware/xilinx_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2024b.6
+# Info: [42003]: Starting analysis of files in library "work"
+# Info: [41002]: Analyzing input file "/home/runner/design.sv" ...
+# Info: [670]: Top module of the design is set to: tanh.
+# Info: [668]: Current working directory: /home/runner/impl_1.
+# Info: [40000]: RTLC-Driver, Release RTLC-Precision 2024b.6
+# Info: [40000]: Last compiled on Jul 24 2024 17:10:21
+# Info: [44512]: Initializing...
+# Info: [44504]: Partitioning design ....
+# Info: [40000]: RTLCompiler, Release RTLC-Precision 2024b.6
+# Info: [40000]: Last compiled on Jul 24 2024 17:47:48
+# Info: [44512]: Initializing...
+# Info: [44522]: Root Module tanh: Pre-processing...
+# Info: [44523]: Root Module tanh: Compiling...
+# Info: [44838]: "/home/runner/design.sv", line 67: Macro mult_add (multiplier adder) "MULT_ADD_30" inferred for node "y_abs".
+# Info: [44846]: Rebalanced Expression Tree...
+# Info: [44842]: Compilation successfully completed.
+# Info: [44856]: Total lines of RTL compiled: 86.
+# Info: [44835]: Total CPU time for compilation: 0.0 secs.
+# Info: [44513]: Overall running time for compilation: 1.0 secs.
+# Info: [668]: Current working directory: /home/runner/impl_1.
+# Info: [15334]: Doing rtl optimizations.
+# Info: [671]: Finished compiling design.
+# Info: [668]: Current working directory: /home/runner/impl_1.
+# Info: [20013]: Precision will use 3 processor(s).
+# Info: [15002]: Optimizing design view:.work.tanh.INTERFACE
+# Info: [15002]: Optimizing design view:.work.tanh.INTERFACE
+# Info: [8010]: Gated clock transformations: Begin...
+# Info: [8010]: Gated clock transformations: End...
+# Info: [8053]: Added global buffer BUFGP for Port port:clk
+# Info: [1081]: Constraints: Precision will generate the following clock domain information against the clocks. Since the clock domain information is not provided by the user for the below clocks, all clocks are assumed to be synchronous clocks. This will result in all paths between the clock domains to be analyzed for timing. If this behaviour is not intended for any clock domain or path, please override using -domain option or false path constraint. Among these clocks, clock with the smallest period will be chosen as the default domain and the rest of the clock periods specified using multiply-by or divide-by factor.
+# Info: Constraints: Precision Generated Clock Domains:
+# Info: 	Domain Name: clk_PS		Clock Name: clk
+# Info: [3027]: Writing file: /home/runner/impl_1/tanh.edf.
+# Info: [3027]: Writing file: /home/runner/impl_1/tanh.xdc.
+# Info: -- Writing file /home/runner/impl_1/tanh.tcl
+# Info: [3027]: Writing file: /home/runner/impl_1/tanh.v.
+# Info: -- Writing file /home/runner/impl_1/tanh.tcl
+# Info: [12045]: Starting timing reports generation...
+# Info: [12046]: Timing reports generation done.
+# Info: [12048]: POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+# Info: [671]: Finished synthesizing design.
+# Info: [11019]: Total CPU time for synthesis: 6.8 secs.
+# Info: [11020]: Overall running time for synthesis: 8.7 secs.
+# Info: /home/runner/impl_1/precision_tech.sdc
+# Info: ***************************************************************
+# Info: Device Utilization for 7A100TCSG324
+# Info: ***************************************************************
+# Info: Resource                          Used    Avail   Utilization
+# Info: ---------------------------------------------------------------
+# Info: IOs                               34      210      16.19%
+# Info: Global Buffers                    1       32        3.12%
+# Info: LUTs                              42      63400     0.07%
+# Info: CLB Slices                        3       15850     0.02%
+# Info: Dffs or Latches                   16      126800    0.01%
+# Info: Block RAMs                        0       135       0.00%
+# Info: DSP48E1s                          1       240       0.42%
+# Info: ---------------------------------------------------------------
+# Info: ********************************************************
+# Info: Library: work    Cell: tanh    View: INTERFACE
+# Info: ********************************************************
+# Info:  Number of ports :                           34
+# Info:  Number of nets :                           200
+# Info:  Number of instances :                      167
+# Info:  Number of references to this view :          0
+# Info: Total accumulated area :
+# Info:  Number of DSP48E1s :                         1
+# Info:  Number of Dffs or Latches :                 16
+# Info:  Number of LUTs :                            42
+# Info:  Number of Primitive LUTs :                  53
+# Info:  Number of LUTs with LUTNM/HLUTNM :          22
+# Info:  Number of MUX CARRYs :                      30
+# Info:  Number of accumulated instances :          167
+# Info: *****************************
+# Info:  IO Register Mapping Report
+# Info: *****************************
+# Info: Design: work.tanh.INTERFACE
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | Port     | Direction |   INFF   |  OUTFF   |  TRIFF   |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | clk      | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | rst_n    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(15)    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(14)    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(13)    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(12)    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(11)    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(10)    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(9)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(8)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(7)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(6)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(5)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(4)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(3)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(2)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(1)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(0)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(15)    | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(14)    | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(13)    | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(12)    | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(11)    | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(10)    | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(9)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(8)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(7)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(6)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(5)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(4)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(3)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(2)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(1)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(0)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: Total registers mapped: 0
+# Info: -- POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+# Info: -- Device: Xilinx - ARTIX-7 : 7A100TCSG324 : 1
+# Info: -- CTE report timing..
+# Info:                   CTE Path Report
+# Info: Critical path #1, (path slack = -4.335):, Logic Levels = 1
+# Info: SOURCE CLOCK: name: clk period: 1.000000
+# Info:      Times are relative to the 1st rising edge
+# Info:   DEST CLOCK: name: clk period: 1.000000
+# Info:      Times are relative to the 2nd rising edge
+# Info: NAME              GATE       DELAY    ARRIVAL DIR  FANOUT LEVEL
+# Info: reg_y_reg(0)/C FDRE                   0.000   up
+# Info: reg_y_reg(0)/Q FDRE         0.496     0.496   up
+# Info: y_1_0(0)       (net)        0.333                   1     0
+# Info: y_obuf(0)/I    OBUF                   0.829   up
+# Info: y_obuf(0)/O    OBUF         2.891     3.720   up
+# Info: y(0)           (net)        0.000                   0     1
+# Info: y(0)           (port)                 3.720   up
+# Info: 		Initial edge separation:      1.000
+# Info: 		Source clock delay:      -    1.615
+# Info: 		Dest clock delay:        +    0.000
+# Info: 		                        -----------
+# Info: 		Edge separation:             -0.615
+# Info: 		Setup constraint:        -    0.000
+# Info: 		                        -----------
+# Info: 		Data required time:          -0.615
+# Info: 		Data arrival time:       -    3.720   ( 91.05% cell delay, 8.95% net delay )
+# Info: 		                        -----------
+# Info: 		Slack (VIOLATED):            -4.335
+# Info: End CTE Analysis ..... CPU Time Used: 0 sec.
+Done

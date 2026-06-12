@@ -1,0 +1,413 @@
+[2026-06-12 16:03:05 UTC] precision -shell -file run.do -fileargs "design.sv" 
+precision: Setting MGC_HOME to /usr/share/precision/Mgc_home ...
+precision: Executing on platform: AlmaLinux release 9.6 (Sage Margay)  -- 5.4.0-216-generic -- x86_64 
+//  Precision RTL Synthesis 64-bit 2024.2.0.4 (Production Release) Wed Aug 14 00:06:06 PDT 2024
+//  
+//             This material contains trade secrets or otherwise confidential
+//             information owned by Siemens Industry Software Inc. or its    
+//             affiliates (collectively, "Siemens"), or its licensors. Access to
+//             and use of this information is strictly limited as set forth    
+//             in the Customer's applicable agreements with Siemens.           
+//  
+//                              Unpublished work. Copyright 2024 Siemens               
+//  
+//  Running on Linux runner@356373e5f1b4 #236-Ubuntu SMP Fri Apr 11 19:53:21 UTC 2025 5.4.0-216-generic x86_64
+//  
+//  Start time Fri Jun 12 12:03:06 2026
+# -------------------------------------------------
+# Info: [9569]: Logging session transcript to file /home/runner/precision.log
+# Warning: [9508]: Results directory is not set. Use new_project, open_project, or set_results_dir.
+# Info: [9577]: Input directory: /home/runner
+# Info: [9572]: Moving session transcript to file /home/runner/precision.log
+# Info: [9558]: Created project /home/runner/project_1.psp in folder /home/runner.
+# Info: [9531]: Created directory: /home/runner/impl_1.
+# Info: [9531]: Created directory: /home/runner/impl_1/ui_data.
+# Info: [9557]: Created implementation impl_1 in project /home/runner/project_1.psp.
+# Info: [9578]: The Results Directory has been set to: /home/runner/impl_1/
+# Info: [9569]: Logging project transcript to file /home/runner/impl_1/precision.log
+# Info: [9569]: Logging suppressed messages transcript to file /home/runner/impl_1/precision.log.suppressed
+# Info: [9552]: Activated implementation impl_1 in project /home/runner/project_1.psp.
+# Info: [15302]: Setting up the design to use synthesis library "xca7.syn"
+# Info: [585]: The global max fanout is currently set to 10000 for Xilinx - ARTIX-7.
+# Info: [15328]: Setting Part to: "7A100TCSG324".
+# Info: [15329]: Setting Process to: "1".
+# Info: [7513]: The default input to Vivado place and route has been set to "Verilog".
+# Info: [7512]: The place and route tool for current technology is Vivado.
+# Info: [3052]: Decompressing file : /usr/share/precision/Mgc_home/pkgs/psr/techlibs/xca7.syn in /home/runner/impl_1/synlib.
+# Info: [3022]: Reading file: /home/runner/impl_1/synlib/xca7.syn.
+# Info: [645]: Loading library initialization file /usr/share/precision/Mgc_home/pkgs/psr/userware/xilinx_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2024b.6
+# Info: [42003]: Starting analysis of files in library "work"
+# Info: [41002]: Analyzing input file "/home/runner/design.sv" ...
+# Info: [670]: Top module of the design is set to: tanh.
+# Info: [668]: Current working directory: /home/runner/impl_1.
+# Info: [40000]: RTLC-Driver, Release RTLC-Precision 2024b.6
+# Info: [40000]: Last compiled on Jul 24 2024 17:10:21
+# Info: [44512]: Initializing...
+# Info: [44504]: Partitioning design ....
+# Info: [40000]: RTLCompiler, Release RTLC-Precision 2024b.6
+# Info: [40000]: Last compiled on Jul 24 2024 17:47:48
+# Info: [44512]: Initializing...
+# Info: [44522]: Root Module tanh: Pre-processing...
+# Info: [44523]: Root Module tanh: Compiling...
+# Info: [44838]: "/home/runner/design.sv", line 77: Macro mult_add (multiplier adder) "MULT_ADD_46" inferred for node "y_poly_3n0s2".
+# Info: [44846]: Rebalanced Expression Tree...
+# Info: [44842]: Compilation successfully completed.
+# Info: [44856]: Total lines of RTL compiled: 111.
+# Info: [44835]: Total CPU time for compilation: 0.0 secs.
+# Info: [44513]: Overall running time for compilation: 1.0 secs.
+# Info: [668]: Current working directory: /home/runner/impl_1.
+# Info: [15334]: Doing rtl optimizations.
+# Info: [671]: Finished compiling design.
+# Info: [668]: Current working directory: /home/runner/impl_1.
+# Info: [20013]: Precision will use 2 processor(s).
+# Info: [11008]: "/home/runner/design.sv", line 65: Using 4 levels of output pipelining instead of 0 may improve the performance of multiplier instance:x2_q12_multu32_0
+# Info: [11008]: "/home/runner/design.sv", line 76: Using 4 levels of output pipelining instead of 0 may improve the performance of multiplier instance:ax2_q12_mults35_0
+# Info: [15002]: Optimizing design view:.work.tanh.INTERFACE
+# Info: [15002]: Optimizing design view:.work.tanh.INTERFACE
+# Info: [8010]: Gated clock transformations: Begin...
+# Info: [8010]: Gated clock transformations: End...
+# Info: [8053]: Added global buffer BUFGP for Port port:clk
+# Info: [1081]: Constraints: Precision will generate the following clock domain information against the clocks. Since the clock domain information is not provided by the user for the below clocks, all clocks are assumed to be synchronous clocks. This will result in all paths between the clock domains to be analyzed for timing. If this behaviour is not intended for any clock domain or path, please override using -domain option or false path constraint. Among these clocks, clock with the smallest period will be chosen as the default domain and the rest of the clock periods specified using multiply-by or divide-by factor.
+# Info: Constraints: Precision Generated Clock Domains:
+# Info: 	Domain Name: clk_PS		Clock Name: clk
+# Info: [3027]: Writing file: /home/runner/impl_1/tanh.edf.
+# Info: [3027]: Writing file: /home/runner/impl_1/tanh.xdc.
+# Info: -- Writing file /home/runner/impl_1/tanh.tcl
+# Info: [3027]: Writing file: /home/runner/impl_1/tanh.v.
+# Info: -- Writing file /home/runner/impl_1/tanh.tcl
+# Info: [12045]: Starting timing reports generation...
+# Info: [12046]: Timing reports generation done.
+# Info: [12048]: POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+# Info: [671]: Finished synthesizing design.
+# Info: [11019]: Total CPU time for synthesis: 9.2 secs.
+# Info: [11020]: Overall running time for synthesis: 10.4 secs.
+# Info: /home/runner/impl_1/precision_tech.sdc
+# Info: ***************************************************************
+# Info: Device Utilization for 7A100TCSG324
+# Info: ***************************************************************
+# Info: Resource                          Used    Avail   Utilization
+# Info: ---------------------------------------------------------------
+# Info: IOs                               34      210      16.19%
+# Info: Global Buffers                    1       32        3.12%
+# Info: LUTs                              53      63400     0.08%
+# Info: CLB Slices                        11      15850     0.07%
+# Info: Dffs or Latches                   13      126800    0.01%
+# Info: Block RAMs                        0       135       0.00%
+# Info: DSP48E1s                          3       240       1.25%
+# Info: ---------------------------------------------------------------
+# Info: ********************************************************
+# Info: Library: work    Cell: tanh    View: INTERFACE
+# Info: ********************************************************
+# Info:  Number of ports :                           34
+# Info:  Number of nets :                           314
+# Info:  Number of instances :                      226
+# Info:  Number of references to this view :          0
+# Info: Total accumulated area :
+# Info:  Number of DSP48E1s :                         3
+# Info:  Number of Dffs or Latches :                 13
+# Info:  Number of LUTs :                            53
+# Info:  Number of Primitive LUTs :                  56
+# Info:  Number of LUTs with LUTNM/HLUTNM :           6
+# Info:  Number of MUX CARRYs :                      58
+# Info:  Number of accumulated instances :          226
+# Info: *****************************
+# Info:  IO Register Mapping Report
+# Info: *****************************
+# Info: Design: work.tanh.INTERFACE
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | Port     | Direction |   INFF   |  OUTFF   |  TRIFF   |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | clk      | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | rst_n    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(15)    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(14)    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(13)    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(12)    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(11)    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(10)    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(9)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(8)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(7)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(6)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(5)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(4)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(3)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(2)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(1)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(0)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(15)    | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(14)    | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(13)    | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(12)    | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(11)    | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(10)    | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(9)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(8)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(7)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(6)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(5)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(4)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(3)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(2)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(1)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(0)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: Total registers mapped: 0
+# Info: -- POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+# Info: -- Device: Xilinx - ARTIX-7 : 7A100TCSG324 : 1
+# Info: -- CTE report timing..
+# Info:                   CTE Path Report
+# Info: Critical path #1, (path slack = -6.094):, Logic Levels = 66
+# Info: SOURCE CLOCK: name: clk period: 1.000000
+# Info:      Times are relative to the 1st rising edge
+# Info:   DEST CLOCK: name: clk period: 1.000000
+# Info:      Times are relative to the 2nd rising edge
+# Info: NAME                              GATE       DELAY    ARRIVAL DIR  FANOUT LEVEL
+# Info: x(15)                          (port)                 0.000   dn
+# Info: x(15)                          (net)        0.000                   1     0
+# Info: x_ibuf(15)/I                   IBUF                   0.000   dn
+# Info: x_ibuf(15)/O                   IBUF         1.298     1.298   dn
+# Info: x_int(15)                      (net)        0.917                  32     1
+# Info: ix8937z1320/I0                 LUT2                   2.215   dn
+# Info: ix8937z1320/O                  LUT2         0.124     2.339   up
+# Info: nx8937z1                       (net)        0.000                   2     2
+# Info: x_abs_addsub15_1_muxcy_0/S     MUXCY                  2.339   up
+# Info: x_abs_addsub15_1_muxcy_0/O     MUXCY        0.122     2.461   up
+# Info: nx8938z1                       (net)        0.000                   2     3
+# Info: x_abs_addsub15_1_muxcy_1/CI    MUXCY                  2.461   up
+# Info: x_abs_addsub15_1_muxcy_1/O     MUXCY        0.029     2.490   up
+# Info: nx8939z1                       (net)        0.000                   2     4
+# Info: x_abs_addsub15_1_muxcy_2/CI    MUXCY                  2.490   up
+# Info: x_abs_addsub15_1_muxcy_2/O     MUXCY        0.029     2.519   up
+# Info: nx8940z1                       (net)        0.000                   2     5
+# Info: x_abs_addsub15_1_muxcy_3/CI    MUXCY                  2.519   up
+# Info: x_abs_addsub15_1_muxcy_3/O     MUXCY        0.029     2.548   up
+# Info: nx8941z1                       (net)        0.000                   2     6
+# Info: x_abs_addsub15_1_muxcy_4/CI    MUXCY                  2.548   up
+# Info: x_abs_addsub15_1_muxcy_4/O     MUXCY        0.029     2.577   up
+# Info: nx8942z1                       (net)        0.000                   2     7
+# Info: x_abs_addsub15_1_muxcy_5/CI    MUXCY                  2.577   up
+# Info: x_abs_addsub15_1_muxcy_5/O     MUXCY        0.029     2.606   up
+# Info: nx8943z1                       (net)        0.000                   2     8
+# Info: x_abs_addsub15_1_muxcy_6/CI    MUXCY                  2.606   up
+# Info: x_abs_addsub15_1_muxcy_6/O     MUXCY        0.029     2.635   up
+# Info: nx8944z1                       (net)        0.000                   2     9
+# Info: x_abs_addsub15_1_muxcy_7/CI    MUXCY                  2.635   up
+# Info: x_abs_addsub15_1_muxcy_7/O     MUXCY        0.029     2.664   up
+# Info: nx8945z1                       (net)        0.000                   2    10
+# Info: x_abs_addsub15_1_muxcy_8/CI    MUXCY                  2.664   up
+# Info: x_abs_addsub15_1_muxcy_8/O     MUXCY        0.029     2.693   up
+# Info: nx8946z1                       (net)        0.000                   2    11
+# Info: x_abs_addsub15_1_muxcy_9/CI    MUXCY                  2.693   up
+# Info: x_abs_addsub15_1_muxcy_9/O     MUXCY        0.029     2.722   up
+# Info: nx1662z1                       (net)        0.000                   2    12
+# Info: x_abs_addsub15_1_muxcy_10/CI   MUXCY                  2.722   up
+# Info: x_abs_addsub15_1_muxcy_10/O    MUXCY        0.029     2.751   up
+# Info: nx1661z1                       (net)        0.000                   2    13
+# Info: x_abs_addsub15_1_muxcy_11/CI   MUXCY                  2.751   up
+# Info: x_abs_addsub15_1_muxcy_11/O    MUXCY        0.029     2.780   up
+# Info: nx1660z1                       (net)        0.000                   2    14
+# Info: x_abs_addsub15_1_muxcy_12/CI   MUXCY                  2.780   up
+# Info: x_abs_addsub15_1_muxcy_12/O    MUXCY        0.029     2.809   up
+# Info: nx1659z1                       (net)        0.000                   2    15
+# Info: x_abs_addsub15_1_muxcy_13/CI   MUXCY                  2.809   up
+# Info: x_abs_addsub15_1_muxcy_13/O    MUXCY        0.029     2.838   up
+# Info: nx1658z1                       (net)        0.000                   2    16
+# Info: x_abs_addsub15_1_xorcy_14/CI   XORCY                  2.838   up
+# Info: x_abs_addsub15_1_xorcy_14/O    XORCY        0.287     3.125   up
+# Info: x_abs(14)                      (net)        1.306                  32    17
+# Info: ix38580z62736/I1               LUT5                   4.431   up
+# Info: ix38580z62736/O                LUT5         0.124     4.555   up
+# Info: nx38580z1                      (net)        0.000                   2    18
+# Info: y_poly_add32_0_muxcy_0/S       MUXCY                  4.555   up
+# Info: y_poly_add32_0_muxcy_0/O       MUXCY        0.122     4.677   up
+# Info: nx38579z1                      (net)        0.000                   2    19
+# Info: y_poly_add32_0_muxcy_1/CI      MUXCY                  4.677   up
+# Info: y_poly_add32_0_muxcy_1/O       MUXCY        0.029     4.706   up
+# Info: nx38578z1                      (net)        0.000                   2    20
+# Info: y_poly_add32_0_muxcy_2/CI      MUXCY                  4.706   up
+# Info: y_poly_add32_0_muxcy_2/O       MUXCY        0.029     4.735   up
+# Info: nx38577z1                      (net)        0.000                   2    21
+# Info: y_poly_add32_0_muxcy_3/CI      MUXCY                  4.735   up
+# Info: y_poly_add32_0_muxcy_3/O       MUXCY        0.029     4.764   up
+# Info: nx38576z1                      (net)        0.000                   2    22
+# Info: y_poly_add32_0_muxcy_4/CI      MUXCY                  4.764   up
+# Info: y_poly_add32_0_muxcy_4/O       MUXCY        0.029     4.793   up
+# Info: nx38575z1                      (net)        0.000                   2    23
+# Info: y_poly_add32_0_muxcy_5/CI      MUXCY                  4.793   up
+# Info: y_poly_add32_0_muxcy_5/O       MUXCY        0.029     4.822   up
+# Info: nx38574z1                      (net)        0.000                   2    24
+# Info: y_poly_add32_0_muxcy_6/CI      MUXCY                  4.822   up
+# Info: y_poly_add32_0_muxcy_6/O       MUXCY        0.029     4.851   up
+# Info: nx38573z1                      (net)        0.000                   2    25
+# Info: y_poly_add32_0_muxcy_7/CI      MUXCY                  4.851   up
+# Info: y_poly_add32_0_muxcy_7/O       MUXCY        0.029     4.880   up
+# Info: nx38572z1                      (net)        0.000                   2    26
+# Info: y_poly_add32_0_muxcy_8/CI      MUXCY                  4.880   up
+# Info: y_poly_add32_0_muxcy_8/O       MUXCY        0.029     4.909   up
+# Info: nx38571z1                      (net)        0.000                   2    27
+# Info: y_poly_add32_0_muxcy_9/CI      MUXCY                  4.909   up
+# Info: y_poly_add32_0_muxcy_9/O       MUXCY        0.029     4.938   up
+# Info: nx6417z1                       (net)        0.000                   2    28
+# Info: y_poly_add32_0_muxcy_10/CI     MUXCY                  4.938   up
+# Info: y_poly_add32_0_muxcy_10/O      MUXCY        0.029     4.967   up
+# Info: nx6418z1                       (net)        0.000                   2    29
+# Info: y_poly_add32_0_muxcy_11/CI     MUXCY                  4.967   up
+# Info: y_poly_add32_0_muxcy_11/O      MUXCY        0.029     4.996   up
+# Info: nx6419z1                       (net)        0.000                   2    30
+# Info: y_poly_add32_0_muxcy_12/CI     MUXCY                  4.996   up
+# Info: y_poly_add32_0_muxcy_12/O      MUXCY        0.029     5.025   up
+# Info: nx6420z1                       (net)        0.000                   2    31
+# Info: y_poly_add32_0_muxcy_13/CI     MUXCY                  5.025   up
+# Info: y_poly_add32_0_muxcy_13/O      MUXCY        0.029     5.054   up
+# Info: nx6421z1                       (net)        0.000                   2    32
+# Info: y_poly_add32_0_muxcy_14/CI     MUXCY                  5.054   up
+# Info: y_poly_add32_0_muxcy_14/O      MUXCY        0.029     5.083   up
+# Info: nx6422z1                       (net)        0.000                   2    33
+# Info: y_poly_add32_0_muxcy_15/CI     MUXCY                  5.083   up
+# Info: y_poly_add32_0_muxcy_15/O      MUXCY        0.029     5.112   up
+# Info: nx6423z1                       (net)        0.000                   2    34
+# Info: y_poly_add32_0_muxcy_16/CI     MUXCY                  5.112   up
+# Info: y_poly_add32_0_muxcy_16/O      MUXCY        0.029     5.141   up
+# Info: nx6424z1                       (net)        0.000                   2    35
+# Info: y_poly_add32_0_muxcy_17/CI     MUXCY                  5.141   up
+# Info: y_poly_add32_0_muxcy_17/O      MUXCY        0.029     5.170   up
+# Info: nx6425z1                       (net)        0.000                   2    36
+# Info: y_poly_add32_0_muxcy_18/CI     MUXCY                  5.170   up
+# Info: y_poly_add32_0_muxcy_18/O      MUXCY        0.029     5.199   up
+# Info: nx6426z1                       (net)        0.000                   2    37
+# Info: y_poly_add32_0_muxcy_19/CI     MUXCY                  5.199   up
+# Info: y_poly_add32_0_muxcy_19/O      MUXCY        0.029     5.228   up
+# Info: nx7414z1                       (net)        0.000                   2    38
+# Info: y_poly_add32_0_muxcy_20/CI     MUXCY                  5.228   up
+# Info: y_poly_add32_0_muxcy_20/O      MUXCY        0.029     5.257   up
+# Info: nx7415z1                       (net)        0.000                   2    39
+# Info: y_poly_add32_0_muxcy_21/CI     MUXCY                  5.257   up
+# Info: y_poly_add32_0_muxcy_21/O      MUXCY        0.029     5.286   up
+# Info: nx7416z1                       (net)        0.000                   2    40
+# Info: y_poly_add32_0_muxcy_22/CI     MUXCY                  5.286   up
+# Info: y_poly_add32_0_muxcy_22/O      MUXCY        0.029     5.315   up
+# Info: nx7417z1                       (net)        0.000                   2    41
+# Info: y_poly_add32_0_muxcy_23/CI     MUXCY                  5.315   up
+# Info: y_poly_add32_0_muxcy_23/O      MUXCY        0.029     5.344   up
+# Info: nx7418z1                       (net)        0.000                   2    42
+# Info: y_poly_add32_0_muxcy_24/CI     MUXCY                  5.344   up
+# Info: y_poly_add32_0_muxcy_24/O      MUXCY        0.029     5.373   up
+# Info: nx7419z1                       (net)        0.000                   2    43
+# Info: y_poly_add32_0_muxcy_25/CI     MUXCY                  5.373   up
+# Info: y_poly_add32_0_muxcy_25/O      MUXCY        0.029     5.402   up
+# Info: nx7420z1                       (net)        0.000                   2    44
+# Info: y_poly_add32_0_muxcy_26/CI     MUXCY                  5.402   up
+# Info: y_poly_add32_0_muxcy_26/O      MUXCY        0.029     5.431   up
+# Info: nx7421z1                       (net)        0.000                   2    45
+# Info: y_poly_add32_0_muxcy_27/CI     MUXCY                  5.431   up
+# Info: y_poly_add32_0_muxcy_27/O      MUXCY        0.029     5.460   up
+# Info: nx7422z1                       (net)        0.000                   2    46
+# Info: y_poly_add32_0_muxcy_28/CI     MUXCY                  5.460   up
+# Info: y_poly_add32_0_muxcy_28/O      MUXCY        0.029     5.489   up
+# Info: nx7423z1                       (net)        0.000                   2    47
+# Info: y_poly_add32_0_muxcy_29/CI     MUXCY                  5.489   up
+# Info: y_poly_add32_0_muxcy_29/O      MUXCY        0.029     5.518   up
+# Info: nx8411z1                       (net)        0.000                   2    48
+# Info: y_poly_add32_0_muxcy_30/CI     MUXCY                  5.518   up
+# Info: y_poly_add32_0_muxcy_30/O      MUXCY        0.029     5.547   up
+# Info: nx58871z1                      (net)        0.000                   1    49
+# Info: y_poly_add32_0_xorcy_31/CI     XORCY                  5.547   up
+# Info: y_poly_add32_0_xorcy_31/O      XORCY        0.287     5.834   up
+# Info: y_poly(31)                     (net)        0.506                  12    50
+# Info: ix5194z1320/I0                 LUT4                   6.340   up
+# Info: ix5194z1320/O                  LUT4         0.124     6.464   dn
+# Info: nx5194z7                       (net)        0.333                   1    51
+# Info: ix5194z1315/I4                 LUT6                   6.797   dn
+# Info: ix5194z1315/O                  LUT6         0.124     6.921   dn
+# Info: nx5194z3                       (net)        0.506                  12    52
+# Info: ix5194z43569/I4                LUT6                   7.427   dn
+# Info: ix5194z43569/O                 LUT6         0.124     7.551   up
+# Info: nx5194z2                       (net)        0.000                   2    53
+# Info: y_reg_addsub16_2i1_muxcy_0/S   MUXCY                  7.551   up
+# Info: y_reg_addsub16_2i1_muxcy_0/O   MUXCY        0.122     7.673   up
+# Info: nx5195z1                       (net)        0.000                   2    54
+# Info: y_reg_addsub16_2i1_muxcy_1/CI  MUXCY                  7.673   up
+# Info: y_reg_addsub16_2i1_muxcy_1/O   MUXCY        0.029     7.702   up
+# Info: nx5196z1                       (net)        0.000                   2    55
+# Info: y_reg_addsub16_2i1_muxcy_2/CI  MUXCY                  7.702   up
+# Info: y_reg_addsub16_2i1_muxcy_2/O   MUXCY        0.029     7.731   up
+# Info: nx5197z1                       (net)        0.000                   2    56
+# Info: y_reg_addsub16_2i1_muxcy_3/CI  MUXCY                  7.731   up
+# Info: y_reg_addsub16_2i1_muxcy_3/O   MUXCY        0.029     7.760   up
+# Info: nx5198z1                       (net)        0.000                   2    57
+# Info: y_reg_addsub16_2i1_muxcy_4/CI  MUXCY                  7.760   up
+# Info: y_reg_addsub16_2i1_muxcy_4/O   MUXCY        0.029     7.789   up
+# Info: nx5199z1                       (net)        0.000                   2    58
+# Info: y_reg_addsub16_2i1_muxcy_5/CI  MUXCY                  7.789   up
+# Info: y_reg_addsub16_2i1_muxcy_5/O   MUXCY        0.029     7.818   up
+# Info: nx5200z1                       (net)        0.000                   2    59
+# Info: y_reg_addsub16_2i1_muxcy_6/CI  MUXCY                  7.818   up
+# Info: y_reg_addsub16_2i1_muxcy_6/O   MUXCY        0.029     7.847   up
+# Info: nx5201z1                       (net)        0.000                   2    60
+# Info: y_reg_addsub16_2i1_muxcy_7/CI  MUXCY                  7.847   up
+# Info: y_reg_addsub16_2i1_muxcy_7/O   MUXCY        0.029     7.876   up
+# Info: nx5202z1                       (net)        0.000                   2    61
+# Info: y_reg_addsub16_2i1_muxcy_8/CI  MUXCY                  7.876   up
+# Info: y_reg_addsub16_2i1_muxcy_8/O   MUXCY        0.029     7.905   up
+# Info: nx5203z1                       (net)        0.000                   2    62
+# Info: y_reg_addsub16_2i1_muxcy_9/CI  MUXCY                  7.905   up
+# Info: y_reg_addsub16_2i1_muxcy_9/O   MUXCY        0.029     7.934   up
+# Info: nx2119z1                       (net)        0.000                   2    63
+# Info: y_reg_addsub16_2i1_muxcy_10/CI MUXCY                  7.934   up
+# Info: y_reg_addsub16_2i1_muxcy_10/O  MUXCY        0.029     7.963   up
+# Info: nx2120z1                       (net)        0.000                   2    64
+# Info: y_reg_addsub16_2i1_muxcy_11/CI MUXCY                  7.963   up
+# Info: y_reg_addsub16_2i1_muxcy_11/O  MUXCY        0.029     7.992   up
+# Info: nx52580z1                      (net)        0.000                   1    65
+# Info: y_reg_addsub16_2i1_xorcy_12/CI XORCY                  7.992   up
+# Info: y_reg_addsub16_2i1_xorcy_12/O  XORCY        0.287     8.279   up
+# Info: y_reg_2n1ss1(12)               (net)        0.333                   1    66
+# Info: reg_y_reg(12)/D                FDRE                   8.612   up
+# Info: 		Initial edge separation:      1.000
+# Info: 		Source clock delay:      -    0.000
+# Info: 		Dest clock delay:        +    1.558
+# Info: 		                        -----------
+# Info: 		Edge separation:              2.558
+# Info: 		Setup constraint:        -    0.040
+# Info: 		                        -----------
+# Info: 		Data required time:           2.518
+# Info: 		Data arrival time:       -    8.612   ( 54.70% cell delay, 45.30% net delay )
+# Info: 		                        -----------
+# Info: 		Slack (VIOLATED):            -6.094
+# Info: End CTE Analysis ..... CPU Time Used: 0 sec.
+Done

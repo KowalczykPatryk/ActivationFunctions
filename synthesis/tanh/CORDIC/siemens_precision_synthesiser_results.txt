@@ -1,0 +1,959 @@
+[2026-06-12 15:01:08 UTC] precision -shell -file run.do -fileargs "design.sv" 
+precision: Setting MGC_HOME to /usr/share/precision/Mgc_home ...
+precision: Executing on platform: AlmaLinux release 9.6 (Sage Margay)  -- 5.4.0-216-generic -- x86_64 
+//  Precision RTL Synthesis 64-bit 2024.2.0.4 (Production Release) Wed Aug 14 00:06:06 PDT 2024
+//  
+//             This material contains trade secrets or otherwise confidential
+//             information owned by Siemens Industry Software Inc. or its    
+//             affiliates (collectively, "Siemens"), or its licensors. Access to
+//             and use of this information is strictly limited as set forth    
+//             in the Customer's applicable agreements with Siemens.           
+//  
+//                              Unpublished work. Copyright 2024 Siemens               
+//  
+//  Running on Linux runner@54457fe745b0 #236-Ubuntu SMP Fri Apr 11 19:53:21 UTC 2025 5.4.0-216-generic x86_64
+//  
+//  Start time Fri Jun 12 11:01:09 2026
+# -------------------------------------------------
+# Info: [9569]: Logging session transcript to file /home/runner/precision.log
+# Warning: [9508]: Results directory is not set. Use new_project, open_project, or set_results_dir.
+# Info: [9577]: Input directory: /home/runner
+# Info: [9572]: Moving session transcript to file /home/runner/precision.log
+# Info: [9558]: Created project /home/runner/project_1.psp in folder /home/runner.
+# Info: [9531]: Created directory: /home/runner/impl_1.
+# Info: [9531]: Created directory: /home/runner/impl_1/ui_data.
+# Info: [9557]: Created implementation impl_1 in project /home/runner/project_1.psp.
+# Info: [9578]: The Results Directory has been set to: /home/runner/impl_1/
+# Info: [9569]: Logging project transcript to file /home/runner/impl_1/precision.log
+# Info: [9569]: Logging suppressed messages transcript to file /home/runner/impl_1/precision.log.suppressed
+# Info: [9552]: Activated implementation impl_1 in project /home/runner/project_1.psp.
+# Info: [15302]: Setting up the design to use synthesis library "xca7.syn"
+# Info: [585]: The global max fanout is currently set to 10000 for Xilinx - ARTIX-7.
+# Info: [15328]: Setting Part to: "7A100TCSG324".
+# Info: [15329]: Setting Process to: "1".
+# Info: [7513]: The default input to Vivado place and route has been set to "Verilog".
+# Info: [7512]: The place and route tool for current technology is Vivado.
+# Info: [3052]: Decompressing file : /usr/share/precision/Mgc_home/pkgs/psr/techlibs/xca7.syn in /home/runner/impl_1/synlib.
+# Info: [3022]: Reading file: /home/runner/impl_1/synlib/xca7.syn.
+# Info: [645]: Loading library initialization file /usr/share/precision/Mgc_home/pkgs/psr/userware/xilinx_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2024b.6
+# Info: [42003]: Starting analysis of files in library "work"
+# Info: [41002]: Analyzing input file "/home/runner/design.sv" ...
+# Info: [670]: Top module of the design is set to: tanh.
+# Info: [668]: Current working directory: /home/runner/impl_1.
+# Info: [40000]: RTLC-Driver, Release RTLC-Precision 2024b.6
+# Info: [40000]: Last compiled on Jul 24 2024 17:10:21
+# Info: [44512]: Initializing...
+# Info: [44504]: Partitioning design ....
+# Info: [40000]: RTLCompiler, Release RTLC-Precision 2024b.6
+# Info: [40000]: Last compiled on Jul 24 2024 17:47:48
+# Info: [44512]: Initializing...
+# Info: [44522]: Root Module tanh: Pre-processing...
+# Info: [44523]: Root Module tanh: Compiling...
+# Info: [44846]: Rebalanced Expression Tree...
+# Info: [44842]: Compilation successfully completed.
+# Info: [44856]: Total lines of RTL compiled: 190.
+# Info: [44835]: Total CPU time for compilation: 0.0 secs.
+# Info: [44513]: Overall running time for compilation: 1.0 secs.
+# Info: [668]: Current working directory: /home/runner/impl_1.
+# Info: [15334]: Doing rtl optimizations.
+# Info: [671]: Finished compiling design.
+# Info: [668]: Current working directory: /home/runner/impl_1.
+# Info: [15002]: Optimizing design view:.work.tanh.INTERFACE
+# Info: [15002]: Optimizing design view:.work.tanh.INTERFACE
+# Info: [8010]: Gated clock transformations: Begin...
+# Info: [8010]: Gated clock transformations: End...
+# Info: [8053]: Added global buffer BUFGP for Port port:clk
+# Info: [1081]: Constraints: Precision will generate the following clock domain information against the clocks. Since the clock domain information is not provided by the user for the below clocks, all clocks are assumed to be synchronous clocks. This will result in all paths between the clock domains to be analyzed for timing. If this behaviour is not intended for any clock domain or path, please override using -domain option or false path constraint. Among these clocks, clock with the smallest period will be chosen as the default domain and the rest of the clock periods specified using multiply-by or divide-by factor.
+# Info: Constraints: Precision Generated Clock Domains:
+# Info: 	Domain Name: clk_PS		Clock Name: clk
+# Info: [3027]: Writing file: /home/runner/impl_1/tanh.edf.
+# Info: [3027]: Writing file: /home/runner/impl_1/tanh.xdc.
+# Info: -- Writing file /home/runner/impl_1/tanh.tcl
+# Info: [3027]: Writing file: /home/runner/impl_1/tanh.v.
+# Info: -- Writing file /home/runner/impl_1/tanh.tcl
+# Info: [12045]: Starting timing reports generation...
+# Info: [12046]: Timing reports generation done.
+# Info: [12048]: POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+# Info: [671]: Finished synthesizing design.
+# Info: [11019]: Total CPU time for synthesis: 20.7 secs.
+# Info: [11020]: Overall running time for synthesis: 26.5 secs.
+# Info: /home/runner/impl_1/precision_tech.sdc
+# Info: ***************************************************************
+# Info: Device Utilization for 7A100TCSG324
+# Info: ***************************************************************
+# Info: Resource                          Used    Avail   Utilization
+# Info: ---------------------------------------------------------------
+# Info: IOs                               34      210      16.19%
+# Info: Global Buffers                    1       32        3.12%
+# Info: LUTs                              373     63400     0.59%
+# Info: CLB Slices                        94      15850     0.59%
+# Info: Dffs or Latches                   7       126800    0.01%
+# Info: Block RAMs                        0       135       0.00%
+# Info: DSP48E1s                          0       240       0.00%
+# Info: ---------------------------------------------------------------
+# Info: ********************************************************
+# Info: Library: work    Cell: tanh    View: INTERFACE
+# Info: ********************************************************
+# Info:  Number of ports :                           34
+# Info:  Number of nets :                          1052
+# Info:  Number of instances :                     1034
+# Info:  Number of references to this view :          0
+# Info: Total accumulated area :
+# Info:  Number of Dffs or Latches :                  7
+# Info:  Number of LUTs :                           373
+# Info:  Number of Primitive LUTs :                 373
+# Info:  Number of MUX CARRYs :                     319
+# Info:  Number of accumulated instances :         1034
+# Info: *****************************
+# Info:  IO Register Mapping Report
+# Info: *****************************
+# Info: Design: work.tanh.INTERFACE
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | Port     | Direction |   INFF   |  OUTFF   |  TRIFF   |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | clk      | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | rst_n    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(15)    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(14)    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(13)    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(12)    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(11)    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(10)    | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(9)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(8)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(7)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(6)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(5)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(4)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(3)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(2)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(1)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | x(0)     | Input     |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(15)    | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(14)    | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(13)    | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(12)    | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(11)    | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(10)    | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(9)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(8)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(7)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(6)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(5)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(4)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(3)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(2)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(1)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: | y(0)     | Output    |          |          |          |
+# Info: +----------+-----------+----------+----------+----------+
+# Info: Total registers mapped: 0
+# Info: -- POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+# Info: -- Device: Xilinx - ARTIX-7 : 7A100TCSG324 : 1
+# Info: -- CTE report timing..
+# Info:                   CTE Path Report
+# Info: Critical path #1, (path slack = -26.329):, Logic Levels = 250
+# Info: SOURCE CLOCK: name: clk period: 1.000000
+# Info:      Times are relative to the 1st rising edge
+# Info:   DEST CLOCK: name: clk period: 1.000000
+# Info:      Times are relative to the 2nd rising edge
+# Info: NAME                            GATE       DELAY    ARRIVAL DIR  FANOUT LEVEL
+# Info: x(15)                        (port)                 0.000   dn
+# Info: x(15)                        (net)        0.000                   1     0
+# Info: x_ibuf(15)/I                 IBUF                   0.000   dn
+# Info: x_ibuf(15)/O                 IBUF         1.298     1.298   dn
+# Info: x_int(15)                    (net)        1.114                  43     1
+# Info: ix38013z1323/I0              LUT2                   2.412   dn
+# Info: ix38013z1323/O               LUT2         0.124     2.536   up
+# Info: nx38013z1                    (net)        0.000                   2     2
+# Info: h1_z_addsub17_2_muxcy_0/S    MUXCY                  2.536   up
+# Info: h1_z_addsub17_2_muxcy_0/O    MUXCY        0.122     2.658   up
+# Info: nx38014z1                    (net)        0.000                   2     3
+# Info: h1_z_addsub17_2_muxcy_1/CI   MUXCY                  2.658   up
+# Info: h1_z_addsub17_2_muxcy_1/O    MUXCY        0.029     2.687   up
+# Info: nx38015z1                    (net)        0.000                   2     4
+# Info: h1_z_addsub17_2_muxcy_2/CI   MUXCY                  2.687   up
+# Info: h1_z_addsub17_2_muxcy_2/O    MUXCY        0.029     2.716   up
+# Info: nx38016z1                    (net)        0.000                   2     5
+# Info: h1_z_addsub17_2_muxcy_3/CI   MUXCY                  2.716   up
+# Info: h1_z_addsub17_2_muxcy_3/O    MUXCY        0.029     2.745   up
+# Info: nx38017z1                    (net)        0.000                   2     6
+# Info: h1_z_addsub17_2_muxcy_4/CI   MUXCY                  2.745   up
+# Info: h1_z_addsub17_2_muxcy_4/O    MUXCY        0.029     2.774   up
+# Info: nx38018z1                    (net)        0.000                   2     7
+# Info: h1_z_addsub17_2_muxcy_5/CI   MUXCY                  2.774   up
+# Info: h1_z_addsub17_2_muxcy_5/O    MUXCY        0.029     2.803   up
+# Info: nx38019z1                    (net)        0.000                   2     8
+# Info: h1_z_addsub17_2_muxcy_6/CI   MUXCY                  2.803   up
+# Info: h1_z_addsub17_2_muxcy_6/O    MUXCY        0.029     2.832   up
+# Info: nx38020z1                    (net)        0.000                   2     9
+# Info: h1_z_addsub17_2_muxcy_7/CI   MUXCY                  2.832   up
+# Info: h1_z_addsub17_2_muxcy_7/O    MUXCY        0.029     2.861   up
+# Info: nx38021z1                    (net)        0.000                   2    10
+# Info: h1_z_addsub17_2_muxcy_8/CI   MUXCY                  2.861   up
+# Info: h1_z_addsub17_2_muxcy_8/O    MUXCY        0.029     2.890   up
+# Info: nx38022z1                    (net)        0.000                   2    11
+# Info: h1_z_addsub17_2_muxcy_9/CI   MUXCY                  2.890   up
+# Info: h1_z_addsub17_2_muxcy_9/O    MUXCY        0.029     2.919   up
+# Info: nx45338z1                    (net)        0.000                   2    12
+# Info: h1_z_addsub17_2_muxcy_10/CI  MUXCY                  2.919   up
+# Info: h1_z_addsub17_2_muxcy_10/O   MUXCY        0.029     2.948   up
+# Info: nx45337z1                    (net)        0.000                   2    13
+# Info: h1_z_addsub17_2_muxcy_11/CI  MUXCY                  2.948   up
+# Info: h1_z_addsub17_2_muxcy_11/O   MUXCY        0.029     2.977   up
+# Info: nx45336z1                    (net)        0.000                   2    14
+# Info: h1_z_addsub17_2_muxcy_12/CI  MUXCY                  2.977   up
+# Info: h1_z_addsub17_2_muxcy_12/O   MUXCY        0.029     3.006   up
+# Info: nx45335z1                    (net)        0.000                   2    15
+# Info: h1_z_addsub17_2_muxcy_13/CI  MUXCY                  3.006   up
+# Info: h1_z_addsub17_2_muxcy_13/O   MUXCY        0.029     3.035   up
+# Info: nx60411z1                    (net)        0.000                   1    16
+# Info: h1_z_addsub17_2_xorcy_14/CI  XORCY                  3.035   up
+# Info: h1_z_addsub17_2_xorcy_14/O   XORCY        0.287     3.322   up
+# Info: h1_z(21)                     (net)        1.114                  42    17
+# Info: ix39294z1323/I0              LUT2                   4.436   up
+# Info: ix39294z1323/O               LUT2         0.124     4.560   up
+# Info: nx39294z1                    (net)        0.000                   2    18
+# Info: h2_z_addsub16_31_muxcy_0/S   MUXCY                  4.560   up
+# Info: h2_z_addsub16_31_muxcy_0/O   MUXCY        0.122     4.682   up
+# Info: nx20868z1                    (net)        0.000                   2    19
+# Info: h2_z_addsub16_31_muxcy_1/CI  MUXCY                  4.682   up
+# Info: h2_z_addsub16_31_muxcy_1/O   MUXCY        0.029     4.711   up
+# Info: nx20869z1                    (net)        0.000                   2    20
+# Info: h2_z_addsub16_31_muxcy_2/CI  MUXCY                  4.711   up
+# Info: h2_z_addsub16_31_muxcy_2/O   MUXCY        0.029     4.740   up
+# Info: nx20870z1                    (net)        0.000                   2    21
+# Info: h2_z_addsub16_31_muxcy_3/CI  MUXCY                  4.740   up
+# Info: h2_z_addsub16_31_muxcy_3/O   MUXCY        0.029     4.769   up
+# Info: nx20871z1                    (net)        0.000                   2    22
+# Info: h2_z_addsub16_31_muxcy_4/CI  MUXCY                  4.769   up
+# Info: h2_z_addsub16_31_muxcy_4/O   MUXCY        0.029     4.798   up
+# Info: nx20872z1                    (net)        0.000                   2    23
+# Info: h2_z_addsub16_31_muxcy_5/CI  MUXCY                  4.798   up
+# Info: h2_z_addsub16_31_muxcy_5/O   MUXCY        0.029     4.827   up
+# Info: nx20873z1                    (net)        0.000                   2    24
+# Info: h2_z_addsub16_31_muxcy_6/CI  MUXCY                  4.827   up
+# Info: h2_z_addsub16_31_muxcy_6/O   MUXCY        0.029     4.856   up
+# Info: nx20874z1                    (net)        0.000                   2    25
+# Info: h2_z_addsub16_31_muxcy_7/CI  MUXCY                  4.856   up
+# Info: h2_z_addsub16_31_muxcy_7/O   MUXCY        0.029     4.885   up
+# Info: nx20875z1                    (net)        0.000                   2    26
+# Info: h2_z_addsub16_31_muxcy_8/CI  MUXCY                  4.885   up
+# Info: h2_z_addsub16_31_muxcy_8/O   MUXCY        0.029     4.914   up
+# Info: nx20876z1                    (net)        0.000                   2    27
+# Info: h2_z_addsub16_31_muxcy_9/CI  MUXCY                  4.914   up
+# Info: h2_z_addsub16_31_muxcy_9/O   MUXCY        0.029     4.943   up
+# Info: nx30532z1                    (net)        0.000                   2    28
+# Info: h2_z_addsub16_31_muxcy_10/CI MUXCY                  4.943   up
+# Info: h2_z_addsub16_31_muxcy_10/O  MUXCY        0.029     4.972   up
+# Info: nx30533z1                    (net)        0.000                   2    29
+# Info: h2_z_addsub16_31_muxcy_11/CI MUXCY                  4.972   up
+# Info: h2_z_addsub16_31_muxcy_11/O  MUXCY        0.029     5.001   up
+# Info: nx30534z1                    (net)        0.000                   2    30
+# Info: h2_z_addsub16_31_muxcy_12/CI MUXCY                  5.001   up
+# Info: h2_z_addsub16_31_muxcy_12/O  MUXCY        0.029     5.030   up
+# Info: nx30535z1                    (net)        0.000                   2    31
+# Info: h2_z_addsub16_31_muxcy_13/CI MUXCY                  5.030   up
+# Info: h2_z_addsub16_31_muxcy_13/O  MUXCY        0.029     5.059   up
+# Info: h3_y_f1(0)                   (net)        0.000                  45    32
+# Info: ix25492z1320/I1              LUT2                   5.059   up
+# Info: ix25492z1320/O               LUT2         0.124     5.183   up
+# Info: nx25492z1                    (net)        0.000                   2    33
+# Info: h3_z_addsub16_32_muxcy_0/S   MUXCY                  5.183   up
+# Info: h3_z_addsub16_32_muxcy_0/O   MUXCY        0.122     5.305   up
+# Info: nx34670z1                    (net)        0.000                   2    34
+# Info: h3_z_addsub16_32_muxcy_1/CI  MUXCY                  5.305   up
+# Info: h3_z_addsub16_32_muxcy_1/O   MUXCY        0.029     5.334   up
+# Info: nx34671z1                    (net)        0.000                   2    35
+# Info: h3_z_addsub16_32_muxcy_2/CI  MUXCY                  5.334   up
+# Info: h3_z_addsub16_32_muxcy_2/O   MUXCY        0.029     5.363   up
+# Info: nx34672z1                    (net)        0.000                   2    36
+# Info: h3_z_addsub16_32_muxcy_3/CI  MUXCY                  5.363   up
+# Info: h3_z_addsub16_32_muxcy_3/O   MUXCY        0.029     5.392   up
+# Info: nx34673z1                    (net)        0.000                   2    37
+# Info: h3_z_addsub16_32_muxcy_4/CI  MUXCY                  5.392   up
+# Info: h3_z_addsub16_32_muxcy_4/O   MUXCY        0.029     5.421   up
+# Info: nx34674z1                    (net)        0.000                   2    38
+# Info: h3_z_addsub16_32_muxcy_5/CI  MUXCY                  5.421   up
+# Info: h3_z_addsub16_32_muxcy_5/O   MUXCY        0.029     5.450   up
+# Info: nx34675z1                    (net)        0.000                   2    39
+# Info: h3_z_addsub16_32_muxcy_6/CI  MUXCY                  5.450   up
+# Info: h3_z_addsub16_32_muxcy_6/O   MUXCY        0.029     5.479   up
+# Info: nx34676z1                    (net)        0.000                   2    40
+# Info: h3_z_addsub16_32_muxcy_7/CI  MUXCY                  5.479   up
+# Info: h3_z_addsub16_32_muxcy_7/O   MUXCY        0.029     5.508   up
+# Info: nx34677z1                    (net)        0.000                   2    41
+# Info: h3_z_addsub16_32_muxcy_8/CI  MUXCY                  5.508   up
+# Info: h3_z_addsub16_32_muxcy_8/O   MUXCY        0.029     5.537   up
+# Info: nx34678z1                    (net)        0.000                   2    42
+# Info: h3_z_addsub16_32_muxcy_9/CI  MUXCY                  5.537   up
+# Info: h3_z_addsub16_32_muxcy_9/O   MUXCY        0.029     5.566   up
+# Info: nx28566z1                    (net)        0.000                   2    43
+# Info: h3_z_addsub16_32_muxcy_10/CI MUXCY                  5.566   up
+# Info: h3_z_addsub16_32_muxcy_10/O  MUXCY        0.029     5.595   up
+# Info: nx28567z1                    (net)        0.000                   2    44
+# Info: h3_z_addsub16_32_muxcy_11/CI MUXCY                  5.595   up
+# Info: h3_z_addsub16_32_muxcy_11/O  MUXCY        0.029     5.624   up
+# Info: nx28568z1                    (net)        0.000                   2    45
+# Info: h3_z_addsub16_32_muxcy_12/CI MUXCY                  5.624   up
+# Info: h3_z_addsub16_32_muxcy_12/O  MUXCY        0.029     5.653   up
+# Info: nx28569z1                    (net)        0.000                   2    46
+# Info: h3_z_addsub16_32_muxcy_13/CI MUXCY                  5.653   up
+# Info: h3_z_addsub16_32_muxcy_13/O  MUXCY        0.029     5.682   up
+# Info: h4_x_f1(0)                   (net)        1.014                  36    47
+# Info: ix53846z1320/I1              LUT2                   6.696   up
+# Info: ix53846z1320/O               LUT2         0.124     6.820   up
+# Info: nx53846z1                    (net)        0.000                   2    48
+# Info: h4_z_addsub16_33_muxcy_0/S   MUXCY                  6.820   up
+# Info: h4_z_addsub16_33_muxcy_0/O   MUXCY        0.122     6.942   up
+# Info: nx17064z1                    (net)        0.000                   2    49
+# Info: h4_z_addsub16_33_muxcy_1/CI  MUXCY                  6.942   up
+# Info: h4_z_addsub16_33_muxcy_1/O   MUXCY        0.029     6.971   up
+# Info: nx17063z1                    (net)        0.000                   2    50
+# Info: h4_z_addsub16_33_muxcy_2/CI  MUXCY                  6.971   up
+# Info: h4_z_addsub16_33_muxcy_2/O   MUXCY        0.029     7.000   up
+# Info: nx17062z1                    (net)        0.000                   2    51
+# Info: h4_z_addsub16_33_muxcy_3/CI  MUXCY                  7.000   up
+# Info: h4_z_addsub16_33_muxcy_3/O   MUXCY        0.029     7.029   up
+# Info: nx17061z1                    (net)        0.000                   2    52
+# Info: h4_z_addsub16_33_muxcy_4/CI  MUXCY                  7.029   up
+# Info: h4_z_addsub16_33_muxcy_4/O   MUXCY        0.029     7.058   up
+# Info: nx17060z1                    (net)        0.000                   2    53
+# Info: h4_z_addsub16_33_muxcy_5/CI  MUXCY                  7.058   up
+# Info: h4_z_addsub16_33_muxcy_5/O   MUXCY        0.029     7.087   up
+# Info: nx17059z1                    (net)        0.000                   2    54
+# Info: h4_z_addsub16_33_muxcy_6/CI  MUXCY                  7.087   up
+# Info: h4_z_addsub16_33_muxcy_6/O   MUXCY        0.029     7.116   up
+# Info: nx17058z1                    (net)        0.000                   2    55
+# Info: h4_z_addsub16_33_muxcy_7/CI  MUXCY                  7.116   up
+# Info: h4_z_addsub16_33_muxcy_7/O   MUXCY        0.029     7.145   up
+# Info: nx17057z1                    (net)        0.000                   2    56
+# Info: h4_z_addsub16_33_muxcy_8/CI  MUXCY                  7.145   up
+# Info: h4_z_addsub16_33_muxcy_8/O   MUXCY        0.029     7.174   up
+# Info: nx17056z1                    (net)        0.000                   2    57
+# Info: h4_z_addsub16_33_muxcy_9/CI  MUXCY                  7.174   up
+# Info: h4_z_addsub16_33_muxcy_9/O   MUXCY        0.029     7.203   up
+# Info: nx26600z1                    (net)        0.000                   2    58
+# Info: h4_z_addsub16_33_muxcy_10/CI MUXCY                  7.203   up
+# Info: h4_z_addsub16_33_muxcy_10/O  MUXCY        0.029     7.232   up
+# Info: nx26601z1                    (net)        0.000                   2    59
+# Info: h4_z_addsub16_33_muxcy_11/CI MUXCY                  7.232   up
+# Info: h4_z_addsub16_33_muxcy_11/O  MUXCY        0.029     7.261   up
+# Info: nx26602z1                    (net)        0.000                   2    60
+# Info: h4_z_addsub16_33_muxcy_12/CI MUXCY                  7.261   up
+# Info: h4_z_addsub16_33_muxcy_12/O  MUXCY        0.029     7.290   up
+# Info: nx26603z1                    (net)        0.000                   2    61
+# Info: h4_z_addsub16_33_muxcy_13/CI MUXCY                  7.290   up
+# Info: h4_z_addsub16_33_muxcy_13/O  MUXCY        0.029     7.319   up
+# Info: h5_y_f1(0)                   (net)        1.063                  38    62
+# Info: ix2112z1320/I1               LUT2                   8.382   up
+# Info: ix2112z1320/O                LUT2         0.124     8.506   up
+# Info: nx2112z1                     (net)        0.000                   2    63
+# Info: h5_z_addsub16_34_muxcy_0/S   MUXCY                  8.506   up
+# Info: h5_z_addsub16_34_muxcy_0/O   MUXCY        0.122     8.628   up
+# Info: nx62274z1                    (net)        0.000                   2    64
+# Info: h5_z_addsub16_34_muxcy_1/CI  MUXCY                  8.628   up
+# Info: h5_z_addsub16_34_muxcy_1/O   MUXCY        0.029     8.657   up
+# Info: nx62275z1                    (net)        0.000                   2    65
+# Info: h5_z_addsub16_34_muxcy_2/CI  MUXCY                  8.657   up
+# Info: h5_z_addsub16_34_muxcy_2/O   MUXCY        0.029     8.686   up
+# Info: nx62276z1                    (net)        0.000                   2    66
+# Info: h5_z_addsub16_34_muxcy_3/CI  MUXCY                  8.686   up
+# Info: h5_z_addsub16_34_muxcy_3/O   MUXCY        0.029     8.715   up
+# Info: nx62277z1                    (net)        0.000                   2    67
+# Info: h5_z_addsub16_34_muxcy_4/CI  MUXCY                  8.715   up
+# Info: h5_z_addsub16_34_muxcy_4/O   MUXCY        0.029     8.744   up
+# Info: nx62278z1                    (net)        0.000                   2    68
+# Info: h5_z_addsub16_34_muxcy_5/CI  MUXCY                  8.744   up
+# Info: h5_z_addsub16_34_muxcy_5/O   MUXCY        0.029     8.773   up
+# Info: nx62279z1                    (net)        0.000                   2    69
+# Info: h5_z_addsub16_34_muxcy_6/CI  MUXCY                  8.773   up
+# Info: h5_z_addsub16_34_muxcy_6/O   MUXCY        0.029     8.802   up
+# Info: nx62280z1                    (net)        0.000                   2    70
+# Info: h5_z_addsub16_34_muxcy_7/CI  MUXCY                  8.802   up
+# Info: h5_z_addsub16_34_muxcy_7/O   MUXCY        0.029     8.831   up
+# Info: nx62281z1                    (net)        0.000                   2    71
+# Info: h5_z_addsub16_34_muxcy_8/CI  MUXCY                  8.831   up
+# Info: h5_z_addsub16_34_muxcy_8/O   MUXCY        0.029     8.860   up
+# Info: nx62282z1                    (net)        0.000                   2    72
+# Info: h5_z_addsub16_34_muxcy_9/CI  MUXCY                  8.860   up
+# Info: h5_z_addsub16_34_muxcy_9/O   MUXCY        0.029     8.889   up
+# Info: nx24634z1                    (net)        0.000                   2    73
+# Info: h5_z_addsub16_34_muxcy_10/CI MUXCY                  8.889   up
+# Info: h5_z_addsub16_34_muxcy_10/O  MUXCY        0.029     8.918   up
+# Info: nx24635z1                    (net)        0.000                   2    74
+# Info: h5_z_addsub16_34_muxcy_11/CI MUXCY                  8.918   up
+# Info: h5_z_addsub16_34_muxcy_11/O  MUXCY        0.029     8.947   up
+# Info: nx24636z1                    (net)        0.000                   2    75
+# Info: h5_z_addsub16_34_muxcy_12/CI MUXCY                  8.947   up
+# Info: h5_z_addsub16_34_muxcy_12/O  MUXCY        0.029     8.976   up
+# Info: nx24637z1                    (net)        0.000                   2    76
+# Info: h5_z_addsub16_34_muxcy_13/CI MUXCY                  8.976   up
+# Info: h5_z_addsub16_34_muxcy_13/O  MUXCY        0.029     9.005   up
+# Info: h6_x_f1(0)                   (net)        1.038                  37    77
+# Info: ix10539z1321/I1              LUT2                  10.043   up
+# Info: ix10539z1321/O               LUT2         0.124    10.167   up
+# Info: nx10539z1                    (net)        0.000                   2    78
+# Info: h6_z_addsub16_35_muxcy_0/S   MUXCY                 10.167   up
+# Info: h6_z_addsub16_35_muxcy_0/O   MUXCY        0.122    10.289   up
+# Info: nx10540z1                    (net)        0.000                   2    79
+# Info: h6_z_addsub16_35_muxcy_1/CI  MUXCY                 10.289   up
+# Info: h6_z_addsub16_35_muxcy_1/O   MUXCY        0.029    10.318   up
+# Info: nx10541z1                    (net)        0.000                   2    80
+# Info: h6_z_addsub16_35_muxcy_2/CI  MUXCY                 10.318   up
+# Info: h6_z_addsub16_35_muxcy_2/O   MUXCY        0.029    10.347   up
+# Info: nx10542z1                    (net)        0.000                   2    81
+# Info: h6_z_addsub16_35_muxcy_3/CI  MUXCY                 10.347   up
+# Info: h6_z_addsub16_35_muxcy_3/O   MUXCY        0.029    10.376   up
+# Info: nx10543z1                    (net)        0.000                   2    82
+# Info: h6_z_addsub16_35_muxcy_4/CI  MUXCY                 10.376   up
+# Info: h6_z_addsub16_35_muxcy_4/O   MUXCY        0.029    10.405   up
+# Info: nx10544z1                    (net)        0.000                   2    83
+# Info: h6_z_addsub16_35_muxcy_5/CI  MUXCY                 10.405   up
+# Info: h6_z_addsub16_35_muxcy_5/O   MUXCY        0.029    10.434   up
+# Info: nx10545z1                    (net)        0.000                   2    84
+# Info: h6_z_addsub16_35_muxcy_6/CI  MUXCY                 10.434   up
+# Info: h6_z_addsub16_35_muxcy_6/O   MUXCY        0.029    10.463   up
+# Info: nx10546z1                    (net)        0.000                   2    85
+# Info: h6_z_addsub16_35_muxcy_7/CI  MUXCY                 10.463   up
+# Info: h6_z_addsub16_35_muxcy_7/O   MUXCY        0.029    10.492   up
+# Info: nx10547z1                    (net)        0.000                   2    86
+# Info: h6_z_addsub16_35_muxcy_8/CI  MUXCY                 10.492   up
+# Info: h6_z_addsub16_35_muxcy_8/O   MUXCY        0.029    10.521   up
+# Info: nx10548z1                    (net)        0.000                   2    87
+# Info: h6_z_addsub16_35_muxcy_9/CI  MUXCY                 10.521   up
+# Info: h6_z_addsub16_35_muxcy_9/O   MUXCY        0.029    10.550   up
+# Info: nx22668z1                    (net)        0.000                   2    88
+# Info: h6_z_addsub16_35_muxcy_10/CI MUXCY                 10.550   up
+# Info: h6_z_addsub16_35_muxcy_10/O  MUXCY        0.029    10.579   up
+# Info: nx22669z1                    (net)        0.000                   2    89
+# Info: h6_z_addsub16_35_muxcy_11/CI MUXCY                 10.579   up
+# Info: h6_z_addsub16_35_muxcy_11/O  MUXCY        0.029    10.608   up
+# Info: nx22670z1                    (net)        0.000                   2    90
+# Info: h6_z_addsub16_35_muxcy_12/CI MUXCY                 10.608   up
+# Info: h6_z_addsub16_35_muxcy_12/O  MUXCY        0.029    10.637   up
+# Info: nx22671z1                    (net)        0.000                   2    91
+# Info: h6_z_addsub16_35_muxcy_13/CI MUXCY                 10.637   up
+# Info: h6_z_addsub16_35_muxcy_13/O  MUXCY        0.029    10.666   up
+# Info: h7_y_f1(0)                   (net)        1.114                  57    92
+# Info: ix10420z1320/I1              LUT2                  11.780   up
+# Info: ix10420z1320/O               LUT2         0.124    11.904   up
+# Info: nx10420z1                    (net)        0.000                   1    93
+# Info: h7_z_addsub16_22_muxcy_0/S   MUXCY                 11.904   up
+# Info: h7_z_addsub16_22_muxcy_0/O   MUXCY        0.122    12.026   up
+# Info: nx10419z1                    (net)        0.000                   1    94
+# Info: h7_z_addsub16_22_muxcy_1/CI  MUXCY                 12.026   up
+# Info: h7_z_addsub16_22_muxcy_1/O   MUXCY        0.029    12.055   up
+# Info: nx10418z1                    (net)        0.000                   1    95
+# Info: h7_z_addsub16_22_muxcy_2/CI  MUXCY                 12.055   up
+# Info: h7_z_addsub16_22_muxcy_2/O   MUXCY        0.029    12.084   up
+# Info: nx10417z1                    (net)        0.000                   1    96
+# Info: h7_z_addsub16_22_muxcy_3/CI  MUXCY                 12.084   up
+# Info: h7_z_addsub16_22_muxcy_3/O   MUXCY        0.029    12.113   up
+# Info: nx10416z1                    (net)        0.000                   1    97
+# Info: h7_z_addsub16_22_muxcy_4/CI  MUXCY                 12.113   up
+# Info: h7_z_addsub16_22_muxcy_4/O   MUXCY        0.029    12.142   up
+# Info: nx10415z1                    (net)        0.000                   1    98
+# Info: h7_z_addsub16_22_muxcy_5/CI  MUXCY                 12.142   up
+# Info: h7_z_addsub16_22_muxcy_5/O   MUXCY        0.029    12.171   up
+# Info: nx10414z1                    (net)        0.000                   1    99
+# Info: h7_z_addsub16_22_muxcy_6/CI  MUXCY                 12.171   up
+# Info: h7_z_addsub16_22_muxcy_6/O   MUXCY        0.029    12.200   up
+# Info: nx10413z1                    (net)        0.000                   1   100
+# Info: h7_z_addsub16_22_muxcy_7/CI  MUXCY                 12.200   up
+# Info: h7_z_addsub16_22_muxcy_7/O   MUXCY        0.029    12.229   up
+# Info: nx10412z1                    (net)        0.000                   1   101
+# Info: h7_z_addsub16_22_muxcy_8/CI  MUXCY                 12.229   up
+# Info: h7_z_addsub16_22_muxcy_8/O   MUXCY        0.029    12.258   up
+# Info: nx10411z1                    (net)        0.000                   1   102
+# Info: h7_z_addsub16_22_muxcy_9/CI  MUXCY                 12.258   up
+# Info: h7_z_addsub16_22_muxcy_9/O   MUXCY        0.029    12.287   up
+# Info: nx33007z1                    (net)        0.000                   1   103
+# Info: h7_z_addsub16_22_muxcy_10/CI MUXCY                 12.287   up
+# Info: h7_z_addsub16_22_muxcy_10/O  MUXCY        0.029    12.316   up
+# Info: nx33006z1                    (net)        0.000                   1   104
+# Info: h7_z_addsub16_22_muxcy_11/CI MUXCY                 12.316   up
+# Info: h7_z_addsub16_22_muxcy_11/O  MUXCY        0.029    12.345   up
+# Info: nx33005z1                    (net)        0.000                   1   105
+# Info: h7_z_addsub16_22_muxcy_12/CI MUXCY                 12.345   up
+# Info: h7_z_addsub16_22_muxcy_12/O  MUXCY        0.029    12.374   up
+# Info: nx33004z1                    (net)        0.000                   1   106
+# Info: h7_z_addsub16_22_muxcy_13/CI MUXCY                 12.374   up
+# Info: h7_z_addsub16_22_muxcy_13/O  MUXCY        0.029    12.403   up
+# Info: d0_x_f1(0)                   (net)        1.114                  41   107
+# Info: ix1286z1419/I2               LUT3                  13.517   up
+# Info: ix1286z1419/O                LUT3         0.124    13.641   up
+# Info: nx1286z1                     (net)        0.000                   2   108
+# Info: d0_x_add15_24_muxcy_0/S      MUXCY                 13.641   up
+# Info: d0_x_add15_24_muxcy_0/O      MUXCY        0.122    13.763   up
+# Info: nx1285z1                     (net)        0.000                   2   109
+# Info: d0_x_add15_24_muxcy_1/CI     MUXCY                 13.763   up
+# Info: d0_x_add15_24_muxcy_1/O      MUXCY        0.029    13.792   up
+# Info: nx1284z1                     (net)        0.000                   2   110
+# Info: d0_x_add15_24_muxcy_2/CI     MUXCY                 13.792   up
+# Info: d0_x_add15_24_muxcy_2/O      MUXCY        0.029    13.821   up
+# Info: nx1283z1                     (net)        0.000                   2   111
+# Info: d0_x_add15_24_muxcy_3/CI     MUXCY                 13.821   up
+# Info: d0_x_add15_24_muxcy_3/O      MUXCY        0.029    13.850   up
+# Info: nx1282z1                     (net)        0.000                   2   112
+# Info: d0_x_add15_24_muxcy_4/CI     MUXCY                 13.850   up
+# Info: d0_x_add15_24_muxcy_4/O      MUXCY        0.029    13.879   up
+# Info: nx1281z1                     (net)        0.000                   2   113
+# Info: d0_x_add15_24_muxcy_5/CI     MUXCY                 13.879   up
+# Info: d0_x_add15_24_muxcy_5/O      MUXCY        0.029    13.908   up
+# Info: nx1280z1                     (net)        0.000                   2   114
+# Info: d0_x_add15_24_muxcy_6/CI     MUXCY                 13.908   up
+# Info: d0_x_add15_24_muxcy_6/O      MUXCY        0.029    13.937   up
+# Info: nx1279z1                     (net)        0.000                   2   115
+# Info: d0_x_add15_24_muxcy_7/CI     MUXCY                 13.937   up
+# Info: d0_x_add15_24_muxcy_7/O      MUXCY        0.029    13.966   up
+# Info: nx1278z1                     (net)        0.000                   2   116
+# Info: d0_x_add15_24_muxcy_8/CI     MUXCY                 13.966   up
+# Info: d0_x_add15_24_muxcy_8/O      MUXCY        0.029    13.995   up
+# Info: nx1277z1                     (net)        0.000                   2   117
+# Info: d0_x_add15_24_muxcy_9/CI     MUXCY                 13.995   up
+# Info: d0_x_add15_24_muxcy_9/O      MUXCY        0.029    14.024   up
+# Info: nx29623z1                    (net)        0.000                   2   118
+# Info: d0_x_add15_24_muxcy_10/CI    MUXCY                 14.024   up
+# Info: d0_x_add15_24_muxcy_10/O     MUXCY        0.029    14.053   up
+# Info: nx50989z1                    (net)        0.000                   1   119
+# Info: d0_x_add15_24_xorcy_11/CI    XORCY                 14.053   up
+# Info: d0_x_add15_24_xorcy_11/O     XORCY        0.287    14.340   up
+# Info: d0_x(21)                     (net)        1.114                  98   120
+# Info: ix13381z28344/I1             LUT5                  15.454   up
+# Info: ix13381z28344/O              LUT5         0.124    15.578   up
+# Info: nx13381z1                    (net)        0.000                   2   121
+# Info: d1_y_add16_26_muxcy_0/S      MUXCY                 15.578   up
+# Info: d1_y_add16_26_muxcy_0/O      MUXCY        0.122    15.700   up
+# Info: nx13380z1                    (net)        0.000                   2   122
+# Info: d1_y_add16_26_muxcy_1/CI     MUXCY                 15.700   up
+# Info: d1_y_add16_26_muxcy_1/O      MUXCY        0.029    15.729   up
+# Info: nx13379z1                    (net)        0.000                   2   123
+# Info: d1_y_add16_26_muxcy_2/CI     MUXCY                 15.729   up
+# Info: d1_y_add16_26_muxcy_2/O      MUXCY        0.029    15.758   up
+# Info: nx13378z1                    (net)        0.000                   2   124
+# Info: d1_y_add16_26_muxcy_3/CI     MUXCY                 15.758   up
+# Info: d1_y_add16_26_muxcy_3/O      MUXCY        0.029    15.787   up
+# Info: nx13377z1                    (net)        0.000                   2   125
+# Info: d1_y_add16_26_muxcy_4/CI     MUXCY                 15.787   up
+# Info: d1_y_add16_26_muxcy_4/O      MUXCY        0.029    15.816   up
+# Info: nx13376z1                    (net)        0.000                   2   126
+# Info: d1_y_add16_26_muxcy_5/CI     MUXCY                 15.816   up
+# Info: d1_y_add16_26_muxcy_5/O      MUXCY        0.029    15.845   up
+# Info: nx13375z1                    (net)        0.000                   2   127
+# Info: d1_y_add16_26_muxcy_6/CI     MUXCY                 15.845   up
+# Info: d1_y_add16_26_muxcy_6/O      MUXCY        0.029    15.874   up
+# Info: nx13374z1                    (net)        0.000                   2   128
+# Info: d1_y_add16_26_muxcy_7/CI     MUXCY                 15.874   up
+# Info: d1_y_add16_26_muxcy_7/O      MUXCY        0.029    15.903   up
+# Info: nx13373z1                    (net)        0.000                   2   129
+# Info: d1_y_add16_26_muxcy_8/CI     MUXCY                 15.903   up
+# Info: d1_y_add16_26_muxcy_8/O      MUXCY        0.029    15.932   up
+# Info: nx13372z1                    (net)        0.000                   2   130
+# Info: d1_y_add16_26_muxcy_9/CI     MUXCY                 15.932   up
+# Info: d1_y_add16_26_muxcy_9/O      MUXCY        0.029    15.961   up
+# Info: nx36004z1                    (net)        0.000                   2   131
+# Info: d1_y_add16_26_muxcy_10/CI    MUXCY                 15.961   up
+# Info: d1_y_add16_26_muxcy_10/O     MUXCY        0.029    15.990   up
+# Info: nx36003z1                    (net)        0.000                   2   132
+# Info: d1_y_add16_26_muxcy_11/CI    MUXCY                 15.990   up
+# Info: d1_y_add16_26_muxcy_11/O     MUXCY        0.029    16.019   up
+# Info: nx36002z1                    (net)        0.000                   2   133
+# Info: d1_y_add16_26_muxcy_12/CI    MUXCY                 16.019   up
+# Info: d1_y_add16_26_muxcy_12/O     MUXCY        0.029    16.048   up
+# Info: nx51078z1                    (net)        0.000                   1   134
+# Info: d1_y_add16_26_xorcy_13/CI    XORCY                 16.048   up
+# Info: d1_y_add16_26_xorcy_13/O     XORCY        0.287    16.335   up
+# Info: d1_y(21)                     (net)        0.638                  19   135
+# Info: ix21770z28344/I1             LUT5                  16.973   up
+# Info: ix21770z28344/O              LUT5         0.124    17.097   up
+# Info: nx21770z1                    (net)        0.335                   2   136
+# Info: d2_y_add17_27_muxcy_0/CI     MUXCY                 17.432   up
+# Info: d2_y_add17_27_muxcy_0/O      MUXCY        0.029    17.461   up
+# Info: nx21769z1                    (net)        0.000                   2   137
+# Info: d2_y_add17_27_muxcy_1/CI     MUXCY                 17.461   up
+# Info: d2_y_add17_27_muxcy_1/O      MUXCY        0.029    17.490   up
+# Info: nx21768z1                    (net)        0.000                   2   138
+# Info: d2_y_add17_27_muxcy_2/CI     MUXCY                 17.490   up
+# Info: d2_y_add17_27_muxcy_2/O      MUXCY        0.029    17.519   up
+# Info: nx21767z1                    (net)        0.000                   2   139
+# Info: d2_y_add17_27_muxcy_3/CI     MUXCY                 17.519   up
+# Info: d2_y_add17_27_muxcy_3/O      MUXCY        0.029    17.548   up
+# Info: nx21766z1                    (net)        0.000                   2   140
+# Info: d2_y_add17_27_muxcy_4/CI     MUXCY                 17.548   up
+# Info: d2_y_add17_27_muxcy_4/O      MUXCY        0.029    17.577   up
+# Info: nx21765z1                    (net)        0.000                   2   141
+# Info: d2_y_add17_27_muxcy_5/CI     MUXCY                 17.577   up
+# Info: d2_y_add17_27_muxcy_5/O      MUXCY        0.029    17.606   up
+# Info: nx21764z1                    (net)        0.000                   2   142
+# Info: d2_y_add17_27_muxcy_6/CI     MUXCY                 17.606   up
+# Info: d2_y_add17_27_muxcy_6/O      MUXCY        0.029    17.635   up
+# Info: nx21763z1                    (net)        0.000                   2   143
+# Info: d2_y_add17_27_muxcy_7/CI     MUXCY                 17.635   up
+# Info: d2_y_add17_27_muxcy_7/O      MUXCY        0.029    17.664   up
+# Info: nx21762z1                    (net)        0.000                   2   144
+# Info: d2_y_add17_27_muxcy_8/CI     MUXCY                 17.664   up
+# Info: d2_y_add17_27_muxcy_8/O      MUXCY        0.029    17.693   up
+# Info: nx21761z1                    (net)        0.000                   2   145
+# Info: d2_y_add17_27_muxcy_9/CI     MUXCY                 17.693   up
+# Info: d2_y_add17_27_muxcy_9/O      MUXCY        0.029    17.722   up
+# Info: nx11229z1                    (net)        0.000                   2   146
+# Info: d2_y_add17_27_muxcy_10/CI    MUXCY                 17.722   up
+# Info: d2_y_add17_27_muxcy_10/O     MUXCY        0.029    17.751   up
+# Info: nx11228z1                    (net)        0.000                   2   147
+# Info: d2_y_add17_27_muxcy_11/CI    MUXCY                 17.751   up
+# Info: d2_y_add17_27_muxcy_11/O     MUXCY        0.029    17.780   up
+# Info: nx11227z1                    (net)        0.000                   2   148
+# Info: d2_y_add17_27_muxcy_12/CI    MUXCY                 17.780   up
+# Info: d2_y_add17_27_muxcy_12/O     MUXCY        0.029    17.809   up
+# Info: nx11226z1                    (net)        0.000                   2   149
+# Info: d2_y_add17_27_muxcy_13/CI    MUXCY                 17.809   up
+# Info: d2_y_add17_27_muxcy_13/O     MUXCY        0.029    17.838   up
+# Info: nx39234z1                    (net)        0.000                   1   150
+# Info: d2_y_add17_27_xorcy_14/CI    XORCY                 17.838   up
+# Info: d2_y_add17_27_xorcy_14/O     XORCY        0.287    18.125   up
+# Info: d2_y(21)                     (net)        0.658                  20   151
+# Info: ix35377z28344/I1             LUT5                  18.783   up
+# Info: ix35377z28344/O              LUT5         0.124    18.907   up
+# Info: nx35377z1                    (net)        0.335                   2   152
+# Info: d3_y_add18_28_muxcy_0/CI     MUXCY                 19.242   up
+# Info: d3_y_add18_28_muxcy_0/O      MUXCY        0.029    19.271   up
+# Info: nx35378z1                    (net)        0.000                   2   153
+# Info: d3_y_add18_28_muxcy_1/CI     MUXCY                 19.271   up
+# Info: d3_y_add18_28_muxcy_1/O      MUXCY        0.029    19.300   up
+# Info: nx35379z1                    (net)        0.000                   2   154
+# Info: d3_y_add18_28_muxcy_2/CI     MUXCY                 19.300   up
+# Info: d3_y_add18_28_muxcy_2/O      MUXCY        0.029    19.329   up
+# Info: nx35380z1                    (net)        0.000                   2   155
+# Info: d3_y_add18_28_muxcy_3/CI     MUXCY                 19.329   up
+# Info: d3_y_add18_28_muxcy_3/O      MUXCY        0.029    19.358   up
+# Info: nx35381z1                    (net)        0.000                   2   156
+# Info: d3_y_add18_28_muxcy_4/CI     MUXCY                 19.358   up
+# Info: d3_y_add18_28_muxcy_4/O      MUXCY        0.029    19.387   up
+# Info: nx35382z1                    (net)        0.000                   2   157
+# Info: d3_y_add18_28_muxcy_5/CI     MUXCY                 19.387   up
+# Info: d3_y_add18_28_muxcy_5/O      MUXCY        0.029    19.416   up
+# Info: nx35383z1                    (net)        0.000                   2   158
+# Info: d3_y_add18_28_muxcy_6/CI     MUXCY                 19.416   up
+# Info: d3_y_add18_28_muxcy_6/O      MUXCY        0.029    19.445   up
+# Info: nx35384z1                    (net)        0.000                   2   159
+# Info: d3_y_add18_28_muxcy_7/CI     MUXCY                 19.445   up
+# Info: d3_y_add18_28_muxcy_7/O      MUXCY        0.029    19.474   up
+# Info: nx35385z1                    (net)        0.000                   2   160
+# Info: d3_y_add18_28_muxcy_8/CI     MUXCY                 19.474   up
+# Info: d3_y_add18_28_muxcy_8/O      MUXCY        0.029    19.503   up
+# Info: nx35386z1                    (net)        0.000                   2   161
+# Info: d3_y_add18_28_muxcy_9/CI     MUXCY                 19.503   up
+# Info: d3_y_add18_28_muxcy_9/O      MUXCY        0.029    19.532   up
+# Info: nx13546z1                    (net)        0.000                   2   162
+# Info: d3_y_add18_28_muxcy_10/CI    MUXCY                 19.532   up
+# Info: d3_y_add18_28_muxcy_10/O     MUXCY        0.029    19.561   up
+# Info: nx13547z1                    (net)        0.000                   2   163
+# Info: d3_y_add18_28_muxcy_11/CI    MUXCY                 19.561   up
+# Info: d3_y_add18_28_muxcy_11/O     MUXCY        0.029    19.590   up
+# Info: nx13548z1                    (net)        0.000                   2   164
+# Info: d3_y_add18_28_muxcy_12/CI    MUXCY                 19.590   up
+# Info: d3_y_add18_28_muxcy_12/O     MUXCY        0.029    19.619   up
+# Info: nx13549z1                    (net)        0.000                   2   165
+# Info: d3_y_add18_28_muxcy_13/CI    MUXCY                 19.619   up
+# Info: d3_y_add18_28_muxcy_13/O     MUXCY        0.029    19.648   up
+# Info: nx13550z1                    (net)        0.000                   2   166
+# Info: d3_y_add18_28_muxcy_14/CI    MUXCY                 19.648   up
+# Info: d3_y_add18_28_muxcy_14/O     MUXCY        0.029    19.677   up
+# Info: nx64010z1                    (net)        0.000                   1   167
+# Info: d3_y_add18_28_xorcy_15/CI    XORCY                 19.677   up
+# Info: d3_y_add18_28_xorcy_15/O     XORCY        0.287    19.964   up
+# Info: d3_y(21)                     (net)        0.678                  21   168
+# Info: ix26988z28344/I1             LUT5                  20.642   up
+# Info: ix26988z28344/O              LUT5         0.124    20.766   up
+# Info: nx26988z1                    (net)        0.335                   2   169
+# Info: d4_y_add19_29_muxcy_0/CI     MUXCY                 21.101   up
+# Info: d4_y_add19_29_muxcy_0/O      MUXCY        0.029    21.130   up
+# Info: nx26989z1                    (net)        0.000                   2   170
+# Info: d4_y_add19_29_muxcy_1/CI     MUXCY                 21.130   up
+# Info: d4_y_add19_29_muxcy_1/O      MUXCY        0.029    21.159   up
+# Info: nx26990z1                    (net)        0.000                   2   171
+# Info: d4_y_add19_29_muxcy_2/CI     MUXCY                 21.159   up
+# Info: d4_y_add19_29_muxcy_2/O      MUXCY        0.029    21.188   up
+# Info: nx26991z1                    (net)        0.000                   2   172
+# Info: d4_y_add19_29_muxcy_3/CI     MUXCY                 21.188   up
+# Info: d4_y_add19_29_muxcy_3/O      MUXCY        0.029    21.217   up
+# Info: nx26992z1                    (net)        0.000                   2   173
+# Info: d4_y_add19_29_muxcy_4/CI     MUXCY                 21.217   up
+# Info: d4_y_add19_29_muxcy_4/O      MUXCY        0.029    21.246   up
+# Info: nx26993z1                    (net)        0.000                   2   174
+# Info: d4_y_add19_29_muxcy_5/CI     MUXCY                 21.246   up
+# Info: d4_y_add19_29_muxcy_5/O      MUXCY        0.029    21.275   up
+# Info: nx26994z1                    (net)        0.000                   2   175
+# Info: d4_y_add19_29_muxcy_6/CI     MUXCY                 21.275   up
+# Info: d4_y_add19_29_muxcy_6/O      MUXCY        0.029    21.304   up
+# Info: nx26995z1                    (net)        0.000                   2   176
+# Info: d4_y_add19_29_muxcy_7/CI     MUXCY                 21.304   up
+# Info: d4_y_add19_29_muxcy_7/O      MUXCY        0.029    21.333   up
+# Info: nx26996z1                    (net)        0.000                   2   177
+# Info: d4_y_add19_29_muxcy_8/CI     MUXCY                 21.333   up
+# Info: d4_y_add19_29_muxcy_8/O      MUXCY        0.029    21.362   up
+# Info: nx26997z1                    (net)        0.000                   2   178
+# Info: d4_y_add19_29_muxcy_9/CI     MUXCY                 21.362   up
+# Info: d4_y_add19_29_muxcy_9/O      MUXCY        0.029    21.391   up
+# Info: nx27215z1                    (net)        0.000                   2   179
+# Info: d4_y_add19_29_muxcy_10/CI    MUXCY                 21.391   up
+# Info: d4_y_add19_29_muxcy_10/O     MUXCY        0.029    21.420   up
+# Info: nx27214z1                    (net)        0.000                   2   180
+# Info: d4_y_add19_29_muxcy_11/CI    MUXCY                 21.420   up
+# Info: d4_y_add19_29_muxcy_11/O     MUXCY        0.029    21.449   up
+# Info: nx27213z1                    (net)        0.000                   2   181
+# Info: d4_y_add19_29_muxcy_12/CI    MUXCY                 21.449   up
+# Info: d4_y_add19_29_muxcy_12/O     MUXCY        0.029    21.478   up
+# Info: nx27212z1                    (net)        0.000                   2   182
+# Info: d4_y_add19_29_muxcy_13/CI    MUXCY                 21.478   up
+# Info: d4_y_add19_29_muxcy_13/O     MUXCY        0.029    21.507   up
+# Info: nx27211z1                    (net)        0.000                   2   183
+# Info: d4_y_add19_29_muxcy_14/CI    MUXCY                 21.507   up
+# Info: d4_y_add19_29_muxcy_14/O     MUXCY        0.029    21.536   up
+# Info: nx27210z1                    (net)        0.000                   2   184
+# Info: d4_y_add19_29_muxcy_15/CI    MUXCY                 21.536   up
+# Info: d4_y_add19_29_muxcy_15/O     MUXCY        0.029    21.565   up
+# Info: nx42286z1                    (net)        0.000                   1   185
+# Info: d4_y_add19_29_xorcy_16/CI    XORCY                 21.565   up
+# Info: d4_y_add19_29_xorcy_16/O     XORCY        0.287    21.852   up
+# Info: d4_y(21)                     (net)        0.698                  22   186
+# Info: ix31215z28344/I1             LUT5                  22.550   up
+# Info: ix31215z28344/O              LUT5         0.124    22.674   up
+# Info: nx31215z1                    (net)        0.335                   2   187
+# Info: d5_y_add20_30_muxcy_0/CI     MUXCY                 23.009   up
+# Info: d5_y_add20_30_muxcy_0/O      MUXCY        0.029    23.038   up
+# Info: nx31214z1                    (net)        0.000                   2   188
+# Info: d5_y_add20_30_muxcy_1/CI     MUXCY                 23.038   up
+# Info: d5_y_add20_30_muxcy_1/O      MUXCY        0.029    23.067   up
+# Info: nx31213z1                    (net)        0.000                   2   189
+# Info: d5_y_add20_30_muxcy_2/CI     MUXCY                 23.067   up
+# Info: d5_y_add20_30_muxcy_2/O      MUXCY        0.029    23.096   up
+# Info: nx31212z1                    (net)        0.000                   2   190
+# Info: d5_y_add20_30_muxcy_3/CI     MUXCY                 23.096   up
+# Info: d5_y_add20_30_muxcy_3/O      MUXCY        0.029    23.125   up
+# Info: nx31211z1                    (net)        0.000                   2   191
+# Info: d5_y_add20_30_muxcy_4/CI     MUXCY                 23.125   up
+# Info: d5_y_add20_30_muxcy_4/O      MUXCY        0.029    23.154   up
+# Info: nx31210z1                    (net)        0.000                   2   192
+# Info: d5_y_add20_30_muxcy_5/CI     MUXCY                 23.154   up
+# Info: d5_y_add20_30_muxcy_5/O      MUXCY        0.029    23.183   up
+# Info: nx31209z1                    (net)        0.000                   2   193
+# Info: d5_y_add20_30_muxcy_6/CI     MUXCY                 23.183   up
+# Info: d5_y_add20_30_muxcy_6/O      MUXCY        0.029    23.212   up
+# Info: nx31208z1                    (net)        0.000                   2   194
+# Info: d5_y_add20_30_muxcy_7/CI     MUXCY                 23.212   up
+# Info: d5_y_add20_30_muxcy_7/O      MUXCY        0.029    23.241   up
+# Info: nx31207z1                    (net)        0.000                   2   195
+# Info: d5_y_add20_30_muxcy_8/CI     MUXCY                 23.241   up
+# Info: d5_y_add20_30_muxcy_8/O      MUXCY        0.029    23.270   up
+# Info: nx31206z1                    (net)        0.000                   2   196
+# Info: d5_y_add20_30_muxcy_9/CI     MUXCY                 23.270   up
+# Info: d5_y_add20_30_muxcy_9/O      MUXCY        0.029    23.299   up
+# Info: nx9290z1                     (net)        0.000                   2   197
+# Info: d5_y_add20_30_muxcy_10/CI    MUXCY                 23.299   up
+# Info: d5_y_add20_30_muxcy_10/O     MUXCY        0.029    23.328   up
+# Info: nx9291z1                     (net)        0.000                   2   198
+# Info: d5_y_add20_30_muxcy_11/CI    MUXCY                 23.328   up
+# Info: d5_y_add20_30_muxcy_11/O     MUXCY        0.029    23.357   up
+# Info: nx9292z1                     (net)        0.000                   2   199
+# Info: d5_y_add20_30_muxcy_12/CI    MUXCY                 23.357   up
+# Info: d5_y_add20_30_muxcy_12/O     MUXCY        0.029    23.386   up
+# Info: nx9293z1                     (net)        0.000                   2   200
+# Info: d5_y_add20_30_muxcy_13/CI    MUXCY                 23.386   up
+# Info: d5_y_add20_30_muxcy_13/O     MUXCY        0.029    23.415   up
+# Info: nx9294z1                     (net)        0.000                   2   201
+# Info: d5_y_add20_30_muxcy_14/CI    MUXCY                 23.415   up
+# Info: d5_y_add20_30_muxcy_14/O     MUXCY        0.029    23.444   up
+# Info: nx9295z1                     (net)        0.000                   2   202
+# Info: d5_y_add20_30_muxcy_15/CI    MUXCY                 23.444   up
+# Info: d5_y_add20_30_muxcy_15/O     MUXCY        0.029    23.473   up
+# Info: nx9296z1                     (net)        0.000                   2   203
+# Info: d5_y_add20_30_muxcy_16/CI    MUXCY                 23.473   up
+# Info: d5_y_add20_30_muxcy_16/O     MUXCY        0.029    23.502   up
+# Info: nx59756z1                    (net)        0.000                   1   204
+# Info: d5_y_add20_30_xorcy_17/CI    XORCY                 23.502   up
+# Info: d5_y_add20_30_xorcy_17/O     XORCY        0.287    23.789   up
+# Info: d5_y(21)                     (net)        0.871                  30   205
+# Info: ix39235z39819/I1             LUT5                  24.660   up
+# Info: ix39235z39819/O              LUT5         0.124    24.784   up
+# Info: nx39235z1                    (net)        0.000                   2   206
+# Info: d6_y_addsub22_0_muxcy_0/S    MUXCY                 24.784   up
+# Info: d6_y_addsub22_0_muxcy_0/O    MUXCY        0.122    24.906   up
+# Info: nx39236z1                    (net)        0.000                   2   207
+# Info: d6_y_addsub22_0_muxcy_1/CI   MUXCY                 24.906   up
+# Info: d6_y_addsub22_0_muxcy_1/O    MUXCY        0.029    24.935   up
+# Info: nx39237z1                    (net)        0.000                   2   208
+# Info: d6_y_addsub22_0_muxcy_2/CI   MUXCY                 24.935   up
+# Info: d6_y_addsub22_0_muxcy_2/O    MUXCY        0.029    24.964   up
+# Info: nx39238z1                    (net)        0.000                   2   209
+# Info: d6_y_addsub22_0_muxcy_3/CI   MUXCY                 24.964   up
+# Info: d6_y_addsub22_0_muxcy_3/O    MUXCY        0.029    24.993   up
+# Info: nx39239z1                    (net)        0.000                   2   210
+# Info: d6_y_addsub22_0_muxcy_4/CI   MUXCY                 24.993   up
+# Info: d6_y_addsub22_0_muxcy_4/O    MUXCY        0.029    25.022   up
+# Info: nx39240z1                    (net)        0.000                   2   211
+# Info: d6_y_addsub22_0_muxcy_5/CI   MUXCY                 25.022   up
+# Info: d6_y_addsub22_0_muxcy_5/O    MUXCY        0.029    25.051   up
+# Info: nx39241z1                    (net)        0.000                   2   212
+# Info: d6_y_addsub22_0_muxcy_6/CI   MUXCY                 25.051   up
+# Info: d6_y_addsub22_0_muxcy_6/O    MUXCY        0.029    25.080   up
+# Info: nx39242z1                    (net)        0.000                   2   213
+# Info: d6_y_addsub22_0_muxcy_7/CI   MUXCY                 25.080   up
+# Info: d6_y_addsub22_0_muxcy_7/O    MUXCY        0.029    25.109   up
+# Info: nx39243z1                    (net)        0.000                   2   214
+# Info: d6_y_addsub22_0_muxcy_8/CI   MUXCY                 25.109   up
+# Info: d6_y_addsub22_0_muxcy_8/O    MUXCY        0.029    25.138   up
+# Info: nx39244z1                    (net)        0.000                   2   215
+# Info: d6_y_addsub22_0_muxcy_9/CI   MUXCY                 25.138   up
+# Info: d6_y_addsub22_0_muxcy_9/O    MUXCY        0.029    25.167   up
+# Info: nx58884z1                    (net)        0.000                   2   216
+# Info: d6_y_addsub22_0_muxcy_10/CI  MUXCY                 25.167   up
+# Info: d6_y_addsub22_0_muxcy_10/O   MUXCY        0.029    25.196   up
+# Info: nx58885z1                    (net)        0.000                   2   217
+# Info: d6_y_addsub22_0_muxcy_11/CI  MUXCY                 25.196   up
+# Info: d6_y_addsub22_0_muxcy_11/O   MUXCY        0.029    25.225   up
+# Info: nx58886z1                    (net)        0.000                   2   218
+# Info: d6_y_addsub22_0_muxcy_12/CI  MUXCY                 25.225   up
+# Info: d6_y_addsub22_0_muxcy_12/O   MUXCY        0.029    25.254   up
+# Info: nx58887z1                    (net)        0.000                   2   219
+# Info: d6_y_addsub22_0_muxcy_13/CI  MUXCY                 25.254   up
+# Info: d6_y_addsub22_0_muxcy_13/O   MUXCY        0.029    25.283   up
+# Info: nx58888z1                    (net)        0.000                   2   220
+# Info: d6_y_addsub22_0_muxcy_14/CI  MUXCY                 25.283   up
+# Info: d6_y_addsub22_0_muxcy_14/O   MUXCY        0.029    25.312   up
+# Info: nx58889z1                    (net)        0.000                   2   221
+# Info: d6_y_addsub22_0_muxcy_15/CI  MUXCY                 25.312   up
+# Info: d6_y_addsub22_0_muxcy_15/O   MUXCY        0.029    25.341   up
+# Info: nx58890z1                    (net)        0.000                   2   222
+# Info: d6_y_addsub22_0_muxcy_16/CI  MUXCY                 25.341   up
+# Info: d6_y_addsub22_0_muxcy_16/O   MUXCY        0.029    25.370   up
+# Info: nx58891z1                    (net)        0.000                   2   223
+# Info: d6_y_addsub22_0_muxcy_17/CI  MUXCY                 25.370   up
+# Info: d6_y_addsub22_0_muxcy_17/O   MUXCY        0.029    25.399   up
+# Info: nx58892z1                    (net)        0.000                   2   224
+# Info: d6_y_addsub22_0_muxcy_18/CI  MUXCY                 25.399   up
+# Info: d6_y_addsub22_0_muxcy_18/O   MUXCY        0.029    25.428   up
+# Info: nx43816z1                    (net)        0.000                   1   225
+# Info: d6_y_addsub22_0_xorcy_19/CI  XORCY                 25.428   up
+# Info: d6_y_addsub22_0_xorcy_19/O   XORCY        0.287    25.715   up
+# Info: d6_y(21)                     (net)        0.678                  21   226
+# Info: ix7289z39819/I1              LUT5                  26.393   up
+# Info: ix7289z39819/O               LUT5         0.124    26.517   up
+# Info: nx7289z1                     (net)        0.000                   1   227
+# Info: d7_y_addsub22_1_muxcy_0/S    MUXCY                 26.517   up
+# Info: d7_y_addsub22_1_muxcy_0/O    MUXCY        0.122    26.639   up
+# Info: nx7290z1                     (net)        0.000                   1   228
+# Info: d7_y_addsub22_1_muxcy_1/CI   MUXCY                 26.639   up
+# Info: d7_y_addsub22_1_muxcy_1/O    MUXCY        0.029    26.668   up
+# Info: nx7291z1                     (net)        0.000                   1   229
+# Info: d7_y_addsub22_1_muxcy_2/CI   MUXCY                 26.668   up
+# Info: d7_y_addsub22_1_muxcy_2/O    MUXCY        0.029    26.697   up
+# Info: nx7292z1                     (net)        0.000                   1   230
+# Info: d7_y_addsub22_1_muxcy_3/CI   MUXCY                 26.697   up
+# Info: d7_y_addsub22_1_muxcy_3/O    MUXCY        0.029    26.726   up
+# Info: nx7293z1                     (net)        0.000                   1   231
+# Info: d7_y_addsub22_1_muxcy_4/CI   MUXCY                 26.726   up
+# Info: d7_y_addsub22_1_muxcy_4/O    MUXCY        0.029    26.755   up
+# Info: nx7294z1                     (net)        0.000                   1   232
+# Info: d7_y_addsub22_1_muxcy_5/CI   MUXCY                 26.755   up
+# Info: d7_y_addsub22_1_muxcy_5/O    MUXCY        0.029    26.784   up
+# Info: nx7295z1                     (net)        0.000                   1   233
+# Info: d7_y_addsub22_1_muxcy_6/CI   MUXCY                 26.784   up
+# Info: d7_y_addsub22_1_muxcy_6/O    MUXCY        0.029    26.813   up
+# Info: nx7296z1                     (net)        0.000                   1   234
+# Info: d7_y_addsub22_1_muxcy_7/CI   MUXCY                 26.813   up
+# Info: d7_y_addsub22_1_muxcy_7/O    MUXCY        0.029    26.842   up
+# Info: nx7297z1                     (net)        0.000                   1   235
+# Info: d7_y_addsub22_1_muxcy_8/CI   MUXCY                 26.842   up
+# Info: d7_y_addsub22_1_muxcy_8/O    MUXCY        0.029    26.871   up
+# Info: nx7298z1                     (net)        0.000                   1   236
+# Info: d7_y_addsub22_1_muxcy_9/CI   MUXCY                 26.871   up
+# Info: d7_y_addsub22_1_muxcy_9/O    MUXCY        0.029    26.900   up
+# Info: nx59218z1                    (net)        0.000                   1   237
+# Info: d7_y_addsub22_1_muxcy_10/CI  MUXCY                 26.900   up
+# Info: d7_y_addsub22_1_muxcy_10/O   MUXCY        0.029    26.929   up
+# Info: nx59219z1                    (net)        0.000                   1   238
+# Info: d7_y_addsub22_1_muxcy_11/CI  MUXCY                 26.929   up
+# Info: d7_y_addsub22_1_muxcy_11/O   MUXCY        0.029    26.958   up
+# Info: nx59220z1                    (net)        0.000                   1   239
+# Info: d7_y_addsub22_1_muxcy_12/CI  MUXCY                 26.958   up
+# Info: d7_y_addsub22_1_muxcy_12/O   MUXCY        0.029    26.987   up
+# Info: nx59221z1                    (net)        0.000                   1   240
+# Info: d7_y_addsub22_1_muxcy_13/CI  MUXCY                 26.987   up
+# Info: d7_y_addsub22_1_muxcy_13/O   MUXCY        0.029    27.016   up
+# Info: nx59222z1                    (net)        0.000                   1   241
+# Info: d7_y_addsub22_1_muxcy_14/CI  MUXCY                 27.016   up
+# Info: d7_y_addsub22_1_muxcy_14/O   MUXCY        0.029    27.045   up
+# Info: nx59223z1                    (net)        0.000                   1   242
+# Info: d7_y_addsub22_1_muxcy_15/CI  MUXCY                 27.045   up
+# Info: d7_y_addsub22_1_muxcy_15/O   MUXCY        0.029    27.074   up
+# Info: nx59224z1                    (net)        0.000                   1   243
+# Info: d7_y_addsub22_1_muxcy_16/CI  MUXCY                 27.074   up
+# Info: d7_y_addsub22_1_muxcy_16/O   MUXCY        0.029    27.103   up
+# Info: nx59225z1                    (net)        0.000                   1   244
+# Info: d7_y_addsub22_1_muxcy_17/CI  MUXCY                 27.103   up
+# Info: d7_y_addsub22_1_muxcy_17/O   MUXCY        0.029    27.132   up
+# Info: nx59226z1                    (net)        0.000                   1   245
+# Info: d7_y_addsub22_1_muxcy_18/CI  MUXCY                 27.132   up
+# Info: d7_y_addsub22_1_muxcy_18/O   MUXCY        0.029    27.161   up
+# Info: nx59227z1                    (net)        0.000                   1   246
+# Info: d7_y_addsub22_1_muxcy_19/CI  MUXCY                 27.161   up
+# Info: d7_y_addsub22_1_muxcy_19/O   MUXCY        0.029    27.190   up
+# Info: nx45138z1                    (net)        0.000                   1   247
+# Info: d7_y_addsub22_1_xorcy_20/CI  XORCY                 27.190   up
+# Info: d7_y_addsub22_1_xorcy_20/O   XORCY        0.287    27.477   up
+# Info: d7_y(21)                     (net)        0.333                   1   248
+# Info: ix50439z1324/I1              LUT2                  27.810   up
+# Info: ix50439z1324/O               LUT2         0.124    27.934   up
+# Info: nx50439z2                    (net)        0.333                   1   249
+# Info: ix50439z1314/I5              LUT6                  28.267   up
+# Info: ix50439z1314/O               LUT6         0.124    28.391   up
+# Info: nx50439z1                    (net)        0.333                   1   250
+# Info: reg_y_reg(5)/D               FDRE                  28.724   up
+# Info: 		Initial edge separation:      1.000
+# Info: 		Source clock delay:      -    0.000
+# Info: 		Dest clock delay:        +    1.435
+# Info: 		                        -----------
+# Info: 		Edge separation:              2.435
+# Info: 		Setup constraint:        -    0.040
+# Info: 		                        -----------
+# Info: 		Data required time:           2.395
+# Info: 		Data arrival time:       -   28.724   ( 46.93% cell delay, 53.07% net delay )
+# Info: 		                        -----------
+# Info: 		Slack (VIOLATED):           -26.329
+# Info: End CTE Analysis ..... CPU Time Used: 0 sec.
+Done

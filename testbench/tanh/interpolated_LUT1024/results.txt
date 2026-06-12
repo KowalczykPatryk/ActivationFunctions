@@ -1,0 +1,129 @@
+[2026-06-12 10:51:04 UTC] chmod +x run.bash; sed -i -e 's/\r//g' run.bash; ./run.bash  
+Python 3.13.0
+2.0.1
+Simulating with Questa
+rm -f results.xml
+"make" -f Makefile results.xml
+make[1]: Entering directory '/home/runner'
+mkdir -p sim_build
+# Make sure all libs in SOURCES_VHDL_* are mentioned in VHDL_LIB_ORDER and vice versa
+/usr/local/lib/python3.13/site-packages/cocotb_tools/makefiles/simulators/Makefile.questa-compat:131: Using MODULE is deprecated, please use COCOTB_TEST_MODULES instead.
+/usr/local/lib/python3.13/site-packages/cocotb_tools/makefiles/simulators/Makefile.questa-compat:131: Using TOPLEVEL is deprecated, please use COCOTB_TOPLEVEL instead.
+rm -f results.xml
+set -o pipefail; \
+  COCOTB_TEST_MODULES=testbench \
+  COCOTB_TESTCASE= \
+  COCOTB_TEST_FILTER= \
+  COCOTB_TOPLEVEL=lut_interp \
+  GPI_EXTRA= \
+  TOPLEVEL_LANG=verilog \
+  VHDL_GPI_INTERFACE=fli \
+  COCOTB__QUESTA_MODE=compat \
+ /usr/share/questa/questasim//linux_x86_64/vsim -c -64  -do sim_build/runsim.do  
+Reading pref.tcl
+
+# 2025.2
+
+# do sim_build/runsim.do
+# QuestaSim-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap -c 
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+# ** Warning: Local ini file already exists and will not be overwritten. -c will be ignored.
+# QuestaSim-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work sim_build/work 
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+# Modifying modelsim.ini
+# QuestaSim-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 06:51:09 on Jun 12,2026
+# vlog -work work -sv -timescale 1ns/1ps -mfcu "+acc" design.sv 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module lut_interp
+# 
+# Top level modules:
+# 	lut_interp
+# End time: 06:51:10 on Jun 12,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -onfinish exit -pli "/usr/local/lib/python3.13/site-packages/cocotb/libs/libcocotbvpi_modelsim.so" work.lut_interp 
+# Start time: 06:51:10 on Jun 12,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vsim-3865) Due to PLI being present, global +acc is being enabled automatically. This will cause your simulation to run very slowly. Please use vsim -no_autoacc to disable this feature. This feature is now deprecated and will be removed from future releases.
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
+# //  Questa Sim-64
+# //  Version 2025.2 linux_x86_64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.lut_interp(fast)
+# Loading /usr/local/lib/python3.13/site-packages/cocotb/libs/libcocotbvpi_modelsim.so
+#      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.13.0rc1 interpreter at /usr/local/bin/python3.13
+#      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+#      0.00ns INFO     cocotb                             Running on ModelSim for Questa-64 version 2025.1 2025.05
+#      0.00ns INFO     cocotb                             Seeding Python random module with 1781261471
+#      0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /usr/local/lib/python3.13/site-packages/cocotb
+#      0.00ns INFO     cocotb                             Running tests
+#      0.00ns INFO     cocotb.regression                  running testbench.test_tanh_generic (1/1)
+#     80.00ns INFO     cocotb.lut_interp                  Detected latency = 3
+#  20130.00ns INFO     cocotb.lut_interp                  FLUSH START: scoreboard size = 3
+#  20130.00ns INFO     cocotb.lut_interp                  Last driven x = 4.000000
+#  20140.00ns INFO     cocotb.lut_interp                  FLUSH[0] raw=0x0FFD
+#  20140.00ns INFO     cocotb.lut_interp                  FLUSH[0] idx=1997 x=3.991996 ref=0.999318 hw=0.999268 raw=0x0FFD err=0.000051
+#  20150.00ns INFO     cocotb.lut_interp                  FLUSH[1] raw=0x0FFD
+#  20150.00ns INFO     cocotb.lut_interp                  FLUSH[1] idx=1998 x=3.995998 ref=0.999324 hw=0.999268 raw=0x0FFD err=0.000056
+#  20160.00ns INFO     cocotb.lut_interp                  FLUSH[2] raw=0x0FFD
+#  20160.00ns INFO     cocotb.lut_interp                  FLUSH[2] idx=1999 x=4.000000 ref=0.999329 hw=0.999268 raw=0x0FFD err=0.000062
+#  20160.00ns INFO     cocotb.lut_interp                  ==== TANH BENCHMARK ====
+#  20160.00ns INFO     cocotb.lut_interp                  Latency : 3 cycle(s) (30 ns)
+#  20160.00ns INFO     cocotb.lut_interp                  MaxE    : 0.004146
+#  20160.00ns INFO     cocotb.lut_interp                  MAE     : 0.000947
+#  20160.00ns INFO     cocotb.lut_interp                  RMSE    : 0.001577
+#  20160.00ns INFO     cocotb.lut_interp                  WORST   : idx=1010, x=0.042021, ref=0.041996, hw=0.046143, raw=0x00BD, err=0.004146
+#  20160.00ns INFO     cocotb.lut_interp                  ==== LAST 20 SAMPLES ====
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1980 x= 3.923962 ref= 0.999219 hw= 0.999268 raw=0x0FFD err= 0.000048
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1981 x= 3.927964 ref= 0.999225 hw= 0.999268 raw=0x0FFD err= 0.000042
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1982 x= 3.931966 ref= 0.999232 hw= 0.999268 raw=0x0FFD err= 0.000036
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1983 x= 3.935968 ref= 0.999238 hw= 0.999268 raw=0x0FFD err= 0.000030
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1984 x= 3.939970 ref= 0.999244 hw= 0.999268 raw=0x0FFD err= 0.000024
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1985 x= 3.943972 ref= 0.999250 hw= 0.999268 raw=0x0FFD err= 0.000018
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1986 x= 3.947974 ref= 0.999256 hw= 0.999268 raw=0x0FFD err= 0.000012
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1987 x= 3.951976 ref= 0.999262 hw= 0.999268 raw=0x0FFD err= 0.000006
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1988 x= 3.955978 ref= 0.999268 hw= 0.999268 raw=0x0FFD err= 0.000000
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1989 x= 3.959980 ref= 0.999273 hw= 0.999268 raw=0x0FFD err= 0.000006
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1990 x= 3.963982 ref= 0.999279 hw= 0.999268 raw=0x0FFD err= 0.000012
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1991 x= 3.967984 ref= 0.999285 hw= 0.999268 raw=0x0FFD err= 0.000017
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1992 x= 3.971986 ref= 0.999291 hw= 0.999268 raw=0x0FFD err= 0.000023
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1993 x= 3.975988 ref= 0.999296 hw= 0.999268 raw=0x0FFD err= 0.000029
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1994 x= 3.979990 ref= 0.999302 hw= 0.999268 raw=0x0FFD err= 0.000034
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1995 x= 3.983992 ref= 0.999307 hw= 0.999268 raw=0x0FFD err= 0.000040
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1996 x= 3.987994 ref= 0.999313 hw= 0.999268 raw=0x0FFD err= 0.000045
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1997 x= 3.991996 ref= 0.999318 hw= 0.999268 raw=0x0FFD err= 0.000051
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1998 x= 3.995998 ref= 0.999324 hw= 0.999268 raw=0x0FFD err= 0.000056
+#  20160.00ns INFO     cocotb.lut_interp                  idx=1999 x= 4.000000 ref= 0.999329 hw= 0.999268 raw=0x0FFD err= 0.000062
+#  20160.00ns INFO     cocotb.lut_interp                  ==== LARGE ERRORS ====
+#  20160.00ns INFO     cocotb.lut_interp                  Config : INPUT_W=16 OUTPUT_W=16 Q_IN=12 Q_OUT=12 STEPS=2000
+#  20160.00ns INFO     cocotb.regression                  testbench.test_tanh_generic passed
+#  20160.00ns INFO     cocotb.regression                  **************************************************************************************
+#                                                         ** TEST                          STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+#                                                         **************************************************************************************
+#                                                         ** testbench.test_tanh_generic    PASS       20160.00           0.49      41533.25  **
+#                                                         **************************************************************************************
+#                                                         ** TESTS=1 PASS=1 FAIL=0 SKIP=0              20160.00           0.49      41133.81  **
+#                                                         **************************************************************************************
+# ** Note: $finish    : design.sv(31)
+#    Time: 20160 ns  Iteration: 3  Instance: /lut_interp
+# End time: 06:51:12 on Jun 12,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 2
+make[1]: Leaving directory '/home/runner'
+Done

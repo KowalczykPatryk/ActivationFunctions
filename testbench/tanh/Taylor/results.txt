@@ -1,0 +1,521 @@
+[2026-06-12 15:22:27 UTC] chmod +x run.bash; sed -i -e 's/\r//g' run.bash; ./run.bash  
+Python 3.13.0
+2.0.1
+Simulating with Questa
+rm -f results.xml
+"make" -f Makefile results.xml
+make[1]: Entering directory '/home/runner'
+mkdir -p sim_build
+# Make sure all libs in SOURCES_VHDL_* are mentioned in VHDL_LIB_ORDER and vice versa
+/usr/local/lib/python3.13/site-packages/cocotb_tools/makefiles/simulators/Makefile.questa-compat:131: Using MODULE is deprecated, please use COCOTB_TEST_MODULES instead.
+/usr/local/lib/python3.13/site-packages/cocotb_tools/makefiles/simulators/Makefile.questa-compat:131: Using TOPLEVEL is deprecated, please use COCOTB_TOPLEVEL instead.
+rm -f results.xml
+set -o pipefail; \
+  COCOTB_TEST_MODULES=testbench \
+  COCOTB_TESTCASE= \
+  COCOTB_TEST_FILTER= \
+  COCOTB_TOPLEVEL=tanh \
+  GPI_EXTRA= \
+  TOPLEVEL_LANG=verilog \
+  VHDL_GPI_INTERFACE=fli \
+  COCOTB__QUESTA_MODE=compat \
+ /usr/share/questa/questasim//linux_x86_64/vsim -c -64  -do sim_build/runsim.do  
+Reading pref.tcl
+
+# 2025.2
+
+# do sim_build/runsim.do
+# QuestaSim-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap -c 
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+# ** Warning: Local ini file already exists and will not be overwritten. -c will be ignored.
+# QuestaSim-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work sim_build/work 
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+# Modifying modelsim.ini
+# QuestaSim-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 11:22:33 on Jun 12,2026
+# vlog -work work -sv -timescale 1ns/1ps -mfcu "+acc" design.sv 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module tanh
+# 
+# Top level modules:
+# 	tanh
+# End time: 11:22:33 on Jun 12,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -onfinish exit -pli "/usr/local/lib/python3.13/site-packages/cocotb/libs/libcocotbvpi_modelsim.so" work.tanh 
+# Start time: 11:22:33 on Jun 12,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vsim-3865) Due to PLI being present, global +acc is being enabled automatically. This will cause your simulation to run very slowly. Please use vsim -no_autoacc to disable this feature. This feature is now deprecated and will be removed from future releases.
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
+# //  Questa Sim-64
+# //  Version 2025.2 linux_x86_64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.tanh(fast)
+# Loading /usr/local/lib/python3.13/site-packages/cocotb/libs/libcocotbvpi_modelsim.so
+#      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.13.0rc1 interpreter at /usr/local/bin/python3.13
+#      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+#      0.00ns INFO     cocotb                             Running on ModelSim for Questa-64 version 2025.1 2025.05
+#      0.00ns INFO     cocotb                             Seeding Python random module with 1781277755
+#      0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /usr/local/lib/python3.13/site-packages/cocotb
+#      0.00ns INFO     cocotb                             Running tests
+#      0.00ns INFO     cocotb.regression                  running testbench.test_tanh_generic (1/1)
+#     60.00ns INFO     cocotb.tanh                        Detected latency = 1
+#  20110.00ns INFO     cocotb.tanh                        FLUSH START: scoreboard size = 1
+#  20110.00ns INFO     cocotb.tanh                        Last driven x = 4.000000
+#  20120.00ns INFO     cocotb.tanh                        FLUSH[0] raw=0x1000
+#  20120.00ns INFO     cocotb.tanh                        FLUSH[0] idx=1999 x=4.000000 ref=0.999329 hw=1.000000 raw=0x1000 err=0.000671
+#  20120.00ns INFO     cocotb.tanh                        ==== TANH BENCHMARK ====
+#  20120.00ns INFO     cocotb.tanh                        Latency : 1 cycle(s) (10 ns)
+#  20120.00ns INFO     cocotb.tanh                        MaxE    : 0.153798
+#  20120.00ns INFO     cocotb.tanh                        MAE     : 0.026829
+#  20120.00ns INFO     cocotb.tanh                        RMSE    : 0.045678
+#  20120.00ns INFO     cocotb.tanh                        WORST   : idx=1310, x=1.242621, ref=0.846202, hw=1.000000, raw=0x1000, err=0.153798
+#  20120.00ns INFO     cocotb.tanh                        ==== LAST 20 SAMPLES ====
+#  20120.00ns INFO     cocotb.tanh                        idx=1980 x= 3.923962 ref= 0.999219 hw= 1.000000 raw=0x1000 err= 0.000781
+#  20120.00ns INFO     cocotb.tanh                        idx=1981 x= 3.927964 ref= 0.999225 hw= 1.000000 raw=0x1000 err= 0.000775
+#  20120.00ns INFO     cocotb.tanh                        idx=1982 x= 3.931966 ref= 0.999232 hw= 1.000000 raw=0x1000 err= 0.000768
+#  20120.00ns INFO     cocotb.tanh                        idx=1983 x= 3.935968 ref= 0.999238 hw= 1.000000 raw=0x1000 err= 0.000762
+#  20120.00ns INFO     cocotb.tanh                        idx=1984 x= 3.939970 ref= 0.999244 hw= 1.000000 raw=0x1000 err= 0.000756
+#  20120.00ns INFO     cocotb.tanh                        idx=1985 x= 3.943972 ref= 0.999250 hw= 1.000000 raw=0x1000 err= 0.000750
+#  20120.00ns INFO     cocotb.tanh                        idx=1986 x= 3.947974 ref= 0.999256 hw= 1.000000 raw=0x1000 err= 0.000744
+#  20120.00ns INFO     cocotb.tanh                        idx=1987 x= 3.951976 ref= 0.999262 hw= 1.000000 raw=0x1000 err= 0.000738
+#  20120.00ns INFO     cocotb.tanh                        idx=1988 x= 3.955978 ref= 0.999268 hw= 1.000000 raw=0x1000 err= 0.000732
+#  20120.00ns INFO     cocotb.tanh                        idx=1989 x= 3.959980 ref= 0.999273 hw= 1.000000 raw=0x1000 err= 0.000727
+#  20120.00ns INFO     cocotb.tanh                        idx=1990 x= 3.963982 ref= 0.999279 hw= 1.000000 raw=0x1000 err= 0.000721
+#  20120.00ns INFO     cocotb.tanh                        idx=1991 x= 3.967984 ref= 0.999285 hw= 1.000000 raw=0x1000 err= 0.000715
+#  20120.00ns INFO     cocotb.tanh                        idx=1992 x= 3.971986 ref= 0.999291 hw= 1.000000 raw=0x1000 err= 0.000709
+#  20120.00ns INFO     cocotb.tanh                        idx=1993 x= 3.975988 ref= 0.999296 hw= 1.000000 raw=0x1000 err= 0.000704
+#  20120.00ns INFO     cocotb.tanh                        idx=1994 x= 3.979990 ref= 0.999302 hw= 1.000000 raw=0x1000 err= 0.000698
+#  20120.00ns INFO     cocotb.tanh                        idx=1995 x= 3.983992 ref= 0.999307 hw= 1.000000 raw=0x1000 err= 0.000693
+#  20120.00ns INFO     cocotb.tanh                        idx=1996 x= 3.987994 ref= 0.999313 hw= 1.000000 raw=0x1000 err= 0.000687
+#  20120.00ns INFO     cocotb.tanh                        idx=1997 x= 3.991996 ref= 0.999318 hw= 1.000000 raw=0x1000 err= 0.000682
+#  20120.00ns INFO     cocotb.tanh                        idx=1998 x= 3.995998 ref= 0.999324 hw= 1.000000 raw=0x1000 err= 0.000676
+#  20120.00ns INFO     cocotb.tanh                        idx=1999 x= 4.000000 ref= 0.999329 hw= 1.000000 raw=0x1000 err= 0.000671
+#  20120.00ns INFO     cocotb.tanh                        ==== LARGE ERRORS ====
+#  20120.00ns INFO     cocotb.tanh                        idx= 542 x=-1.830915 ref=-0.949916 hw=-1.000000 raw=0xF000 err= 0.050084
+#  20120.00ns INFO     cocotb.tanh                        idx= 543 x=-1.826913 ref=-0.949523 hw=-1.000000 raw=0xF000 err= 0.050477
+#  20120.00ns INFO     cocotb.tanh                        idx= 544 x=-1.822911 ref=-0.949128 hw=-1.000000 raw=0xF000 err= 0.050872
+#  20120.00ns INFO     cocotb.tanh                        idx= 545 x=-1.818909 ref=-0.948730 hw=-1.000000 raw=0xF000 err= 0.051270
+#  20120.00ns INFO     cocotb.tanh                        idx= 546 x=-1.814907 ref=-0.948328 hw=-1.000000 raw=0xF000 err= 0.051672
+#  20120.00ns INFO     cocotb.tanh                        idx= 547 x=-1.810905 ref=-0.947924 hw=-1.000000 raw=0xF000 err= 0.052076
+#  20120.00ns INFO     cocotb.tanh                        idx= 548 x=-1.806903 ref=-0.947516 hw=-1.000000 raw=0xF000 err= 0.052484
+#  20120.00ns INFO     cocotb.tanh                        idx= 549 x=-1.802901 ref=-0.947106 hw=-1.000000 raw=0xF000 err= 0.052894
+#  20120.00ns INFO     cocotb.tanh                        idx= 550 x=-1.798899 ref=-0.946692 hw=-1.000000 raw=0xF000 err= 0.053308
+#  20120.00ns INFO     cocotb.tanh                        idx= 551 x=-1.794897 ref=-0.946275 hw=-1.000000 raw=0xF000 err= 0.053725
+#  20120.00ns INFO     cocotb.tanh                        idx= 552 x=-1.790895 ref=-0.945855 hw=-1.000000 raw=0xF000 err= 0.054145
+#  20120.00ns INFO     cocotb.tanh                        idx= 553 x=-1.786893 ref=-0.945432 hw=-1.000000 raw=0xF000 err= 0.054568
+#  20120.00ns INFO     cocotb.tanh                        idx= 554 x=-1.782891 ref=-0.945005 hw=-1.000000 raw=0xF000 err= 0.054995
+#  20120.00ns INFO     cocotb.tanh                        idx= 555 x=-1.778889 ref=-0.944576 hw=-1.000000 raw=0xF000 err= 0.055424
+#  20120.00ns INFO     cocotb.tanh                        idx= 556 x=-1.774887 ref=-0.944143 hw=-1.000000 raw=0xF000 err= 0.055857
+#  20120.00ns INFO     cocotb.tanh                        idx= 557 x=-1.770885 ref=-0.943706 hw=-1.000000 raw=0xF000 err= 0.056294
+#  20120.00ns INFO     cocotb.tanh                        idx= 558 x=-1.766883 ref=-0.943267 hw=-1.000000 raw=0xF000 err= 0.056733
+#  20120.00ns INFO     cocotb.tanh                        idx= 559 x=-1.762881 ref=-0.942824 hw=-1.000000 raw=0xF000 err= 0.057176
+#  20120.00ns INFO     cocotb.tanh                        idx= 560 x=-1.758879 ref=-0.942378 hw=-1.000000 raw=0xF000 err= 0.057622
+#  20120.00ns INFO     cocotb.tanh                        idx= 561 x=-1.754877 ref=-0.941928 hw=-1.000000 raw=0xF000 err= 0.058072
+#  20120.00ns INFO     cocotb.tanh                        idx= 562 x=-1.750875 ref=-0.941475 hw=-1.000000 raw=0xF000 err= 0.058525
+#  20120.00ns INFO     cocotb.tanh                        idx= 563 x=-1.746873 ref=-0.941019 hw=-1.000000 raw=0xF000 err= 0.058981
+#  20120.00ns INFO     cocotb.tanh                        idx= 564 x=-1.742871 ref=-0.940559 hw=-1.000000 raw=0xF000 err= 0.059441
+#  20120.00ns INFO     cocotb.tanh                        idx= 565 x=-1.738869 ref=-0.940095 hw=-1.000000 raw=0xF000 err= 0.059905
+#  20120.00ns INFO     cocotb.tanh                        idx= 566 x=-1.734867 ref=-0.939629 hw=-1.000000 raw=0xF000 err= 0.060371
+#  20120.00ns INFO     cocotb.tanh                        idx= 567 x=-1.730865 ref=-0.939158 hw=-1.000000 raw=0xF000 err= 0.060842
+#  20120.00ns INFO     cocotb.tanh                        idx= 568 x=-1.726863 ref=-0.938684 hw=-1.000000 raw=0xF000 err= 0.061316
+#  20120.00ns INFO     cocotb.tanh                        idx= 569 x=-1.722861 ref=-0.938207 hw=-1.000000 raw=0xF000 err= 0.061793
+#  20120.00ns INFO     cocotb.tanh                        idx= 570 x=-1.718859 ref=-0.937726 hw=-1.000000 raw=0xF000 err= 0.062274
+#  20120.00ns INFO     cocotb.tanh                        idx= 571 x=-1.714857 ref=-0.937241 hw=-1.000000 raw=0xF000 err= 0.062759
+#  20120.00ns INFO     cocotb.tanh                        idx= 572 x=-1.710855 ref=-0.936752 hw=-1.000000 raw=0xF000 err= 0.063248
+#  20120.00ns INFO     cocotb.tanh                        idx= 573 x=-1.706853 ref=-0.936260 hw=-1.000000 raw=0xF000 err= 0.063740
+#  20120.00ns INFO     cocotb.tanh                        idx= 574 x=-1.702851 ref=-0.935765 hw=-1.000000 raw=0xF000 err= 0.064235
+#  20120.00ns INFO     cocotb.tanh                        idx= 575 x=-1.698849 ref=-0.935265 hw=-1.000000 raw=0xF000 err= 0.064735
+#  20120.00ns INFO     cocotb.tanh                        idx= 576 x=-1.694847 ref=-0.934762 hw=-1.000000 raw=0xF000 err= 0.065238
+#  20120.00ns INFO     cocotb.tanh                        idx= 577 x=-1.690845 ref=-0.934255 hw=-1.000000 raw=0xF000 err= 0.065745
+#  20120.00ns INFO     cocotb.tanh                        idx= 578 x=-1.686843 ref=-0.933744 hw=-1.000000 raw=0xF000 err= 0.066256
+#  20120.00ns INFO     cocotb.tanh                        idx= 579 x=-1.682841 ref=-0.933229 hw=-1.000000 raw=0xF000 err= 0.066771
+#  20120.00ns INFO     cocotb.tanh                        idx= 580 x=-1.678839 ref=-0.932711 hw=-1.000000 raw=0xF000 err= 0.067289
+#  20120.00ns INFO     cocotb.tanh                        idx= 581 x=-1.674837 ref=-0.932188 hw=-1.000000 raw=0xF000 err= 0.067812
+#  20120.00ns INFO     cocotb.tanh                        idx= 582 x=-1.670835 ref=-0.931662 hw=-1.000000 raw=0xF000 err= 0.068338
+#  20120.00ns INFO     cocotb.tanh                        idx= 583 x=-1.666833 ref=-0.931132 hw=-1.000000 raw=0xF000 err= 0.068868
+#  20120.00ns INFO     cocotb.tanh                        idx= 584 x=-1.662831 ref=-0.930598 hw=-1.000000 raw=0xF000 err= 0.069402
+#  20120.00ns INFO     cocotb.tanh                        idx= 585 x=-1.658829 ref=-0.930059 hw=-1.000000 raw=0xF000 err= 0.069941
+#  20120.00ns INFO     cocotb.tanh                        idx= 586 x=-1.654827 ref=-0.929517 hw=-1.000000 raw=0xF000 err= 0.070483
+#  20120.00ns INFO     cocotb.tanh                        idx= 587 x=-1.650825 ref=-0.928971 hw=-1.000000 raw=0xF000 err= 0.071029
+#  20120.00ns INFO     cocotb.tanh                        idx= 588 x=-1.646823 ref=-0.928420 hw=-1.000000 raw=0xF000 err= 0.071580
+#  20120.00ns INFO     cocotb.tanh                        idx= 589 x=-1.642821 ref=-0.927866 hw=-1.000000 raw=0xF000 err= 0.072134
+#  20120.00ns INFO     cocotb.tanh                        idx= 590 x=-1.638819 ref=-0.927307 hw=-1.000000 raw=0xF000 err= 0.072693
+#  20120.00ns INFO     cocotb.tanh                        idx= 591 x=-1.634817 ref=-0.926745 hw=-1.000000 raw=0xF000 err= 0.073255
+#  20120.00ns INFO     cocotb.tanh                        idx= 592 x=-1.630815 ref=-0.926178 hw=-1.000000 raw=0xF000 err= 0.073822
+#  20120.00ns INFO     cocotb.tanh                        idx= 593 x=-1.626813 ref=-0.925606 hw=-1.000000 raw=0xF000 err= 0.074394
+#  20120.00ns INFO     cocotb.tanh                        idx= 594 x=-1.622811 ref=-0.925031 hw=-1.000000 raw=0xF000 err= 0.074969
+#  20120.00ns INFO     cocotb.tanh                        idx= 595 x=-1.618809 ref=-0.924451 hw=-1.000000 raw=0xF000 err= 0.075549
+#  20120.00ns INFO     cocotb.tanh                        idx= 596 x=-1.614807 ref=-0.923867 hw=-1.000000 raw=0xF000 err= 0.076133
+#  20120.00ns INFO     cocotb.tanh                        idx= 597 x=-1.610805 ref=-0.923279 hw=-1.000000 raw=0xF000 err= 0.076721
+#  20120.00ns INFO     cocotb.tanh                        idx= 598 x=-1.606803 ref=-0.922686 hw=-1.000000 raw=0xF000 err= 0.077314
+#  20120.00ns INFO     cocotb.tanh                        idx= 599 x=-1.602801 ref=-0.922089 hw=-1.000000 raw=0xF000 err= 0.077911
+#  20120.00ns INFO     cocotb.tanh                        idx= 600 x=-1.598799 ref=-0.921488 hw=-1.000000 raw=0xF000 err= 0.078512
+#  20120.00ns INFO     cocotb.tanh                        idx= 601 x=-1.594797 ref=-0.920882 hw=-1.000000 raw=0xF000 err= 0.079118
+#  20120.00ns INFO     cocotb.tanh                        idx= 602 x=-1.590795 ref=-0.920271 hw=-1.000000 raw=0xF000 err= 0.079729
+#  20120.00ns INFO     cocotb.tanh                        idx= 603 x=-1.586793 ref=-0.919656 hw=-1.000000 raw=0xF000 err= 0.080344
+#  20120.00ns INFO     cocotb.tanh                        idx= 604 x=-1.582791 ref=-0.919037 hw=-1.000000 raw=0xF000 err= 0.080963
+#  20120.00ns INFO     cocotb.tanh                        idx= 605 x=-1.578789 ref=-0.918413 hw=-1.000000 raw=0xF000 err= 0.081587
+#  20120.00ns INFO     cocotb.tanh                        idx= 606 x=-1.574787 ref=-0.917784 hw=-1.000000 raw=0xF000 err= 0.082216
+#  20120.00ns INFO     cocotb.tanh                        idx= 607 x=-1.570785 ref=-0.917151 hw=-1.000000 raw=0xF000 err= 0.082849
+#  20120.00ns INFO     cocotb.tanh                        idx= 608 x=-1.566783 ref=-0.916513 hw=-1.000000 raw=0xF000 err= 0.083487
+#  20120.00ns INFO     cocotb.tanh                        idx= 609 x=-1.562781 ref=-0.915870 hw=-1.000000 raw=0xF000 err= 0.084130
+#  20120.00ns INFO     cocotb.tanh                        idx= 610 x=-1.558779 ref=-0.915222 hw=-1.000000 raw=0xF000 err= 0.084778
+#  20120.00ns INFO     cocotb.tanh                        idx= 611 x=-1.554777 ref=-0.914570 hw=-1.000000 raw=0xF000 err= 0.085430
+#  20120.00ns INFO     cocotb.tanh                        idx= 612 x=-1.550775 ref=-0.913913 hw=-1.000000 raw=0xF000 err= 0.086087
+#  20120.00ns INFO     cocotb.tanh                        idx= 613 x=-1.546773 ref=-0.913252 hw=-1.000000 raw=0xF000 err= 0.086748
+#  20120.00ns INFO     cocotb.tanh                        idx= 614 x=-1.542771 ref=-0.912585 hw=-1.000000 raw=0xF000 err= 0.087415
+#  20120.00ns INFO     cocotb.tanh                        idx= 615 x=-1.538769 ref=-0.911913 hw=-1.000000 raw=0xF000 err= 0.088087
+#  20120.00ns INFO     cocotb.tanh                        idx= 616 x=-1.534767 ref=-0.911237 hw=-1.000000 raw=0xF000 err= 0.088763
+#  20120.00ns INFO     cocotb.tanh                        idx= 617 x=-1.530765 ref=-0.910555 hw=-1.000000 raw=0xF000 err= 0.089445
+#  20120.00ns INFO     cocotb.tanh                        idx= 618 x=-1.526763 ref=-0.909869 hw=-1.000000 raw=0xF000 err= 0.090131
+#  20120.00ns INFO     cocotb.tanh                        idx= 619 x=-1.522761 ref=-0.909178 hw=-1.000000 raw=0xF000 err= 0.090822
+#  20120.00ns INFO     cocotb.tanh                        idx= 620 x=-1.518759 ref=-0.908481 hw=-1.000000 raw=0xF000 err= 0.091519
+#  20120.00ns INFO     cocotb.tanh                        idx= 621 x=-1.514757 ref=-0.907780 hw=-1.000000 raw=0xF000 err= 0.092220
+#  20120.00ns INFO     cocotb.tanh                        idx= 622 x=-1.510755 ref=-0.907073 hw=-1.000000 raw=0xF000 err= 0.092927
+#  20120.00ns INFO     cocotb.tanh                        idx= 623 x=-1.506753 ref=-0.906361 hw=-1.000000 raw=0xF000 err= 0.093639
+#  20120.00ns INFO     cocotb.tanh                        idx= 624 x=-1.502751 ref=-0.905644 hw=-1.000000 raw=0xF000 err= 0.094356
+#  20120.00ns INFO     cocotb.tanh                        idx= 625 x=-1.498749 ref=-0.904922 hw=-1.000000 raw=0xF000 err= 0.095078
+#  20120.00ns INFO     cocotb.tanh                        idx= 626 x=-1.494747 ref=-0.904195 hw=-1.000000 raw=0xF000 err= 0.095805
+#  20120.00ns INFO     cocotb.tanh                        idx= 627 x=-1.490745 ref=-0.903462 hw=-1.000000 raw=0xF000 err= 0.096538
+#  20120.00ns INFO     cocotb.tanh                        idx= 628 x=-1.486743 ref=-0.902724 hw=-1.000000 raw=0xF000 err= 0.097276
+#  20120.00ns INFO     cocotb.tanh                        idx= 629 x=-1.482741 ref=-0.901980 hw=-1.000000 raw=0xF000 err= 0.098020
+#  20120.00ns INFO     cocotb.tanh                        idx= 630 x=-1.478739 ref=-0.901232 hw=-1.000000 raw=0xF000 err= 0.098768
+#  20120.00ns INFO     cocotb.tanh                        idx= 631 x=-1.474737 ref=-0.900477 hw=-1.000000 raw=0xF000 err= 0.099523
+#  20120.00ns INFO     cocotb.tanh                        idx= 632 x=-1.470735 ref=-0.899718 hw=-1.000000 raw=0xF000 err= 0.100282
+#  20120.00ns INFO     cocotb.tanh                        idx= 633 x=-1.466733 ref=-0.898952 hw=-1.000000 raw=0xF000 err= 0.101048
+#  20120.00ns INFO     cocotb.tanh                        idx= 634 x=-1.462731 ref=-0.898182 hw=-1.000000 raw=0xF000 err= 0.101818
+#  20120.00ns INFO     cocotb.tanh                        idx= 635 x=-1.458729 ref=-0.897406 hw=-1.000000 raw=0xF000 err= 0.102594
+#  20120.00ns INFO     cocotb.tanh                        idx= 636 x=-1.454727 ref=-0.896624 hw=-1.000000 raw=0xF000 err= 0.103376
+#  20120.00ns INFO     cocotb.tanh                        idx= 637 x=-1.450725 ref=-0.895836 hw=-1.000000 raw=0xF000 err= 0.104164
+#  20120.00ns INFO     cocotb.tanh                        idx= 638 x=-1.446723 ref=-0.895043 hw=-1.000000 raw=0xF000 err= 0.104957
+#  20120.00ns INFO     cocotb.tanh                        idx= 639 x=-1.442721 ref=-0.894244 hw=-1.000000 raw=0xF000 err= 0.105756
+#  20120.00ns INFO     cocotb.tanh                        idx= 640 x=-1.438719 ref=-0.893440 hw=-1.000000 raw=0xF000 err= 0.106560
+#  20120.00ns INFO     cocotb.tanh                        idx= 641 x=-1.434717 ref=-0.892629 hw=-1.000000 raw=0xF000 err= 0.107371
+#  20120.00ns INFO     cocotb.tanh                        idx= 642 x=-1.430715 ref=-0.891813 hw=-1.000000 raw=0xF000 err= 0.108187
+#  20120.00ns INFO     cocotb.tanh                        idx= 643 x=-1.426713 ref=-0.890991 hw=-1.000000 raw=0xF000 err= 0.109009
+#  20120.00ns INFO     cocotb.tanh                        idx= 644 x=-1.422711 ref=-0.890163 hw=-1.000000 raw=0xF000 err= 0.109837
+#  20120.00ns INFO     cocotb.tanh                        idx= 645 x=-1.418709 ref=-0.889329 hw=-1.000000 raw=0xF000 err= 0.110671
+#  20120.00ns INFO     cocotb.tanh                        idx= 646 x=-1.414707 ref=-0.888490 hw=-1.000000 raw=0xF000 err= 0.111510
+#  20120.00ns INFO     cocotb.tanh                        idx= 647 x=-1.410705 ref=-0.887644 hw=-1.000000 raw=0xF000 err= 0.112356
+#  20120.00ns INFO     cocotb.tanh                        idx= 648 x=-1.406703 ref=-0.886792 hw=-1.000000 raw=0xF000 err= 0.113208
+#  20120.00ns INFO     cocotb.tanh                        idx= 649 x=-1.402701 ref=-0.885934 hw=-1.000000 raw=0xF000 err= 0.114066
+#  20120.00ns INFO     cocotb.tanh                        idx= 650 x=-1.398699 ref=-0.885070 hw=-1.000000 raw=0xF000 err= 0.114930
+#  20120.00ns INFO     cocotb.tanh                        idx= 651 x=-1.394697 ref=-0.884200 hw=-1.000000 raw=0xF000 err= 0.115800
+#  20120.00ns INFO     cocotb.tanh                        idx= 652 x=-1.390695 ref=-0.883324 hw=-1.000000 raw=0xF000 err= 0.116676
+#  20120.00ns INFO     cocotb.tanh                        idx= 653 x=-1.386693 ref=-0.882441 hw=-1.000000 raw=0xF000 err= 0.117559
+#  20120.00ns INFO     cocotb.tanh                        idx= 654 x=-1.382691 ref=-0.881553 hw=-1.000000 raw=0xF000 err= 0.118447
+#  20120.00ns INFO     cocotb.tanh                        idx= 655 x=-1.378689 ref=-0.880657 hw=-1.000000 raw=0xF000 err= 0.119343
+#  20120.00ns INFO     cocotb.tanh                        idx= 656 x=-1.374687 ref=-0.879756 hw=-1.000000 raw=0xF000 err= 0.120244
+#  20120.00ns INFO     cocotb.tanh                        idx= 657 x=-1.370685 ref=-0.878848 hw=-1.000000 raw=0xF000 err= 0.121152
+#  20120.00ns INFO     cocotb.tanh                        idx= 658 x=-1.366683 ref=-0.877934 hw=-1.000000 raw=0xF000 err= 0.122066
+#  20120.00ns INFO     cocotb.tanh                        idx= 659 x=-1.362681 ref=-0.877014 hw=-1.000000 raw=0xF000 err= 0.122986
+#  20120.00ns INFO     cocotb.tanh                        idx= 660 x=-1.358679 ref=-0.876086 hw=-1.000000 raw=0xF000 err= 0.123914
+#  20120.00ns INFO     cocotb.tanh                        idx= 661 x=-1.354677 ref=-0.875153 hw=-1.000000 raw=0xF000 err= 0.124847
+#  20120.00ns INFO     cocotb.tanh                        idx= 662 x=-1.350675 ref=-0.874213 hw=-1.000000 raw=0xF000 err= 0.125787
+#  20120.00ns INFO     cocotb.tanh                        idx= 663 x=-1.346673 ref=-0.873266 hw=-1.000000 raw=0xF000 err= 0.126734
+#  20120.00ns INFO     cocotb.tanh                        idx= 664 x=-1.342671 ref=-0.872312 hw=-1.000000 raw=0xF000 err= 0.127688
+#  20120.00ns INFO     cocotb.tanh                        idx= 665 x=-1.338669 ref=-0.871352 hw=-1.000000 raw=0xF000 err= 0.128648
+#  20120.00ns INFO     cocotb.tanh                        idx= 666 x=-1.334667 ref=-0.870385 hw=-1.000000 raw=0xF000 err= 0.129615
+#  20120.00ns INFO     cocotb.tanh                        idx= 667 x=-1.330665 ref=-0.869412 hw=-1.000000 raw=0xF000 err= 0.130588
+#  20120.00ns INFO     cocotb.tanh                        idx= 668 x=-1.326663 ref=-0.868431 hw=-1.000000 raw=0xF000 err= 0.131569
+#  20120.00ns INFO     cocotb.tanh                        idx= 669 x=-1.322661 ref=-0.867444 hw=-1.000000 raw=0xF000 err= 0.132556
+#  20120.00ns INFO     cocotb.tanh                        idx= 670 x=-1.318659 ref=-0.866450 hw=-1.000000 raw=0xF000 err= 0.133550
+#  20120.00ns INFO     cocotb.tanh                        idx= 671 x=-1.314657 ref=-0.865449 hw=-1.000000 raw=0xF000 err= 0.134551
+#  20120.00ns INFO     cocotb.tanh                        idx= 672 x=-1.310655 ref=-0.864441 hw=-1.000000 raw=0xF000 err= 0.135559
+#  20120.00ns INFO     cocotb.tanh                        idx= 673 x=-1.306653 ref=-0.863426 hw=-1.000000 raw=0xF000 err= 0.136574
+#  20120.00ns INFO     cocotb.tanh                        idx= 674 x=-1.302651 ref=-0.862404 hw=-1.000000 raw=0xF000 err= 0.137596
+#  20120.00ns INFO     cocotb.tanh                        idx= 675 x=-1.298649 ref=-0.861375 hw=-1.000000 raw=0xF000 err= 0.138625
+#  20120.00ns INFO     cocotb.tanh                        idx= 676 x=-1.294647 ref=-0.860339 hw=-1.000000 raw=0xF000 err= 0.139661
+#  20120.00ns INFO     cocotb.tanh                        idx= 677 x=-1.290645 ref=-0.859295 hw=-1.000000 raw=0xF000 err= 0.140705
+#  20120.00ns INFO     cocotb.tanh                        idx= 678 x=-1.286643 ref=-0.858245 hw=-1.000000 raw=0xF000 err= 0.141755
+#  20120.00ns INFO     cocotb.tanh                        idx= 679 x=-1.282641 ref=-0.857187 hw=-1.000000 raw=0xF000 err= 0.142813
+#  20120.00ns INFO     cocotb.tanh                        idx= 680 x=-1.278639 ref=-0.856122 hw=-1.000000 raw=0xF000 err= 0.143878
+#  20120.00ns INFO     cocotb.tanh                        idx= 681 x=-1.274637 ref=-0.855050 hw=-1.000000 raw=0xF000 err= 0.144950
+#  20120.00ns INFO     cocotb.tanh                        idx= 682 x=-1.270635 ref=-0.853970 hw=-1.000000 raw=0xF000 err= 0.146030
+#  20120.00ns INFO     cocotb.tanh                        idx= 683 x=-1.266633 ref=-0.852883 hw=-1.000000 raw=0xF000 err= 0.147117
+#  20120.00ns INFO     cocotb.tanh                        idx= 684 x=-1.262631 ref=-0.851788 hw=-1.000000 raw=0xF000 err= 0.148212
+#  20120.00ns INFO     cocotb.tanh                        idx= 685 x=-1.258629 ref=-0.850686 hw=-1.000000 raw=0xF000 err= 0.149314
+#  20120.00ns INFO     cocotb.tanh                        idx= 686 x=-1.254627 ref=-0.849576 hw=-1.000000 raw=0xF000 err= 0.150424
+#  20120.00ns INFO     cocotb.tanh                        idx= 687 x=-1.250625 ref=-0.848459 hw=-1.000000 raw=0xF000 err= 0.151541
+#  20120.00ns INFO     cocotb.tanh                        idx= 688 x=-1.246623 ref=-0.847334 hw=-0.998291 raw=0xF007 err= 0.150957
+#  20120.00ns INFO     cocotb.tanh                        idx= 689 x=-1.242621 ref=-0.846202 hw=-0.993652 raw=0xF01A err= 0.147451
+#  20120.00ns INFO     cocotb.tanh                        idx= 690 x=-1.238619 ref=-0.845061 hw=-0.989746 raw=0xF02A err= 0.144685
+#  20120.00ns INFO     cocotb.tanh                        idx= 691 x=-1.234617 ref=-0.843913 hw=-0.985596 raw=0xF03B err= 0.141682
+#  20120.00ns INFO     cocotb.tanh                        idx= 692 x=-1.230615 ref=-0.842758 hw=-0.981689 raw=0xF04B err= 0.138932
+#  20120.00ns INFO     cocotb.tanh                        idx= 693 x=-1.226613 ref=-0.841594 hw=-0.977783 raw=0xF05B err= 0.136189
+#  20120.00ns INFO     cocotb.tanh                        idx= 694 x=-1.222611 ref=-0.840423 hw=-0.973389 raw=0xF06D err= 0.132966
+#  20120.00ns INFO     cocotb.tanh                        idx= 695 x=-1.218609 ref=-0.839243 hw=-0.969727 raw=0xF07C err= 0.130483
+#  20120.00ns INFO     cocotb.tanh                        idx= 696 x=-1.214607 ref=-0.838056 hw=-0.965820 raw=0xF08C err= 0.127764
+#  20120.00ns INFO     cocotb.tanh                        idx= 697 x=-1.210605 ref=-0.836861 hw=-0.962158 raw=0xF09B err= 0.125297
+#  20120.00ns INFO     cocotb.tanh                        idx= 698 x=-1.206603 ref=-0.835658 hw=-0.958496 raw=0xF0AA err= 0.122838
+#  20120.00ns INFO     cocotb.tanh                        idx= 699 x=-1.202601 ref=-0.834446 hw=-0.954346 raw=0xF0BB err= 0.119899
+#  20120.00ns INFO     cocotb.tanh                        idx= 700 x=-1.198599 ref=-0.833227 hw=-0.950928 raw=0xF0C9 err= 0.117701
+#  20120.00ns INFO     cocotb.tanh                        idx= 701 x=-1.194597 ref=-0.831999 hw=-0.947266 raw=0xF0D8 err= 0.115266
+#  20120.00ns INFO     cocotb.tanh                        idx= 702 x=-1.190595 ref=-0.830763 hw=-0.943359 raw=0xF0E8 err= 0.112596
+#  20120.00ns INFO     cocotb.tanh                        idx= 703 x=-1.186593 ref=-0.829519 hw=-0.939941 raw=0xF0F6 err= 0.110422
+#  20120.00ns INFO     cocotb.tanh                        idx= 704 x=-1.182591 ref=-0.828267 hw=-0.936279 raw=0xF105 err= 0.108012
+#  20120.00ns INFO     cocotb.tanh                        idx= 705 x=-1.178589 ref=-0.827006 hw=-0.932617 raw=0xF114 err= 0.105611
+#  20120.00ns INFO     cocotb.tanh                        idx= 706 x=-1.174587 ref=-0.825737 hw=-0.928955 raw=0xF123 err= 0.103218
+#  20120.00ns INFO     cocotb.tanh                        idx= 707 x=-1.170585 ref=-0.824460 hw=-0.925293 raw=0xF132 err= 0.100833
+#  20120.00ns INFO     cocotb.tanh                        idx= 708 x=-1.166583 ref=-0.823174 hw=-0.922119 raw=0xF13F err= 0.098945
+#  20120.00ns INFO     cocotb.tanh                        idx= 709 x=-1.162581 ref=-0.821879 hw=-0.918701 raw=0xF14D err= 0.096822
+#  20120.00ns INFO     cocotb.tanh                        idx= 710 x=-1.158579 ref=-0.820576 hw=-0.915283 raw=0xF15B err= 0.094707
+#  20120.00ns INFO     cocotb.tanh                        idx= 711 x=-1.154577 ref=-0.819265 hw=-0.911621 raw=0xF16A err= 0.092356
+#  20120.00ns INFO     cocotb.tanh                        idx= 712 x=-1.150575 ref=-0.817945 hw=-0.908447 raw=0xF177 err= 0.090503
+#  20120.00ns INFO     cocotb.tanh                        idx= 713 x=-1.146573 ref=-0.816616 hw=-0.905029 raw=0xF185 err= 0.088414
+#  20120.00ns INFO     cocotb.tanh                        idx= 714 x=-1.142571 ref=-0.815278 hw=-0.901611 raw=0xF193 err= 0.086333
+#  20120.00ns INFO     cocotb.tanh                        idx= 715 x=-1.138569 ref=-0.813932 hw=-0.898438 raw=0xF1A0 err= 0.084506
+#  20120.00ns INFO     cocotb.tanh                        idx= 716 x=-1.134567 ref=-0.812577 hw=-0.895264 raw=0xF1AD err= 0.082687
+#  20120.00ns INFO     cocotb.tanh                        idx= 717 x=-1.130565 ref=-0.811213 hw=-0.892090 raw=0xF1BA err= 0.080877
+#  20120.00ns INFO     cocotb.tanh                        idx= 718 x=-1.126563 ref=-0.809840 hw=-0.888672 raw=0xF1C8 err= 0.078832
+#  20120.00ns INFO     cocotb.tanh                        idx= 719 x=-1.122561 ref=-0.808458 hw=-0.885498 raw=0xF1D5 err= 0.077040
+#  20120.00ns INFO     cocotb.tanh                        idx= 720 x=-1.118559 ref=-0.807067 hw=-0.882568 raw=0xF1E1 err= 0.075501
+#  20120.00ns INFO     cocotb.tanh                        idx= 721 x=-1.114557 ref=-0.805667 hw=-0.879150 raw=0xF1EF err= 0.073483
+#  20120.00ns INFO     cocotb.tanh                        idx= 722 x=-1.110555 ref=-0.804259 hw=-0.876221 raw=0xF1FB err= 0.071962
+#  20120.00ns INFO     cocotb.tanh                        idx= 723 x=-1.106553 ref=-0.802841 hw=-0.873047 raw=0xF208 err= 0.070206
+#  20120.00ns INFO     cocotb.tanh                        idx= 724 x=-1.102551 ref=-0.801414 hw=-0.870117 raw=0xF214 err= 0.068704
+#  20120.00ns INFO     cocotb.tanh                        idx= 725 x=-1.098549 ref=-0.799977 hw=-0.866943 raw=0xF221 err= 0.066966
+#  20120.00ns INFO     cocotb.tanh                        idx= 726 x=-1.094547 ref=-0.798532 hw=-0.864014 raw=0xF22D err= 0.065482
+#  20120.00ns INFO     cocotb.tanh                        idx= 727 x=-1.090545 ref=-0.797077 hw=-0.860840 raw=0xF23A err= 0.063763
+#  20120.00ns INFO     cocotb.tanh                        idx= 728 x=-1.086543 ref=-0.795613 hw=-0.857910 raw=0xF246 err= 0.062297
+#  20120.00ns INFO     cocotb.tanh                        idx= 729 x=-1.082541 ref=-0.794140 hw=-0.855225 raw=0xF251 err= 0.061085
+#  20120.00ns INFO     cocotb.tanh                        idx= 730 x=-1.078539 ref=-0.792657 hw=-0.851807 raw=0xF25F err= 0.059150
+#  20120.00ns INFO     cocotb.tanh                        idx= 731 x=-1.074537 ref=-0.791165 hw=-0.849365 raw=0xF269 err= 0.058201
+#  20120.00ns INFO     cocotb.tanh                        idx= 732 x=-1.070535 ref=-0.789663 hw=-0.846191 raw=0xF276 err= 0.056529
+#  20120.00ns INFO     cocotb.tanh                        idx= 733 x=-1.066533 ref=-0.788152 hw=-0.843506 raw=0xF281 err= 0.055354
+#  20120.00ns INFO     cocotb.tanh                        idx= 734 x=-1.062531 ref=-0.786631 hw=-0.840332 raw=0xF28E err= 0.053701
+#  20120.00ns INFO     cocotb.tanh                        idx= 735 x=-1.058529 ref=-0.785100 hw=-0.837646 raw=0xF299 err= 0.052546
+#  20120.00ns INFO     cocotb.tanh                        idx= 736 x=-1.054527 ref=-0.783560 hw=-0.834717 raw=0xF2A5 err= 0.051157
+#  20120.00ns INFO     cocotb.tanh                        idx= 737 x=-1.050525 ref=-0.782010 hw=-0.832031 raw=0xF2B0 err= 0.050021
+#  20120.00ns INFO     cocotb.tanh                        idx=1258 x= 1.034517 ref= 0.775714 hw= 0.826172 raw=0x0D38 err= 0.050458
+#  20120.00ns INFO     cocotb.tanh                        idx=1259 x= 1.038519 ref= 0.777303 hw= 0.828857 raw=0x0D43 err= 0.051555
+#  20120.00ns INFO     cocotb.tanh                        idx=1260 x= 1.042521 ref= 0.778882 hw= 0.831787 raw=0x0D4F err= 0.052905
+#  20120.00ns INFO     cocotb.tanh                        idx=1261 x= 1.046523 ref= 0.780451 hw= 0.834473 raw=0x0D5A err= 0.054022
+#  20120.00ns INFO     cocotb.tanh                        idx=1262 x= 1.050525 ref= 0.782010 hw= 0.837402 raw=0x0D66 err= 0.055392
+#  20120.00ns INFO     cocotb.tanh                        idx=1263 x= 1.054527 ref= 0.783560 hw= 0.840088 raw=0x0D71 err= 0.056528
+#  20120.00ns INFO     cocotb.tanh                        idx=1264 x= 1.058529 ref= 0.785100 hw= 0.843262 raw=0x0D7E err= 0.058161
+#  20120.00ns INFO     cocotb.tanh                        idx=1265 x= 1.062531 ref= 0.786631 hw= 0.845947 raw=0x0D89 err= 0.059317
+#  20120.00ns INFO     cocotb.tanh                        idx=1266 x= 1.066533 ref= 0.788152 hw= 0.849121 raw=0x0D96 err= 0.060970
+#  20120.00ns INFO     cocotb.tanh                        idx=1267 x= 1.070535 ref= 0.789663 hw= 0.851562 raw=0x0DA0 err= 0.061900
+#  20120.00ns INFO     cocotb.tanh                        idx=1268 x= 1.074537 ref= 0.791165 hw= 0.854980 raw=0x0DAE err= 0.063816
+#  20120.00ns INFO     cocotb.tanh                        idx=1269 x= 1.078539 ref= 0.792657 hw= 0.857666 raw=0x0DB9 err= 0.065009
+#  20120.00ns INFO     cocotb.tanh                        idx=1270 x= 1.082541 ref= 0.794140 hw= 0.860596 raw=0x0DC5 err= 0.066456
+#  20120.00ns INFO     cocotb.tanh                        idx=1271 x= 1.086543 ref= 0.795613 hw= 0.863770 raw=0x0DD2 err= 0.068157
+#  20120.00ns INFO     cocotb.tanh                        idx=1272 x= 1.090545 ref= 0.797077 hw= 0.866699 raw=0x0DDE err= 0.069622
+#  20120.00ns INFO     cocotb.tanh                        idx=1273 x= 1.094547 ref= 0.798532 hw= 0.869873 raw=0x0DEB err= 0.071341
+#  20120.00ns INFO     cocotb.tanh                        idx=1274 x= 1.098549 ref= 0.799977 hw= 0.872803 raw=0x0DF7 err= 0.072825
+#  20120.00ns INFO     cocotb.tanh                        idx=1275 x= 1.102551 ref= 0.801414 hw= 0.875977 raw=0x0E04 err= 0.074563
+#  20120.00ns INFO     cocotb.tanh                        idx=1276 x= 1.106553 ref= 0.802841 hw= 0.878906 raw=0x0E10 err= 0.076066
+#  20120.00ns INFO     cocotb.tanh                        idx=1277 x= 1.110555 ref= 0.804259 hw= 0.882324 raw=0x0E1E err= 0.078066
+#  20120.00ns INFO     cocotb.tanh                        idx=1278 x= 1.114557 ref= 0.805667 hw= 0.885254 raw=0x0E2A err= 0.079586
+#  20120.00ns INFO     cocotb.tanh                        idx=1279 x= 1.118559 ref= 0.807067 hw= 0.888428 raw=0x0E37 err= 0.081361
+#  20120.00ns INFO     cocotb.tanh                        idx=1280 x= 1.122561 ref= 0.808458 hw= 0.891846 raw=0x0E45 err= 0.083388
+#  20120.00ns INFO     cocotb.tanh                        idx=1281 x= 1.126563 ref= 0.809840 hw= 0.895020 raw=0x0E52 err= 0.085180
+#  20120.00ns INFO     cocotb.tanh                        idx=1282 x= 1.130565 ref= 0.811213 hw= 0.898193 raw=0x0E5F err= 0.086981
+#  20120.00ns INFO     cocotb.tanh                        idx=1283 x= 1.134567 ref= 0.812577 hw= 0.901367 raw=0x0E6C err= 0.088791
+#  20120.00ns INFO     cocotb.tanh                        idx=1284 x= 1.138569 ref= 0.813932 hw= 0.904785 raw=0x0E7A err= 0.090853
+#  20120.00ns INFO     cocotb.tanh                        idx=1285 x= 1.142571 ref= 0.815278 hw= 0.908203 raw=0x0E88 err= 0.092925
+#  20120.00ns INFO     cocotb.tanh                        idx=1286 x= 1.146573 ref= 0.816616 hw= 0.911377 raw=0x0E95 err= 0.094761
+#  20120.00ns INFO     cocotb.tanh                        idx=1287 x= 1.150575 ref= 0.817945 hw= 0.915039 raw=0x0EA4 err= 0.097094
+#  20120.00ns INFO     cocotb.tanh                        idx=1288 x= 1.154577 ref= 0.819265 hw= 0.918457 raw=0x0EB2 err= 0.099192
+#  20120.00ns INFO     cocotb.tanh                        idx=1289 x= 1.158579 ref= 0.820576 hw= 0.921875 raw=0x0EC0 err= 0.101299
+#  20120.00ns INFO     cocotb.tanh                        idx=1290 x= 1.162581 ref= 0.821879 hw= 0.925049 raw=0x0ECD err= 0.103170
+#  20120.00ns INFO     cocotb.tanh                        idx=1291 x= 1.166583 ref= 0.823174 hw= 0.928711 raw=0x0EDC err= 0.105537
+#  20120.00ns INFO     cocotb.tanh                        idx=1292 x= 1.170585 ref= 0.824460 hw= 0.932373 raw=0x0EEB err= 0.107913
+#  20120.00ns INFO     cocotb.tanh                        idx=1293 x= 1.174587 ref= 0.825737 hw= 0.936035 raw=0x0EFA err= 0.110298
+#  20120.00ns INFO     cocotb.tanh                        idx=1294 x= 1.178589 ref= 0.827006 hw= 0.939697 raw=0x0F09 err= 0.112691
+#  20120.00ns INFO     cocotb.tanh                        idx=1295 x= 1.182591 ref= 0.828267 hw= 0.943115 raw=0x0F17 err= 0.114848
+#  20120.00ns INFO     cocotb.tanh                        idx=1296 x= 1.186593 ref= 0.829519 hw= 0.947021 raw=0x0F27 err= 0.117502
+#  20120.00ns INFO     cocotb.tanh                        idx=1297 x= 1.190595 ref= 0.830763 hw= 0.950684 raw=0x0F36 err= 0.119920
+#  20120.00ns INFO     cocotb.tanh                        idx=1298 x= 1.194597 ref= 0.831999 hw= 0.954102 raw=0x0F44 err= 0.122102
+#  20120.00ns INFO     cocotb.tanh                        idx=1299 x= 1.198599 ref= 0.833227 hw= 0.958252 raw=0x0F55 err= 0.125025
+#  20120.00ns INFO     cocotb.tanh                        idx=1300 x= 1.202601 ref= 0.834446 hw= 0.961914 raw=0x0F64 err= 0.127468
+#  20120.00ns INFO     cocotb.tanh                        idx=1301 x= 1.206603 ref= 0.835658 hw= 0.965576 raw=0x0F73 err= 0.129918
+#  20120.00ns INFO     cocotb.tanh                        idx=1302 x= 1.210605 ref= 0.836861 hw= 0.969482 raw=0x0F83 err= 0.132621
+#  20120.00ns INFO     cocotb.tanh                        idx=1303 x= 1.214607 ref= 0.838056 hw= 0.973145 raw=0x0F92 err= 0.135088
+#  20120.00ns INFO     cocotb.tanh                        idx=1304 x= 1.218609 ref= 0.839243 hw= 0.977539 raw=0x0FA4 err= 0.138296
+#  20120.00ns INFO     cocotb.tanh                        idx=1305 x= 1.222611 ref= 0.840423 hw= 0.981445 raw=0x0FB4 err= 0.141023
+#  20120.00ns INFO     cocotb.tanh                        idx=1306 x= 1.226613 ref= 0.841594 hw= 0.985352 raw=0x0FC4 err= 0.143757
+#  20120.00ns INFO     cocotb.tanh                        idx=1307 x= 1.230615 ref= 0.842758 hw= 0.989502 raw=0x0FD5 err= 0.146744
+#  20120.00ns INFO     cocotb.tanh                        idx=1308 x= 1.234617 ref= 0.843913 hw= 0.993408 raw=0x0FE5 err= 0.149495
+#  20120.00ns INFO     cocotb.tanh                        idx=1309 x= 1.238619 ref= 0.845061 hw= 0.998047 raw=0x0FF8 err= 0.152986
+#  20120.00ns INFO     cocotb.tanh                        idx=1310 x= 1.242621 ref= 0.846202 hw= 1.000000 raw=0x1000 err= 0.153798
+#  20120.00ns INFO     cocotb.tanh                        idx=1311 x= 1.246623 ref= 0.847334 hw= 1.000000 raw=0x1000 err= 0.152666
+#  20120.00ns INFO     cocotb.tanh                        idx=1312 x= 1.250625 ref= 0.848459 hw= 1.000000 raw=0x1000 err= 0.151541
+#  20120.00ns INFO     cocotb.tanh                        idx=1313 x= 1.254627 ref= 0.849576 hw= 1.000000 raw=0x1000 err= 0.150424
+#  20120.00ns INFO     cocotb.tanh                        idx=1314 x= 1.258629 ref= 0.850686 hw= 1.000000 raw=0x1000 err= 0.149314
+#  20120.00ns INFO     cocotb.tanh                        idx=1315 x= 1.262631 ref= 0.851788 hw= 1.000000 raw=0x1000 err= 0.148212
+#  20120.00ns INFO     cocotb.tanh                        idx=1316 x= 1.266633 ref= 0.852883 hw= 1.000000 raw=0x1000 err= 0.147117
+#  20120.00ns INFO     cocotb.tanh                        idx=1317 x= 1.270635 ref= 0.853970 hw= 1.000000 raw=0x1000 err= 0.146030
+#  20120.00ns INFO     cocotb.tanh                        idx=1318 x= 1.274637 ref= 0.855050 hw= 1.000000 raw=0x1000 err= 0.144950
+#  20120.00ns INFO     cocotb.tanh                        idx=1319 x= 1.278639 ref= 0.856122 hw= 1.000000 raw=0x1000 err= 0.143878
+#  20120.00ns INFO     cocotb.tanh                        idx=1320 x= 1.282641 ref= 0.857187 hw= 1.000000 raw=0x1000 err= 0.142813
+#  20120.00ns INFO     cocotb.tanh                        idx=1321 x= 1.286643 ref= 0.858245 hw= 1.000000 raw=0x1000 err= 0.141755
+#  20120.00ns INFO     cocotb.tanh                        idx=1322 x= 1.290645 ref= 0.859295 hw= 1.000000 raw=0x1000 err= 0.140705
+#  20120.00ns INFO     cocotb.tanh                        idx=1323 x= 1.294647 ref= 0.860339 hw= 1.000000 raw=0x1000 err= 0.139661
+#  20120.00ns INFO     cocotb.tanh                        idx=1324 x= 1.298649 ref= 0.861375 hw= 1.000000 raw=0x1000 err= 0.138625
+#  20120.00ns INFO     cocotb.tanh                        idx=1325 x= 1.302651 ref= 0.862404 hw= 1.000000 raw=0x1000 err= 0.137596
+#  20120.00ns INFO     cocotb.tanh                        idx=1326 x= 1.306653 ref= 0.863426 hw= 1.000000 raw=0x1000 err= 0.136574
+#  20120.00ns INFO     cocotb.tanh                        idx=1327 x= 1.310655 ref= 0.864441 hw= 1.000000 raw=0x1000 err= 0.135559
+#  20120.00ns INFO     cocotb.tanh                        idx=1328 x= 1.314657 ref= 0.865449 hw= 1.000000 raw=0x1000 err= 0.134551
+#  20120.00ns INFO     cocotb.tanh                        idx=1329 x= 1.318659 ref= 0.866450 hw= 1.000000 raw=0x1000 err= 0.133550
+#  20120.00ns INFO     cocotb.tanh                        idx=1330 x= 1.322661 ref= 0.867444 hw= 1.000000 raw=0x1000 err= 0.132556
+#  20120.00ns INFO     cocotb.tanh                        idx=1331 x= 1.326663 ref= 0.868431 hw= 1.000000 raw=0x1000 err= 0.131569
+#  20120.00ns INFO     cocotb.tanh                        idx=1332 x= 1.330665 ref= 0.869412 hw= 1.000000 raw=0x1000 err= 0.130588
+#  20120.00ns INFO     cocotb.tanh                        idx=1333 x= 1.334667 ref= 0.870385 hw= 1.000000 raw=0x1000 err= 0.129615
+#  20120.00ns INFO     cocotb.tanh                        idx=1334 x= 1.338669 ref= 0.871352 hw= 1.000000 raw=0x1000 err= 0.128648
+#  20120.00ns INFO     cocotb.tanh                        idx=1335 x= 1.342671 ref= 0.872312 hw= 1.000000 raw=0x1000 err= 0.127688
+#  20120.00ns INFO     cocotb.tanh                        idx=1336 x= 1.346673 ref= 0.873266 hw= 1.000000 raw=0x1000 err= 0.126734
+#  20120.00ns INFO     cocotb.tanh                        idx=1337 x= 1.350675 ref= 0.874213 hw= 1.000000 raw=0x1000 err= 0.125787
+#  20120.00ns INFO     cocotb.tanh                        idx=1338 x= 1.354677 ref= 0.875153 hw= 1.000000 raw=0x1000 err= 0.124847
+#  20120.00ns INFO     cocotb.tanh                        idx=1339 x= 1.358679 ref= 0.876086 hw= 1.000000 raw=0x1000 err= 0.123914
+#  20120.00ns INFO     cocotb.tanh                        idx=1340 x= 1.362681 ref= 0.877014 hw= 1.000000 raw=0x1000 err= 0.122986
+#  20120.00ns INFO     cocotb.tanh                        idx=1341 x= 1.366683 ref= 0.877934 hw= 1.000000 raw=0x1000 err= 0.122066
+#  20120.00ns INFO     cocotb.tanh                        idx=1342 x= 1.370685 ref= 0.878848 hw= 1.000000 raw=0x1000 err= 0.121152
+#  20120.00ns INFO     cocotb.tanh                        idx=1343 x= 1.374687 ref= 0.879756 hw= 1.000000 raw=0x1000 err= 0.120244
+#  20120.00ns INFO     cocotb.tanh                        idx=1344 x= 1.378689 ref= 0.880657 hw= 1.000000 raw=0x1000 err= 0.119343
+#  20120.00ns INFO     cocotb.tanh                        idx=1345 x= 1.382691 ref= 0.881553 hw= 1.000000 raw=0x1000 err= 0.118447
+#  20120.00ns INFO     cocotb.tanh                        idx=1346 x= 1.386693 ref= 0.882441 hw= 1.000000 raw=0x1000 err= 0.117559
+#  20120.00ns INFO     cocotb.tanh                        idx=1347 x= 1.390695 ref= 0.883324 hw= 1.000000 raw=0x1000 err= 0.116676
+#  20120.00ns INFO     cocotb.tanh                        idx=1348 x= 1.394697 ref= 0.884200 hw= 1.000000 raw=0x1000 err= 0.115800
+#  20120.00ns INFO     cocotb.tanh                        idx=1349 x= 1.398699 ref= 0.885070 hw= 1.000000 raw=0x1000 err= 0.114930
+#  20120.00ns INFO     cocotb.tanh                        idx=1350 x= 1.402701 ref= 0.885934 hw= 1.000000 raw=0x1000 err= 0.114066
+#  20120.00ns INFO     cocotb.tanh                        idx=1351 x= 1.406703 ref= 0.886792 hw= 1.000000 raw=0x1000 err= 0.113208
+#  20120.00ns INFO     cocotb.tanh                        idx=1352 x= 1.410705 ref= 0.887644 hw= 1.000000 raw=0x1000 err= 0.112356
+#  20120.00ns INFO     cocotb.tanh                        idx=1353 x= 1.414707 ref= 0.888490 hw= 1.000000 raw=0x1000 err= 0.111510
+#  20120.00ns INFO     cocotb.tanh                        idx=1354 x= 1.418709 ref= 0.889329 hw= 1.000000 raw=0x1000 err= 0.110671
+#  20120.00ns INFO     cocotb.tanh                        idx=1355 x= 1.422711 ref= 0.890163 hw= 1.000000 raw=0x1000 err= 0.109837
+#  20120.00ns INFO     cocotb.tanh                        idx=1356 x= 1.426713 ref= 0.890991 hw= 1.000000 raw=0x1000 err= 0.109009
+#  20120.00ns INFO     cocotb.tanh                        idx=1357 x= 1.430715 ref= 0.891813 hw= 1.000000 raw=0x1000 err= 0.108187
+#  20120.00ns INFO     cocotb.tanh                        idx=1358 x= 1.434717 ref= 0.892629 hw= 1.000000 raw=0x1000 err= 0.107371
+#  20120.00ns INFO     cocotb.tanh                        idx=1359 x= 1.438719 ref= 0.893440 hw= 1.000000 raw=0x1000 err= 0.106560
+#  20120.00ns INFO     cocotb.tanh                        idx=1360 x= 1.442721 ref= 0.894244 hw= 1.000000 raw=0x1000 err= 0.105756
+#  20120.00ns INFO     cocotb.tanh                        idx=1361 x= 1.446723 ref= 0.895043 hw= 1.000000 raw=0x1000 err= 0.104957
+#  20120.00ns INFO     cocotb.tanh                        idx=1362 x= 1.450725 ref= 0.895836 hw= 1.000000 raw=0x1000 err= 0.104164
+#  20120.00ns INFO     cocotb.tanh                        idx=1363 x= 1.454727 ref= 0.896624 hw= 1.000000 raw=0x1000 err= 0.103376
+#  20120.00ns INFO     cocotb.tanh                        idx=1364 x= 1.458729 ref= 0.897406 hw= 1.000000 raw=0x1000 err= 0.102594
+#  20120.00ns INFO     cocotb.tanh                        idx=1365 x= 1.462731 ref= 0.898182 hw= 1.000000 raw=0x1000 err= 0.101818
+#  20120.00ns INFO     cocotb.tanh                        idx=1366 x= 1.466733 ref= 0.898952 hw= 1.000000 raw=0x1000 err= 0.101048
+#  20120.00ns INFO     cocotb.tanh                        idx=1367 x= 1.470735 ref= 0.899718 hw= 1.000000 raw=0x1000 err= 0.100282
+#  20120.00ns INFO     cocotb.tanh                        idx=1368 x= 1.474737 ref= 0.900477 hw= 1.000000 raw=0x1000 err= 0.099523
+#  20120.00ns INFO     cocotb.tanh                        idx=1369 x= 1.478739 ref= 0.901232 hw= 1.000000 raw=0x1000 err= 0.098768
+#  20120.00ns INFO     cocotb.tanh                        idx=1370 x= 1.482741 ref= 0.901980 hw= 1.000000 raw=0x1000 err= 0.098020
+#  20120.00ns INFO     cocotb.tanh                        idx=1371 x= 1.486743 ref= 0.902724 hw= 1.000000 raw=0x1000 err= 0.097276
+#  20120.00ns INFO     cocotb.tanh                        idx=1372 x= 1.490745 ref= 0.903462 hw= 1.000000 raw=0x1000 err= 0.096538
+#  20120.00ns INFO     cocotb.tanh                        idx=1373 x= 1.494747 ref= 0.904195 hw= 1.000000 raw=0x1000 err= 0.095805
+#  20120.00ns INFO     cocotb.tanh                        idx=1374 x= 1.498749 ref= 0.904922 hw= 1.000000 raw=0x1000 err= 0.095078
+#  20120.00ns INFO     cocotb.tanh                        idx=1375 x= 1.502751 ref= 0.905644 hw= 1.000000 raw=0x1000 err= 0.094356
+#  20120.00ns INFO     cocotb.tanh                        idx=1376 x= 1.506753 ref= 0.906361 hw= 1.000000 raw=0x1000 err= 0.093639
+#  20120.00ns INFO     cocotb.tanh                        idx=1377 x= 1.510755 ref= 0.907073 hw= 1.000000 raw=0x1000 err= 0.092927
+#  20120.00ns INFO     cocotb.tanh                        idx=1378 x= 1.514757 ref= 0.907780 hw= 1.000000 raw=0x1000 err= 0.092220
+#  20120.00ns INFO     cocotb.tanh                        idx=1379 x= 1.518759 ref= 0.908481 hw= 1.000000 raw=0x1000 err= 0.091519
+#  20120.00ns INFO     cocotb.tanh                        idx=1380 x= 1.522761 ref= 0.909178 hw= 1.000000 raw=0x1000 err= 0.090822
+#  20120.00ns INFO     cocotb.tanh                        idx=1381 x= 1.526763 ref= 0.909869 hw= 1.000000 raw=0x1000 err= 0.090131
+#  20120.00ns INFO     cocotb.tanh                        idx=1382 x= 1.530765 ref= 0.910555 hw= 1.000000 raw=0x1000 err= 0.089445
+#  20120.00ns INFO     cocotb.tanh                        idx=1383 x= 1.534767 ref= 0.911237 hw= 1.000000 raw=0x1000 err= 0.088763
+#  20120.00ns INFO     cocotb.tanh                        idx=1384 x= 1.538769 ref= 0.911913 hw= 1.000000 raw=0x1000 err= 0.088087
+#  20120.00ns INFO     cocotb.tanh                        idx=1385 x= 1.542771 ref= 0.912585 hw= 1.000000 raw=0x1000 err= 0.087415
+#  20120.00ns INFO     cocotb.tanh                        idx=1386 x= 1.546773 ref= 0.913252 hw= 1.000000 raw=0x1000 err= 0.086748
+#  20120.00ns INFO     cocotb.tanh                        idx=1387 x= 1.550775 ref= 0.913913 hw= 1.000000 raw=0x1000 err= 0.086087
+#  20120.00ns INFO     cocotb.tanh                        idx=1388 x= 1.554777 ref= 0.914570 hw= 1.000000 raw=0x1000 err= 0.085430
+#  20120.00ns INFO     cocotb.tanh                        idx=1389 x= 1.558779 ref= 0.915222 hw= 1.000000 raw=0x1000 err= 0.084778
+#  20120.00ns INFO     cocotb.tanh                        idx=1390 x= 1.562781 ref= 0.915870 hw= 1.000000 raw=0x1000 err= 0.084130
+#  20120.00ns INFO     cocotb.tanh                        idx=1391 x= 1.566783 ref= 0.916513 hw= 1.000000 raw=0x1000 err= 0.083487
+#  20120.00ns INFO     cocotb.tanh                        idx=1392 x= 1.570785 ref= 0.917151 hw= 1.000000 raw=0x1000 err= 0.082849
+#  20120.00ns INFO     cocotb.tanh                        idx=1393 x= 1.574787 ref= 0.917784 hw= 1.000000 raw=0x1000 err= 0.082216
+#  20120.00ns INFO     cocotb.tanh                        idx=1394 x= 1.578789 ref= 0.918413 hw= 1.000000 raw=0x1000 err= 0.081587
+#  20120.00ns INFO     cocotb.tanh                        idx=1395 x= 1.582791 ref= 0.919037 hw= 1.000000 raw=0x1000 err= 0.080963
+#  20120.00ns INFO     cocotb.tanh                        idx=1396 x= 1.586793 ref= 0.919656 hw= 1.000000 raw=0x1000 err= 0.080344
+#  20120.00ns INFO     cocotb.tanh                        idx=1397 x= 1.590795 ref= 0.920271 hw= 1.000000 raw=0x1000 err= 0.079729
+#  20120.00ns INFO     cocotb.tanh                        idx=1398 x= 1.594797 ref= 0.920882 hw= 1.000000 raw=0x1000 err= 0.079118
+#  20120.00ns INFO     cocotb.tanh                        idx=1399 x= 1.598799 ref= 0.921488 hw= 1.000000 raw=0x1000 err= 0.078512
+#  20120.00ns INFO     cocotb.tanh                        idx=1400 x= 1.602801 ref= 0.922089 hw= 1.000000 raw=0x1000 err= 0.077911
+#  20120.00ns INFO     cocotb.tanh                        idx=1401 x= 1.606803 ref= 0.922686 hw= 1.000000 raw=0x1000 err= 0.077314
+#  20120.00ns INFO     cocotb.tanh                        idx=1402 x= 1.610805 ref= 0.923279 hw= 1.000000 raw=0x1000 err= 0.076721
+#  20120.00ns INFO     cocotb.tanh                        idx=1403 x= 1.614807 ref= 0.923867 hw= 1.000000 raw=0x1000 err= 0.076133
+#  20120.00ns INFO     cocotb.tanh                        idx=1404 x= 1.618809 ref= 0.924451 hw= 1.000000 raw=0x1000 err= 0.075549
+#  20120.00ns INFO     cocotb.tanh                        idx=1405 x= 1.622811 ref= 0.925031 hw= 1.000000 raw=0x1000 err= 0.074969
+#  20120.00ns INFO     cocotb.tanh                        idx=1406 x= 1.626813 ref= 0.925606 hw= 1.000000 raw=0x1000 err= 0.074394
+#  20120.00ns INFO     cocotb.tanh                        idx=1407 x= 1.630815 ref= 0.926178 hw= 1.000000 raw=0x1000 err= 0.073822
+#  20120.00ns INFO     cocotb.tanh                        idx=1408 x= 1.634817 ref= 0.926745 hw= 1.000000 raw=0x1000 err= 0.073255
+#  20120.00ns INFO     cocotb.tanh                        idx=1409 x= 1.638819 ref= 0.927307 hw= 1.000000 raw=0x1000 err= 0.072693
+#  20120.00ns INFO     cocotb.tanh                        idx=1410 x= 1.642821 ref= 0.927866 hw= 1.000000 raw=0x1000 err= 0.072134
+#  20120.00ns INFO     cocotb.tanh                        idx=1411 x= 1.646823 ref= 0.928420 hw= 1.000000 raw=0x1000 err= 0.071580
+#  20120.00ns INFO     cocotb.tanh                        idx=1412 x= 1.650825 ref= 0.928971 hw= 1.000000 raw=0x1000 err= 0.071029
+#  20120.00ns INFO     cocotb.tanh                        idx=1413 x= 1.654827 ref= 0.929517 hw= 1.000000 raw=0x1000 err= 0.070483
+#  20120.00ns INFO     cocotb.tanh                        idx=1414 x= 1.658829 ref= 0.930059 hw= 1.000000 raw=0x1000 err= 0.069941
+#  20120.00ns INFO     cocotb.tanh                        idx=1415 x= 1.662831 ref= 0.930598 hw= 1.000000 raw=0x1000 err= 0.069402
+#  20120.00ns INFO     cocotb.tanh                        idx=1416 x= 1.666833 ref= 0.931132 hw= 1.000000 raw=0x1000 err= 0.068868
+#  20120.00ns INFO     cocotb.tanh                        idx=1417 x= 1.670835 ref= 0.931662 hw= 1.000000 raw=0x1000 err= 0.068338
+#  20120.00ns INFO     cocotb.tanh                        idx=1418 x= 1.674837 ref= 0.932188 hw= 1.000000 raw=0x1000 err= 0.067812
+#  20120.00ns INFO     cocotb.tanh                        idx=1419 x= 1.678839 ref= 0.932711 hw= 1.000000 raw=0x1000 err= 0.067289
+#  20120.00ns INFO     cocotb.tanh                        idx=1420 x= 1.682841 ref= 0.933229 hw= 1.000000 raw=0x1000 err= 0.066771
+#  20120.00ns INFO     cocotb.tanh                        idx=1421 x= 1.686843 ref= 0.933744 hw= 1.000000 raw=0x1000 err= 0.066256
+#  20120.00ns INFO     cocotb.tanh                        idx=1422 x= 1.690845 ref= 0.934255 hw= 1.000000 raw=0x1000 err= 0.065745
+#  20120.00ns INFO     cocotb.tanh                        idx=1423 x= 1.694847 ref= 0.934762 hw= 1.000000 raw=0x1000 err= 0.065238
+#  20120.00ns INFO     cocotb.tanh                        idx=1424 x= 1.698849 ref= 0.935265 hw= 1.000000 raw=0x1000 err= 0.064735
+#  20120.00ns INFO     cocotb.tanh                        idx=1425 x= 1.702851 ref= 0.935765 hw= 1.000000 raw=0x1000 err= 0.064235
+#  20120.00ns INFO     cocotb.tanh                        idx=1426 x= 1.706853 ref= 0.936260 hw= 1.000000 raw=0x1000 err= 0.063740
+#  20120.00ns INFO     cocotb.tanh                        idx=1427 x= 1.710855 ref= 0.936752 hw= 1.000000 raw=0x1000 err= 0.063248
+#  20120.00ns INFO     cocotb.tanh                        idx=1428 x= 1.714857 ref= 0.937241 hw= 1.000000 raw=0x1000 err= 0.062759
+#  20120.00ns INFO     cocotb.tanh                        idx=1429 x= 1.718859 ref= 0.937726 hw= 1.000000 raw=0x1000 err= 0.062274
+#  20120.00ns INFO     cocotb.tanh                        idx=1430 x= 1.722861 ref= 0.938207 hw= 1.000000 raw=0x1000 err= 0.061793
+#  20120.00ns INFO     cocotb.tanh                        idx=1431 x= 1.726863 ref= 0.938684 hw= 1.000000 raw=0x1000 err= 0.061316
+#  20120.00ns INFO     cocotb.tanh                        idx=1432 x= 1.730865 ref= 0.939158 hw= 1.000000 raw=0x1000 err= 0.060842
+#  20120.00ns INFO     cocotb.tanh                        idx=1433 x= 1.734867 ref= 0.939629 hw= 1.000000 raw=0x1000 err= 0.060371
+#  20120.00ns INFO     cocotb.tanh                        idx=1434 x= 1.738869 ref= 0.940095 hw= 1.000000 raw=0x1000 err= 0.059905
+#  20120.00ns INFO     cocotb.tanh                        idx=1435 x= 1.742871 ref= 0.940559 hw= 1.000000 raw=0x1000 err= 0.059441
+#  20120.00ns INFO     cocotb.tanh                        idx=1436 x= 1.746873 ref= 0.941019 hw= 1.000000 raw=0x1000 err= 0.058981
+#  20120.00ns INFO     cocotb.tanh                        idx=1437 x= 1.750875 ref= 0.941475 hw= 1.000000 raw=0x1000 err= 0.058525
+#  20120.00ns INFO     cocotb.tanh                        idx=1438 x= 1.754877 ref= 0.941928 hw= 1.000000 raw=0x1000 err= 0.058072
+#  20120.00ns INFO     cocotb.tanh                        idx=1439 x= 1.758879 ref= 0.942378 hw= 1.000000 raw=0x1000 err= 0.057622
+#  20120.00ns INFO     cocotb.tanh                        idx=1440 x= 1.762881 ref= 0.942824 hw= 1.000000 raw=0x1000 err= 0.057176
+#  20120.00ns INFO     cocotb.tanh                        idx=1441 x= 1.766883 ref= 0.943267 hw= 1.000000 raw=0x1000 err= 0.056733
+#  20120.00ns INFO     cocotb.tanh                        idx=1442 x= 1.770885 ref= 0.943706 hw= 1.000000 raw=0x1000 err= 0.056294
+#  20120.00ns INFO     cocotb.tanh                        idx=1443 x= 1.774887 ref= 0.944143 hw= 1.000000 raw=0x1000 err= 0.055857
+#  20120.00ns INFO     cocotb.tanh                        idx=1444 x= 1.778889 ref= 0.944576 hw= 1.000000 raw=0x1000 err= 0.055424
+#  20120.00ns INFO     cocotb.tanh                        idx=1445 x= 1.782891 ref= 0.945005 hw= 1.000000 raw=0x1000 err= 0.054995
+#  20120.00ns INFO     cocotb.tanh                        idx=1446 x= 1.786893 ref= 0.945432 hw= 1.000000 raw=0x1000 err= 0.054568
+#  20120.00ns INFO     cocotb.tanh                        idx=1447 x= 1.790895 ref= 0.945855 hw= 1.000000 raw=0x1000 err= 0.054145
+#  20120.00ns INFO     cocotb.tanh                        idx=1448 x= 1.794897 ref= 0.946275 hw= 1.000000 raw=0x1000 err= 0.053725
+#  20120.00ns INFO     cocotb.tanh                        idx=1449 x= 1.798899 ref= 0.946692 hw= 1.000000 raw=0x1000 err= 0.053308
+#  20120.00ns INFO     cocotb.tanh                        idx=1450 x= 1.802901 ref= 0.947106 hw= 1.000000 raw=0x1000 err= 0.052894
+#  20120.00ns INFO     cocotb.tanh                        idx=1451 x= 1.806903 ref= 0.947516 hw= 1.000000 raw=0x1000 err= 0.052484
+#  20120.00ns INFO     cocotb.tanh                        idx=1452 x= 1.810905 ref= 0.947924 hw= 1.000000 raw=0x1000 err= 0.052076
+#  20120.00ns INFO     cocotb.tanh                        idx=1453 x= 1.814907 ref= 0.948328 hw= 1.000000 raw=0x1000 err= 0.051672
+#  20120.00ns INFO     cocotb.tanh                        idx=1454 x= 1.818909 ref= 0.948730 hw= 1.000000 raw=0x1000 err= 0.051270
+#  20120.00ns INFO     cocotb.tanh                        idx=1455 x= 1.822911 ref= 0.949128 hw= 1.000000 raw=0x1000 err= 0.050872
+#  20120.00ns INFO     cocotb.tanh                        idx=1456 x= 1.826913 ref= 0.949523 hw= 1.000000 raw=0x1000 err= 0.050477
+#  20120.00ns INFO     cocotb.tanh                        idx=1457 x= 1.830915 ref= 0.949916 hw= 1.000000 raw=0x1000 err= 0.050084
+#  20120.00ns INFO     cocotb.tanh                        Config : INPUT_W=16 OUTPUT_W=16 Q_IN=12 Q_OUT=12 STEPS=2000
+#  20120.00ns INFO     cocotb.regression                  testbench.test_tanh_generic passed
+#  20120.00ns INFO     cocotb.regression                  **************************************************************************************
+#                                                         ** TEST                          STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+#                                                         **************************************************************************************
+#                                                         ** testbench.test_tanh_generic    PASS       20120.00           0.54      37468.41  **
+#                                                         **************************************************************************************
+#                                                         ** TESTS=1 PASS=1 FAIL=0 SKIP=0              20120.00           0.54      36966.98  **
+#                                                         **************************************************************************************
+# ** Note: $finish
+#    Time: 20120 ns  Iteration: 3  Instance: /tanh
+# End time: 11:22:35 on Jun 12,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 2
+make[1]: Leaving directory '/home/runner'
+Done
